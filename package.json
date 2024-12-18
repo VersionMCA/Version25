@@ -3,10 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint" : "next lint",
+    "lint:check": "eslint --max-warnings 0 --config .eslintrc .",
+    "lint:fix": "eslint --max-warnings 0 --config .eslintrc . --fix",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json}\"",
+    "prisma:docker": "npm run prisma:migrate && npm run db:seed && npm run studio",
+    "dev:docker": "npm run prisma:docker & next dev",
+    "prisma:migrate": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:reset": "prisma migrate reset",
+    "update:videometadata": "ts-node --compiler-options \"{\\\"module\\\": \\\"CommonJS\\\"}\" ./src/scripts/updateVideoMetaData.ts",
+    "studio": "prisma studio"
   },
   "dependencies": {
     "next": "15.1.0",
