@@ -25,3 +25,6 @@ jobs:
 
       - name: Check formatting
         run: npm run format:check
+      
+      - name: Fix formatting
+        run: npm run format:fix
