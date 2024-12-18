@@ -1,9 +1,9 @@
 const EEC_Members=[ {
     name: "Chirag Tomar",
-    image: '../assets/EEC_Images/Chirag.jpg',
+    image: '',
     socialLinks: {
       github: "https://github.com/andresberlin",
-      twitter: "https://twitter.com/andresberlin",
+      linkedin: "https://twitter.com/andresberlin",
       instagram: "https://instagram.com/andresberlin",
     }},
 {
@@ -11,7 +11,7 @@ const EEC_Members=[ {
     image: '../assets/EEC_Images/Chirag.jpg',
     socialLinks: {
         github: "https://github.com/andresberlin",
-        twitter: "https://twitter.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
         instagram: "https://instagram.com/andresberlin",
       }
 },
@@ -20,7 +20,7 @@ const EEC_Members=[ {
     image: '../assets/EEC_Images/Chirag.jpg',
     socialLinks: {
         github: "https://github.com/andresberlin",
-        twitter: "https://twitter.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
         instagram: "https://instagram.com/andresberlin",
       }
 },
@@ -29,7 +29,7 @@ const EEC_Members=[ {
     image: '../assets/EEC_Images/Chirag.jpg',
     socialLinks: {
         github: "https://github.com/andresberlin",
-        twitter: "https://twitter.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
         instagram: "https://instagram.com/andresberlin",
       }
 },
@@ -38,7 +38,7 @@ const EEC_Members=[ {
     image: '../assets/EEC_Images/Chirag.jpg',
     socialLinks: {
         github: "https://github.com/andresberlin",
-        twitter: "https://twitter.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
         instagram: "https://instagram.com/andresberlin",
       }
 },
@@ -47,7 +47,7 @@ const EEC_Members=[ {
     image: '../assets/EEC_Images/Chirag.jpg',
     socialLinks: {
         github: "https://github.com/andresberlin",
-        twitter: "https://twitter.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
         instagram: "https://instagram.com/andresberlin",
       }
 }];
