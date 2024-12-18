@@ -3,10 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint:check": "next lint",
+    "lint:fix": "next lint --fix",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,json}\"",
+    "prepare": "husky install",
+    "prisma:migrate": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:reset": "prisma migrate reset",
+    "studio": "prisma studio"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
@@ -18,9 +28,13 @@
     "@eslint/eslintrc": "^3",
     "@types/node": "22.10.2",
     "@types/react": "19.0.1",
-    "eslint": "^9",
+    "eslint": "^9.17.0",
     "eslint-config-next": "15.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.7",
     "postcss": "^8",
+    "prettier": "3.4.2",
     "tailwindcss": "^3.4.1"
   }
 }
