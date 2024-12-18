@@ -17,19 +17,17 @@ jobs:
         with:
           node-version: '16' # Specify the Node.js version you want to use
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: '7' # You can specify the pnpm version you want here
+      - name: Install Yarn
+        run: npm install -g yarn
 
       - name: Install Dependencies
-        run: pnpm install
+        run: yarn install
 
       - name: Run linting check
-        run: pnpm run lint:check
+        run: yarn lint:check
 
       - name: Check formatting
-        run: pnpm run format:check
+        run: yarn format:check
 
       - name: Fix formatting
-        run: pnpm run format:fix
+        run: yarn format:fix
