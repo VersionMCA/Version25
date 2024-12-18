@@ -20,24 +20,23 @@ const NITTrichyMap = () => {
             }).addTo(map)
 
             const locations = [
-                { name: "Octagon (Center)", coords: [10.758, 78.813] },
-                { name: "Admin Block", coords: [10.759, 78.814] },
-                { name: "Library", coords: [10.762, 78.814] },
-                { name: "Orion Boys Hostel", coords: [10.756, 78.812] },
-                { name: "Leo Boys Hostel", coords: [10.757, 78.813] },
-                { name: "Aquarius Boys Hostel", coords: [10.755, 78.814] },
-                { name: "Opal Girls Hostel", coords: [10.758, 78.810] },
-                { name: "Mega Mess 1", coords: [10.758, 78.811] },
-                { name: "Mega Mess 2", coords: [10.759, 78.811] },
-                { name: "Silver Jubilee Building", coords: [10.761, 78.813] },
-                { name: "Barn Hall", coords: [10.760, 78.813] },
-                { name: "Lecture Hall Complex", coords: [10.759, 78.816] },
-                { name: "MCA Lab (in front of Lyceum)", coords: [10.760, 78.816] },
-                { name: "ThirdI Lab (in front of Lecture Hall)", coords: [10.759, 78.815] },
-                { name: "Computer Science Department", coords: [10.761, 78.814] },
-                { name: "EEE Department", coords: [10.760, 78.815] },
-                { name: "Mechanical Department", coords: [10.759, 78.817] },
-                { name: "Chemical Engineering Department", coords: [10.758, 78.817] }
+                { name: "Octagon", coords: [10.760652939498392, 78.814644951214] },
+                { name: "Admin Block", coords: [10.758992420208626, 78.81321606867355] },
+                { name: "Central Library", coords: [10.757234763819078, 78.81823008736052] },
+                { name: "Lassi Shop", coords: [10.761874944125786, 78.81462252518216] },
+                { name: "Basketball Court", coords: [10.762694930278185, 78.81462147241709] },
+                { name: "Barn Hall", coords: [10.75935716831512, 78.81330713747782] },
+                { name: "Lecture Hall Complex", coords: [10.761066735566802, 78.81418222136351] },
+                { name: "ThirdI Lab", coords: [10.761627553975291, 78.81454740190756] },
+                { name: "Department Of Computer Applications", coords: [10.759852491629992, 78.81778024924118] },
+                { name: "2K Market", coords: [10.761253043932214, 78.81903808707331] },
+                { name: "Lyceum", coords: [10.759755139971304, 78.81722256124189] },
+                { name: "Tasty Chat Khazana", coords: [10.758, 78.817] },
+                {name:"GJCH", coords: [10.761614235607802, 78.81189165601184]},
+                {name:"GJCH", coords: [10.764033068268885, 78.81548246582308]},
+                {name:"MIG Plaza", coords: [10.75966650181768, 78.80991497981377]},
+                {name:"Mega Mess", coords: [10.766062107330727, 78.8152904454767]}
+                
             ]            
 
             locations.forEach(location => {
