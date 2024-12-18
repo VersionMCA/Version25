@@ -5,9 +5,7 @@ on:
       - main
 
 jobs:
-
   Continuous-Integration:
-
     name: Performs linting, formatting on the application
     runs-on: ubuntu-latest
     steps:
@@ -16,15 +14,22 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Specify the Node.js version you want to use
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '7' # You can specify the pnpm version you want here
 
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Run linting check
-        run: npm run lint:check
+        run: pnpm run lint:check
 
       - name: Check formatting
-        run: npm run format:check
-      
+        run: pnpm run format:check
+
       - name: Fix formatting
-        run: npm run format:fix
+        run: pnpm run format:fix
