@@ -1,6 +1,6 @@
 const EEC_Members=[ {
     name: "Chirag Tomar",
-    image: '',
+    image: '../assets/EEC_Images/Chirag.jpg',
     socialLinks: {
       github: "https://github.com/andresberlin",
       linkedin: "https://twitter.com/andresberlin",
