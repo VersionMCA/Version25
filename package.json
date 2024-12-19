@@ -10,11 +10,11 @@
     "lint:fix": "next lint --fix",
     "format:check": "prettier --check \"**/*.{ts,tsx,json}\"",
     "format:fix": "prettier --write \"**/*.{ts,tsx,json}\"",
-    "prepare": "husky install",
     "prisma:migrate": "prisma migrate deploy",
     "db:seed": "prisma db seed",
     "db:reset": "prisma migrate reset",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

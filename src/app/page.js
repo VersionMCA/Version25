@@ -1,6 +1,9 @@
-'use client'
-import Map from "../components/home/Map.jsx";
+import Map from "../components/home/Map";
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Map />
+    </div>
+  );
 }

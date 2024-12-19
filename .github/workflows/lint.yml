@@ -3,6 +3,8 @@ on:
   pull_request:
     branches:
       - main
+env : 
+  HUSKY: 0
 
 jobs:
   Continuous-Integration:
@@ -15,19 +17,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Specify the Node.js version you want to use
-
-      - name: Install Yarn
-        run: npm install -g yarn
+          node-version: "16" # Specify the Node.js version you want to use
 
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run linting check
-        run: yarn lint:check
+        run: npm lint:check
 
       - name: Check formatting
-        run: yarn format:check
+        run: npm format:check
 
       - name: Fix formatting
-        run: yarn format:fix
+        run: npm format:fix
