@@ -6,11 +6,7 @@
       "@public/*": ["./public/*"]
     },
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -28,16 +24,14 @@
       }
     ]
   },
-  
+
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/**/*",  // Ensure this includes the 'src' folder
+    "src/**/*", // Ensure this includes the 'src' folder
     "public/**/*"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

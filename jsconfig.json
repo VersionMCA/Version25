@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],  // Adjusted to point to 'src' folder
+      "@/*": ["./src/*"], // Adjusted to point to 'src' folder
       "@public/*": ["./public/*"]
     }
   },
@@ -10,6 +10,6 @@
     "pages/**/*",
     "components/**/*",
     "public/**/*",
-    "src/**/*"  // Include the 'src' folder for JavaScript files
+    "src/**/*" // Include the 'src' folder for JavaScript files
   ]
 }
