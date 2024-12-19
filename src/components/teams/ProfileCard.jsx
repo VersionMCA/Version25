@@ -8,7 +8,7 @@ const ProfileCard = ({ name, image, socialLinks }) => {
       <img
         src={image}
         alt={`Image ${name}`}
-        srcSet="https://i.pinimg.com/736x/3d/3b/f1/3d3bf1f13bc997907db8aa68e4ab5153.jpg"
+        srcSet="https://images.pexels.com/photos/29179699/pexels-photo-29179699/free-photo-of-young-woman-enjoying-music-indoors.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
         className="w-full h-full object-cover"
       />
       <div className="bg-[#A5F524] p-2 sm:p-3 rounded-2xl border-2 border-black absolute bottom-3 sm:bottom-6 font-mono text-black flex justify-center flex-col items-center">
