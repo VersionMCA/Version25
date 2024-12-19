@@ -1,3 +1,5 @@
+import Chirag from "@public/images/Chirag.jpg"
+import Image from "next/image";
 const ProfileCard = ({ name, image, socialLinks }) => {
   console.log(image);
   return (
@@ -5,16 +7,17 @@ const ProfileCard = ({ name, image, socialLinks }) => {
   className="rounded-lg aspect-[1/1] overflow-hidden xl:w-1/4 w-full flex justify-center items-center flex-col relative select-none bg-[#1E1E1E] border-double hover:border-l-8 hover:border-t-8 hover:border-l-[#b7f625] hover:border-t-[#b7f625] transition-all ease-in-out sm:w-1/2 md:w-1/3 lg:w-1/4"
 >
 
-      <img
-        src={image}
+      <Image
+        src={Chirag}
         alt={`Image ${name}`}
-        srcSet="https://images.pexels.com/photos/29179699/pexels-photo-29179699/free-photo-of-young-woman-enjoying-music-indoors.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
         className="w-full h-full object-cover"
       />
-      <div className="bg-[#A5F524] p-2 sm:p-3 rounded-2xl border-2 border-black absolute bottom-3 sm:bottom-6 font-mono text-black flex justify-center flex-col items-center">
-        <p className="font-bold text-md sm:text-xl">{name}</p>
+      <div className="group bg-[#A5F524] p-2 sm:p-3 rounded-2xl border-2 border-black absolute bottom-3 sm:bottom-6 font-mono text-black flex justify-center flex-col items-center ">
+        <div className="flex justify-center flex-col items-center inset-0 bg-opacity-60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
+        <p className="font-bold text-md sm:text-xl ">{name}</p>
         <p className="text-sm sm:text-md">Head</p>
-        <div className="w-full flex justify-center pt-2 pb-2">
+        </div>
+        <div className=" relative w-full flex justify-center pt-2 pb-2 inset-0 bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-linear">
           {socialLinks.github && (
             <a href={socialLinks.github} className="mx-5" aria-label="Github">
               <svg

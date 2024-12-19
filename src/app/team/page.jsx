@@ -1,5 +1,5 @@
-import ProfileCard from "../../components/teams/ProfileCard"
-import Teams from "../../helper/teams"
+import ProfileCard from "@/components/teams/ProfileCard"
+import Teams from "@/helper/teams"
 
 const page = () => {
   const [EEC_Members,PPC_Members]=Teams;
