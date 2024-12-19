@@ -19,7 +19,12 @@ export default {
           black: "#0D0C0C", // RGB: 13, 12, 12
         },
       },
+      clipPath: {
+        'custom': 'polygon(0% 0%, 85% 0%, 100% 40%, 100% 100%, 15% 100%, 0% 60%)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-clip-path')
+  ],
 };
