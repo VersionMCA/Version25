@@ -1,9 +1,10 @@
-import Map from "../components/home/Map";
-
+import Calendar from "../components/home/Calendar";
+import About from "../components/home/About";
 export default function Home() {
   return (
     <div>
-      <Map />
+      <Calendar />
+      <About />
     </div>
   );
 }
