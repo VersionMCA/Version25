@@ -1,9 +1,9 @@
-import Map from "../components/home/Map";
+import FAQ from "../components/home/FAQ";
 
 export default function Home() {
   return (
     <div>
-      <Map />
+      <FAQ />
     </div>
   );
 }
