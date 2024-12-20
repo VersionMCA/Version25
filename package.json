@@ -2,6 +2,9 @@
   "name": "version25",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,10 +20,16 @@
     "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.7.4",
+    "@prisma/client": "^6.1.0",
     "leaflet": "^1.9.4",
     "next": "15.1.0",
+    "next-auth": "^4.24.11",
+    "prisma": "^6.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-clip-path": "^1.0.0",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

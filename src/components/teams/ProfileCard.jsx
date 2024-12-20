@@ -1,6 +1,7 @@
 import Chirag from "@public/images/Chirag.jpg";
 import Image from "next/image";
 
+
 const ProfileCard = ({ name, image, socialLinks, designation }) => {
   return (
     <div
