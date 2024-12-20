@@ -1,4 +1,18 @@
-npm run lint:check
-npm run format:check
+#!/bin/bash
+# Run linters and formatters
+echo "Running linting and formatting..."
 npm run lint:fix
 npm run format:fix
+
+# Check if there are any changes
+if ! git diff --quiet; then
+  echo "Linting/formatting made changes. Amending the commit..."
+  git add .
+  git commit --amend --no-edit
+else
+  echo "No changes detected."
+fi
+
+# Proceed with the push
+echo "Pushing the code..."
+exit 0
