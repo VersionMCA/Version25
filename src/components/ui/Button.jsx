@@ -1,19 +1,12 @@
-const Button = ({ text, onClick, disabled, loading }) => {
-  return (
-    <button
-      className={`relative flex items-center justify-center px-6 py-3 text-white font-semibold rounded-md 
-        ${disabled || loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}
-        ${loading && "cursor-wait"}`}
-      onClick={onClick}
-      disabled={disabled || loading}
-    >
-      {loading ? (
-        <div className="loader border-t-transparent border-4 border-white rounded-full w-5 h-5"></div>
-      ) : (
-        text
-      )}
-    </button>
-  );
-};
+'use client'
+import React from "react";
 
-export default Button;
+function Button({text , type='button',bgColor="bg-[#BFF205]", textColor='text-black',className='',...props}){
+    return(
+        <button className={`${bgColor} ${textColor}  font-mono text-lg font-bold py-3 px-4 rounded-tl-md rounded-br-md clip-path-custom mt-12`}{...props}>
+                {text}
+        </button>
+    )
+}
+
+export default Button
