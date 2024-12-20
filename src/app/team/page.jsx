@@ -7,7 +7,8 @@ const links={
 }
 
 const page = () => {
-  const [EEC_Members, PPC_Members, Faculty,CCC_Members,EEC_Heads,PRC_Members,PRC_Heads,PPC_Heads,HRC_Members,HRC_Heads,ARC_Members,ARC_Heads] = Teams;
+  const {EEC_Members, PPC_Members, Faculty,CCC_Members,EEC_Heads,PRC_Members,PRC_Heads,PPC_Heads,HRC_Members,HRC_Heads,ARC_Members,ARC_Heads} = Teams;
+  console.log(PRC_Members)
   return (
     <div className="flex justify-center items-center p-4 flex-col bg-[#1E1E1E] ">
       <div className="opacity-1 transform-none font-extrabold font-mono text-white">

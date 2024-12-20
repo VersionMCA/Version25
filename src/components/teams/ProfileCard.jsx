@@ -1,7 +1,7 @@
 import Chirag from "@public/images/Chirag.jpg"
 import Image from "next/image";
 const ProfileCard = ({ name, image, socialLinks ,designation}) => {
-  console.log(image);
+  // console.log(image);
   return (
 <div 
   className="rounded-lg aspect-[1/1] overflow-hidden xl:w-1/4 w-full flex justify-center items-center flex-col relative select-none bg-[#1E1E1E] border-double hover:border-l-8 hover:border-t-8 hover:border-l-[#b7f625] hover:border-t-[#b7f625] transition-all ease-in-out sm:w-1/2 md:w-1/3 lg:w-1/4"

@@ -226,7 +226,7 @@ const EEC_Heads=[{name: "Chirag Tomar",
       linkedin: "https://twitter.com/andresberlin",
       instagram: "https://instagram.com/andresberlin",
     }}];
-    const PRC_Members=[{name: "Chirag Tomar",
+    const PRC_Members=[{name: "XYZ",
       image: '@public/images/Chirag.jpg',
       designation:'',
       socialLinks: {
@@ -357,6 +357,6 @@ const EEC_Heads=[{name: "Chirag Tomar",
       }}];
 
 
-const Teams=[EEC_Members,PPC_Members,Faculty,CCC_Members,EEC_Heads,PPC_Heads,PRC_Heads,PRC_Members,ARC_Heads,ARC_Members,HRC_Heads,HRC_Members];
+const Teams={EEC_Members,PPC_Members,Faculty,CCC_Members,EEC_Heads,PPC_Heads,PRC_Heads,PRC_Members,ARC_Heads,ARC_Members,HRC_Heads,HRC_Members};
 
 export default Teams;
