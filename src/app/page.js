@@ -1,9 +1,9 @@
-import Map from "../components/home/Map";
-
+"use client";
+import { signOut } from "next-auth/react";
 export default function Home() {
   return (
     <div>
-      <Map />
+      <button onClick={() => signOut()}> signOut</button>
     </div>
   );
 }
