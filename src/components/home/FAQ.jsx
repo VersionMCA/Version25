@@ -4,14 +4,18 @@ import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import arrowUpIcon from "../../assets/svgs/arrow-up.svg";
 import Image from "next/image";
+import { faqItems } from "../../helper/faqs.js";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => (
-  <div className="border rounded-lg overflow-hidden">
+  <div
+    className="border border-theme-cream rounded-lg overflow-hidden bg-theme-black"
+    style={{ alignSelf: "start" }}
+  >
     <button
       onClick={onClick}
-      className="w-full text-left flex justify-between px-4 py-3 font-medium bg-black-100 hover:bg-gray-400 focus:outline-none focus:ring focus:ring-gray-300"
+      className="w-full text-left flex justify-between px-4 py-3 font-medium bg-black-100 hover:bg-gray-700 focus:outline-none  focus:ring-gray-300 text-theme-lime"
     >
-      {title}
+      Q. {title}
       <Image
         priority
         src={arrowUpIcon}
@@ -34,7 +38,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => (
       leaveTo="transform scale-y-0 opacity-0"
       className="overflow-hidden"
     >
-      <div className="px-4 py-3 bg-black">{content}</div>
+      <div className="px-4 py-3 bg-theme-black text-theme-blue">{content}</div>
     </Transition>
   </div>
 );
@@ -62,27 +66,11 @@ const Accordion = ({ items }) => {
 };
 
 export default function FAQ() {
-  const faqItems = [
-    {
-      title: "What is Tailwind CSS?",
-      content:
-        "Tailwind CSS is a utility-first CSS framework for creating custom designs directly in your HTML.",
-    },
-    {
-      title: "How does the Accordion work?",
-      content:
-        "This accordion uses React state to manage the open/close logic and Tailwind CSS for animations.",
-    },
-    {
-      title: "Is Tailwind CSS beginner-friendly?",
-      content:
-        "Yes, Tailwind CSS is designed to be simple and efficient for developers of all levels.",
-    },
-  ];
-
   return (
     <div className="max-w-2xl mx-auto mt-8">
-      <h1 className="text-2xl font-bold mb-6">Frequently Asked Questions</h1>
+      <h1 className="text-4xl font-bold mb-6 text-theme-blue">
+        Frequently Asked Questions
+      </h1>
       <Accordion items={faqItems} />
     </div>
   );
