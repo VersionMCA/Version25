@@ -1,6 +1,6 @@
 import Chirag from "@public/images/Chirag.jpg"
 import Image from "next/image";
-const ProfileCard = ({ name, image, socialLinks }) => {
+const ProfileCard = ({ name, image, socialLinks ,designation}) => {
   console.log(image);
   return (
 <div 
@@ -15,7 +15,7 @@ const ProfileCard = ({ name, image, socialLinks }) => {
       <div className="group bg-[#A5F524] p-2 sm:p-3 rounded-2xl border-2 border-black absolute bottom-3 sm:bottom-6 font-mono text-black flex justify-center flex-col items-center ">
         <div className="flex justify-center flex-col items-center inset-0 bg-opacity-60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
         <p className="font-bold text-md sm:text-xl ">{name}</p>
-        <p className="text-sm sm:text-md">Head</p>
+        <p className="text-sm sm:text-md">{designation}</p>
         </div>
         <div className=" relative w-full flex justify-center pt-2 pb-2 inset-0 bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-linear">
           {socialLinks.github && (
