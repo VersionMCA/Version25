@@ -2,8 +2,8 @@ import "../../app/globals.css"
 
 const Navbar = () => {
   return (
-    <div className = "pixie sticky top-0 z-50">
-      <div className = "p-4 m-auto flex flex-row justify-center items-center text-lg">
+        <div className="sticky top-0 z-50">
+      <div className = "p-4 m-auto flex flex-row justify-center items-center text-lg sticky pixie z-[99]">
         <div className = "basis-1/12 flex justify-center"><span className = "rounded-full p-4 bg-red-900">X</span></div>
         <ul className = "flex flex-row bg-[#94dc18] p-4 basis-full rounded-full text-black">
           <span className = "basis-1/2"><li className = "mx-5 xl:mr-10">VERSION</li></span>
@@ -18,7 +18,7 @@ const Navbar = () => {
         </ul>
         <div className = "basis-1/12 flex justify-center"><span className = "rounded-full p-4 bg-red-900">Y</span></div>
       </div>
-    </div>
+      </div>
   )
 }
 
