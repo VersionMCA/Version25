@@ -5,11 +5,6 @@ export const faqItems = [
       "Tailwind CSS is a utility-first CSS framework for creating custom designs directly in your HTML.",
   },
   {
-    title: "How does the Accordion work?",
-    content:
-      "This accordion uses React state to manage the open/close logic and Tailwind CSS for animations.",
-  },
-  {
     title: "Is Tailwind CSS beginner-friendly?",
     content:
       "Yes, Tailwind CSS is designed to be simple and efficient for developers of all levels.",
