@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Silkscreen } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar/Navbar";
@@ -13,6 +13,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const pixie = Silkscreen({
+  subsets: ["latin"], // Include the 'latin' subset
+  weight: ["400", "700"], // Include specific weights (regular and bold)
+  style: ["normal"], // Include styles
+  display: "swap", // Ensures text remains visible during font loading
+  variable: "--font-pixie",
+});
+
 export const metadata = {
   title: "Version'25 : All India MCA Meet",
   description:
@@ -23,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} antialiased`}
       >
         <Providers>
           <Navbar />

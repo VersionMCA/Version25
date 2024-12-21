@@ -14,6 +14,10 @@
   }
 }
 
+.pixie{
+  font-family: var(--font-pixie);
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
