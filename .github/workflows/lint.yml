@@ -17,16 +17,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16" # Specify the Node.js version you want to use
+          node-version: "20" # Specify the Node.js version you want to use
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Run linting check
-        run: npm lint:check
+      - name: Fix Linting
+        run: npm run lint:fix
+
+      - name: Fix Formatting
+        run: npm run format:fix
+
+      - name: Check linting 
+        run: npm run lint:check
 
       - name: Check formatting
-        run: npm format:check
+        run: npm run format:check
 
-      - name: Fix formatting
-        run: npm format:fix
+      

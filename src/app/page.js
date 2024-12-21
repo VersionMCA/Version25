@@ -1,9 +1,11 @@
-import FAQ from "../components/home/FAQ";
+import Home from "@/components/home/Home";
 
-export default function Home() {
+const page = () => {
   return (
     <div>
-      <FAQ />
+      <Home />
     </div>
   );
-}
+};
+
+export default page;
