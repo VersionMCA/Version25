@@ -22,14 +22,18 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
     "@prisma/client": "^6.1.0",
+    "framer-motion": "^11.15.0",
+    "gsap": "^3.12.5",
+    "hamburger-react": "^2.5.2",
     "leaflet": "^1.9.4",
     "next": "15.1.0",
     "next-auth": "^4.24.11",
     "prisma": "^6.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-clip-path": "^1.0.0",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "react-use": "^17.6.0",
+    "tailwind-clip-path": "^1.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
