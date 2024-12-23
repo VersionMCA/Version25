@@ -1,4 +1,5 @@
 import EventCard from "./EventCard";
+import InsertEvents from "./InsertEvents";
 import eventsList from "@/helper/eventsList";
 const page = () => {
   return (
@@ -9,6 +10,7 @@ const page = () => {
           <EventCard key={event.id} event={event} />
         ))
       }
+      <InsertEvents />
     </div>
   )
 }
