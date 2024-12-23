@@ -80,13 +80,11 @@ model Registration {
   id        String   @id @default(cuid())
   userId    String
   eventId   String
-  teamName  String? 
-  participants String[] 
   createdAt DateTime @default(now())
 
   // Relations
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
 
-  @@unique([userId, eventId]) 
+  @@unique([userId, eventId], name: "userId_eventId") 
 }

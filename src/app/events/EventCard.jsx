@@ -4,29 +4,25 @@ import { React, useState } from "react";
 import toast from "react-hot-toast";
 
 const EventCard = ({ event }) => {
-    const { data: session } = useSession();
+    const { data: session,} = useSession();
     const [registered, setRegistered] = useState(false);
 
-    const clickHandler = async () => {
-        if (!session) {
-            toast.error("Login to register the events");
-            console.log("Login to register the events");
-            return;
-        }
-
+    const registerEvent = async () => {
         try {
-            const res = await fetch('../api/events/register', {
+            if (!session) {
+                toast.error("Login to register the events");
+                console.log("Login to register the events");
+                return;
+            }
+            const res = await fetch('/api/events/register', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     eventId: event.id,
-                    teamName: null,
-                    participants: []
                 })
             })
-
             const data = await res.json();
             console.log(data);
             if (res.ok) {
@@ -37,7 +33,6 @@ const EventCard = ({ event }) => {
                 toast.error(data.message);
             }
         } catch (error) {
-            console.log(error);
             toast.error("Something went wrong. Please try again.");
         }
     }
@@ -49,7 +44,7 @@ const EventCard = ({ event }) => {
             {
                 (!registered) ? <button
                     className="mt-4 bg-blue-500 text-white p-2 rounded"
-                    onClick={clickHandler}
+                    onClick={registerEvent}
                 >
                     Register
                 </button>
