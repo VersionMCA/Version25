@@ -1,4 +1,4 @@
-import Chirag from "@public/images/Chirag.jpg";
+import Chirag from "@public/profile_images/Chirag.jpg";
 import Image from "next/image";
 
 
