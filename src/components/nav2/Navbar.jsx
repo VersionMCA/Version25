@@ -20,6 +20,8 @@ const Navbar = () => {
         <div className = "basis-1/12 flex justify-center mr-2"><span className = "rounded-full p-4 bg-red-900">Y</span></div>
       </div>
       </div>
+
+     
   )
 }
 
