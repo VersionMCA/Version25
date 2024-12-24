@@ -1,3 +1,6 @@
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line
 export default {
@@ -8,6 +11,11 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        "meteor-effect": "meteor 5s linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -25,7 +33,35 @@ export default {
         custom:
           "polygon(0 0, calc(100% - 17px) 0, 100% 17px, 100% 100%, 17px 100%, 0 calc(100% - 17px))",
       },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwind-clip-path")],
+  plugins: [require("tailwind-clip-path"),addVariablesForColors],
 };
+
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
