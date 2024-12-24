@@ -124,7 +124,7 @@ const Home = () => {
   }, [gameWidth]);
 
   return (
-    <>
+    <div className = "min-h-screen">
    <section className=' h-screen max-w-screen overflow-x-hidden' id = "gameSection" onMouseEnter={() => setActive(true)} onMouseLeave = {() => setActive(false)}>
      <div className="absolute inset-0 z-20 animateThis">
         <div className="gridAnimate absolute top-0 -left-4 w-1/4 h-2/4 bg-[#370657] opacity-40 transform blur-[60px] -rotate-12 animate-circle2" />
@@ -158,13 +158,17 @@ const Home = () => {
     <div className="firework"></div>
     <div className="firework"></div>
    </div>
-   </section>
 
+   
+   </section>
     {/*Add shadow property... */}
+
    <section className = "w-screen bg-theme-black mt-[5%] h-screen">   
     hee
    </section>
-   </>
+
+   
+   </div>
 
 
 
