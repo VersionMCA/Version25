@@ -1,16 +1,19 @@
 "use client"
 import { useSession } from "next-auth/react";
-import { React, useState } from "react";
-import toast from "react-hot-toast";
+import { React, useState, useEffect } from "react";
 
-const EventCard = ({ event }) => {
-    const { data: session,} = useSession();
-    const [registered, setRegistered] = useState(false);
+const EventCard = ({ event, isRegistered }) => {
+    const { data: session, } = useSession();
+    const [registered, setRegistered] = useState(isRegistered);
+
+    useEffect(() => {
+        setRegistered(isRegistered);
+    }, [isRegistered]);
+
 
     const registerEvent = async () => {
         try {
             if (!session) {
-                toast.error("Login to register the events");
                 console.log("Login to register the events");
                 return;
             }
@@ -24,21 +27,20 @@ const EventCard = ({ event }) => {
                 })
             })
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
             if (res.ok) {
                 setRegistered(true);
-                toast.success("Successfully registered");
             }
             else {
-                toast.error(data.message);
+                console.log(data.message);
             }
         } catch (error) {
-            toast.error("Something went wrong. Please try again.");
+            console.log("Something went wrong. Please try again.");
         }
     }
     return (
         <div className="event-card bg-slate-400 flex flex-col items-center justify-center text-sz-2xl text-white p-4 w-1/4 h-[250px]">
-            <img src={event.img} alt="This is event image" className='overflow-hidden' />
+            <img src='/profile_images/Chirag.jpg' alt="This is event image" className='overflow-hidden' />
             <h1>{event.title}</h1>
             <p>{event.description}</p>
             {

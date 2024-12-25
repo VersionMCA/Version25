@@ -6,6 +6,7 @@ export async function POST(req) {
 
     try {
         const session = await getServerSession(authOptions);
+        // console.log(session);
         if (!session || !session.user) {
             return new Response(JSON.stringify("Login to register the events", { status: 401 }));
         }
@@ -29,13 +30,12 @@ export async function POST(req) {
                     eventId: event.id
                 }
             })
-            console.log(newRegistration);
+            // console.log(newRegistration);
             return new Response(JSON.stringify(newRegistration, { status: 201, message: "Successfully registered" }));
         }
 
     } catch (error) {
-        console.log(error);   
-        return new Response(JSON.stringify("Internal server error", { status: 500 }));
+        return new Response(JSON.stringify(error, { status: 500 }));
     }
 }
 
