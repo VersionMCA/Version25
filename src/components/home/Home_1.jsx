@@ -163,9 +163,9 @@ const Home = () => {
    </section>
     {/*Add shadow property... */}
 
-   <section className = "w-screen bg-theme-black mt-[5%] h-screen">   
-    hee
-   </section>
+   {/* <section className = "w-screen bg-theme-black mt-[5%] h-screen">   
+    ABOUT US...
+   </section> */}
 
    
    </div>

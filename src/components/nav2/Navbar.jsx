@@ -26,10 +26,10 @@ const Navbar = ({toggle}) => {
                   <p>Profile</p>
                 </Link>
             </li>
-            <li className = "mx-3 p-2 md:p-0 md:mx-0 text-white flex justify-center items-center">
+            <li className = "mx-3 p-2 md:p-0 md:mx-0 flex justify-center items-center">
               <button type="button" className="md:block"
             onClick={toggle}>
-              <svg xmlns="http://www.w3.org/2000/svg"
+              <svg className = "invert" xmlns="http://www.w3.org/2000/svg"
                     width="40"
                     height="40"
                     viewBox="0 0 24 24">
