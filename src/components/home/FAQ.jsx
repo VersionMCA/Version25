@@ -8,8 +8,8 @@ import { faqItems } from "../../helper/faqs.js";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => (
   <div
-    className="border border-theme-cream rounded-lg overflow-hidden bg-theme-black"
-    style={{ alignSelf: "start" }}
+    className="rounded-lg overflow-hidden bg-theme-black"
+    style={{ alignSelf: "start", border: "2px solid #3f444a" }}
   >
     <button
       onClick={onClick}
