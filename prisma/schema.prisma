@@ -76,6 +76,7 @@ model Event {
   createdAt   DateTime  @default(now())
 
   // Relations
+  teams       Team[]
   registrations Registration[]
 }
 
