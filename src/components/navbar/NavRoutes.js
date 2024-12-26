@@ -12,7 +12,7 @@ const routes = [
   {
     id: 3,
     title: "Teams",
-    href: "/teams",
+    href: "/team",
   },
   {
     id: 4,
