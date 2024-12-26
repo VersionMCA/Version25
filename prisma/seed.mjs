@@ -5,6 +5,7 @@ async function seedEvents() {
     data: {
       eventName: "Event 1",
       description: "Event 1 Description",
+      type: "Individual",
     },
   });
 }
