@@ -24,7 +24,7 @@ const Sidebar = ({
           </svg>
         </button>
 
-        <ul className="sidebar-nav text-center leading-relaxed text-7xl font-extrabold text-black max-h-screen pixie">
+        <ul className="sidebar-nav text-center leading-relaxed text-4xl lg:text-7xl font-extrabold text-black max-h-screen pixie">
         <li className = "mx-4 xl:mx-8 "> <Link href="/">
                   <p>Home</p>
                 </Link></li>
