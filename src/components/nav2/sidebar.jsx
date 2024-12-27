@@ -8,7 +8,7 @@ const Sidebar = ({
   return (
     <>
       <div
-        className="sidebar-container fixed w-full h-full overflow-hidden justify-center bg-[#94dc18bd] backdrop-blur-sm grid pt-[120px] left-0 z-[100] "
+        className="md:hidden sidebar-container fixed w-full h-full overflow-hidden justify-center bg-[#94dc18bd] backdrop-blur-sm grid pt-[120px] left-0 z-[100] "
         style={{
           opacity: `${isOpen ? "1" : "0"}`,
           top: ` ${isOpen ? "0" : "-100%"}`,
