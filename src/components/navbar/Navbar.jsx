@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import navLinks from "./navLinks";
 
-const Navbar = ({toggle}) => {
+const Navbar = ({ toggle }) => {
   const session = useSession();
   const user = session.data?.user;
 
