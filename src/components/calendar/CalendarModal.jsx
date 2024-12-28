@@ -20,7 +20,7 @@ export default function CalendarModal() {
         </ModalTrigger>
         <ModalBody>
           <ModalContent>
-            <CalendarContent /> 
+            <CalendarContent />
           </ModalContent>
           <ModalFooter className="gap-4">Version Events Calendar</ModalFooter>
         </ModalBody>
