@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import velocium from "../../../public/assets/velocium.svg"
-
+import velocium from "../../../public/assets/velocium.svg";
 
 export default function CalendarContent() {
   return (
@@ -50,7 +49,6 @@ function EventRow({ time, duration, name, location }) {
     </div>
   );
 }
-
 
 const D1Events = [
   {

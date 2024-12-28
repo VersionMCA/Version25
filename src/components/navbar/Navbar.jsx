@@ -1,12 +1,12 @@
 "use client";
 import NavMobile from "./NavMobile.jsx";
-import logo from "../../../public/assets/logo2.png"
+import logo from "../../../public/assets/logo2.png";
 import NavDesktop from "./NavDesktop.jsx";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 
-export function Navbar({ bgWhite, noBgBlack ,session }) {
+export function Navbar({ bgWhite, noBgBlack, session }) {
   const loading = false;
   const navBar = useRef();
 
@@ -18,8 +18,11 @@ export function Navbar({ bgWhite, noBgBlack ,session }) {
         className="container flex items-center justify-between p-4 max-md:p-2 max-sm:p-1 text-base md:text-lg uppercase min-w-full"
         ref={navBar}
       >
-        <Link href="/" className=" mx-6 max-md:mx-4 max-sm:mx-0 h-12 max-md:h-10 max-sm:h-8 w-44 relative flex justify-center items-center">
-            <Image src={logo} alt="logo" fill objectFit="contain"/>
+        <Link
+          href="/"
+          className=" mx-6 max-md:mx-4 max-sm:mx-0 h-12 max-md:h-10 max-sm:h-8 w-44 relative flex justify-center items-center"
+        >
+          <Image src={logo} alt="logo" fill objectFit="contain" />
         </Link>
 
         {!loading && (
