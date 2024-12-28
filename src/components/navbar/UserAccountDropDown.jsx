@@ -72,8 +72,12 @@ export default function UserAccountDropDown() {
             >
               <DropdownMenuLabel className="flex items-center space-x-3 p-3">
                 <div className="flex flex-col">
-                  <span className="text-foreground font-semibold">{user.name}</span>
-                  <span className="text-muted-foreground max-w-[150px] text-xs">{user.email}</span>
+                  <span className="text-foreground font-semibold">
+                    {user.name}
+                  </span>
+                  <span className="text-muted-foreground max-w-[150px] text-xs">
+                    {user.email}
+                  </span>
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator className="bg-primary/10 my-2" />
@@ -95,8 +99,11 @@ export default function UserAccountDropDown() {
                   router.push("/");
                 }}
               >
-                <LogOut size={15} className="hover:text-black group-hover:text-black" />
-                <span className="group-hover:text-black" >Logout</span>
+                <LogOut
+                  size={15}
+                  className="hover:text-black group-hover:text-black"
+                />
+                <span className="group-hover:text-black">Logout</span>
               </DropdownMenuItem>
             </motion.div>
           </DropdownMenuContent>
