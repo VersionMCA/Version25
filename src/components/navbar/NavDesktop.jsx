@@ -6,9 +6,10 @@ import ScrambleText from "./ScrambleText";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import CyberButton from "../ui/CyberButton";
+import RegisterModal from "../RegisterModal";
 
-export default function NavDesktop({ bgWhite,session }) {
-    const user = session?.user;
+export default function NavDesktop({ bgWhite, session }) {
+  const user = session?.user;
   ScrambleText();
 
   return (
@@ -20,11 +21,9 @@ export default function NavDesktop({ bgWhite,session }) {
               className={`flex justify-center cursor-pointer ${
                 bgWhite ? "text-black" : "text-offWhite"
               } gap-1 transition-all codedText`}
-              onClick={()=>signOut()}
+              onClick={() => signOut()}
               role="button"
-            >
-              
-            </span>
+            ></span>
           ) : (
             <Link
               href={route.href}
@@ -38,7 +37,7 @@ export default function NavDesktop({ bgWhite,session }) {
         </li>
       ))}
       <Link href="/signin">
-        <CyberButton text="REGISTER" />
+        <RegisterModal />
       </Link>
     </ul>
   );
