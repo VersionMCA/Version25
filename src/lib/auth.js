@@ -11,12 +11,15 @@ export const authOptions = {
     }),
   ],
   session: {
-    strategy: "database", // jwt can also be used
+    strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "secr3t",
   callbacks: {
-    redirect() {
-      return "/";
+    async session({ session, token }) {
+      if (token) {
+        session.user.id = token.sub;
+      }
+      return session;
     },
   },
   pages: {

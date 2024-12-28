@@ -1,57 +1,42 @@
-'use client';
-import { useEffect, useState } from "react";
+"use client";
+import React from "react";
+import { useState } from "react";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import events from "./eventData";
 import EventCard from "./EventCard";
-import InsertEvents from "./InsertEvents";
+import EventSlider from "./EventSlider";
 
-const Page = () => {
-  const [eventList, setEventList] = useState([]);
-  const [registeredEvents, setRegisteredEvents] = useState([]);
+function Events() {
+  const [selectedEventIndex, setSelectedEventIndex] = useState(0);
+  const [showEvent, setShowEvent] = useState(false);
 
-  useEffect(() => {
-
-    const fetchEvents = async () => {
-      try {
-        const res = await fetch(`/api/events/fetchEvents`, {
-          cache: 'no-store',
-        });
-        const data = await res.json();
-        setEventList(data);
-        console.log("Fetched Events:", data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      }
-    };
-    fetchEvents();
-
-    const fetchRegisteredEvents = async () => {
-      try {
-        const res = await fetch(`/api/events/fetchRegisteredEvents`, {
-          cache: 'no-store',
-        });
-        const data = await res.json();
-        setRegisteredEvents(data.map((event) => event.eventId));
-        console.log("Registered Events:", data);
-      } catch (error) {
-        console.error("Error fetching registered events:", error);
-      }
-    };
-
-    fetchRegisteredEvents();
-  }, []);
+  //Function to change the main content to the clicked event
+  function changeEvent(ind) {
+    setSelectedEventIndex(ind);
+  }
 
   return (
-    <div className="flex flex-wrap items-center justify-center mt-[200px] gap-5">
-      <h1 className="w-full content-center">Welcome to the events page</h1>
-      {eventList.map((event) => (
+    <div className="h-full relative w-full mt-40">
+      {showEvent ? (
         <EventCard
-          key={event.id}
-          event={event}
-          isRegistered={registeredEvents.includes(event.id)}
+          event={events[selectedEventIndex]}
+          setShowEvent={setShowEvent}
         />
-      ))}
-      <InsertEvents />
+      ) : (
+        <div className="h-screen overflow-hidden mt-44">
+          <EventSlider
+            selectedEventIndex={selectedEventIndex}
+            changeEvent={changeEvent}
+            event={events[selectedEventIndex]}
+            setShowEvent={setShowEvent}
+          />
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default Page;
+export default Events;

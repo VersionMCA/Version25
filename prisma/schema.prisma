@@ -18,13 +18,13 @@ model User {
   collegeRollNumber String?
   phoneNumber       String?
 
-  accounts      Account[]
-  sessions      Session[]
+  accounts          Account[]
+  sessions          Session[]
   registrations     Registration[]
- 
+  teams             Team[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
 }
  
 model Account {
@@ -47,6 +47,7 @@ model Account {
  
   @@id([provider, providerAccountId])
 }
+
  
 model Session {
   sessionToken String   @unique
@@ -65,26 +66,47 @@ model VerificationToken {
  
   @@id([identifier, token])
 }
+
  
 model Event {
   id          String    @id @default(cuid())
   eventName   String    @unique
   description String
+  type        String
   createdAt   DateTime  @default(now())
 
   // Relations
+  teams       Team[]
   registrations Registration[]
 }
 
+
 model Registration {
-  id        String   @id @default(cuid())
-  userId    String
-  eventId   String
-  createdAt DateTime @default(now())
+  id                String          @id @default(cuid())
+  userId            String
+  eventId           String
+  teamId            String?         // Nullable for individual events
 
-  // Relations
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event             Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  team              Team?           @relation(fields: [teamId], references: [id], onDelete: Cascade)
 
-  @@unique([userId, eventId], name: "userId_eventId") 
+  createdAt         DateTime        @default(now())
+
+  @@unique([userId, eventId])       // Ensures unique registration for the same user in an event
+}
+
+
+model Team {
+  id                String          @id @default(cuid())
+  teamName          String
+  leaderId          String          // Foreign key referencing User (leader)
+  eventId           String          // Foreign key referencing Event
+  createdAt         DateTime        @default(now())
+
+  registrations     Registration[]  // Relation to Registration model
+  leader            User            @relation(fields: [leaderId], references: [id], onDelete: Cascade)
+  event             Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([teamName, eventId])     // Ensures unique team names within an event
 }
