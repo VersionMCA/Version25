@@ -53,7 +53,7 @@ const EventCard = ({ event, setShowEvent }) => {
               ))}
             </div>
             <div className={`w-full p-3`}>
-              <Markdown >
+              <Markdown>
                 {event.details[index]?.content || "No content available"}
               </Markdown>
             </div>
@@ -68,8 +68,10 @@ const EventCard = ({ event, setShowEvent }) => {
                 <span className="ml-2">{event.venue}</span>
               </span>
             </div>
-            <button >Register Now</button>
-            <div className="font-Orbitron text-sm">PRIZE MONEY : {event.price}</div>
+            <button>Register Now</button>
+            <div className="font-Orbitron text-sm">
+              PRIZE MONEY : {event.price}
+            </div>
           </div>
         </div>
       </div>
