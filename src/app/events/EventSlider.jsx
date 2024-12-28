@@ -6,8 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import EventImage from "public/event_images/cryptic-min.jpg";
 
-function EventSlider({ changeEvent,selectedEventIndex,setShowEvent,event }) {
-
+function EventSlider({ changeEvent, selectedEventIndex, setShowEvent, event }) {
   // Custom Prev Button
   const PrevButton = ({ onClick }) => (
     <button
@@ -24,7 +23,7 @@ function EventSlider({ changeEvent,selectedEventIndex,setShowEvent,event }) {
       className="absolute right-0 z-10 transform -translate-y-1/2 bg-gray-800 text-white rounded-full w-10 h-10 flex events-center justify-center top-1/2 hover:bg-gray-700"
       onClick={onClick}
     >
-     <Image src={arrowSvg} alt="rightArrow" className="h-12" />
+      <Image src={arrowSvg} alt="rightArrow" className="h-12" />
     </button>
   );
 
@@ -60,10 +59,16 @@ function EventSlider({ changeEvent,selectedEventIndex,setShowEvent,event }) {
           <p key={event.id} className="text-base sm:text-lg mb-2">
             {event.description}
           </p>
-            <div className="text-cyan-400 text-lg sm:text-xl mt-4 sm:mt-6">
-              {event.status}
-            </div>
-            <button onClick={()=>{setShowEvent(true)}}>Get Details</button>
+          <div className="text-cyan-400 text-lg sm:text-xl mt-4 sm:mt-6">
+            {event.status}
+          </div>
+          <button
+            onClick={() => {
+              setShowEvent(true);
+            }}
+          >
+            Get Details
+          </button>
         </div>
       </div>
 
@@ -76,13 +81,17 @@ function EventSlider({ changeEvent,selectedEventIndex,setShowEvent,event }) {
               onClick={() => changeEvent(index)}
               className={cn(
                 "relative w-1/4 aspect-square p-1",
-                selectedEventIndex === index ? "z-10" : "opacity-50 hover:opacity-75",
+                selectedEventIndex === index
+                  ? "z-10"
+                  : "opacity-50 hover:opacity-75",
               )}
             >
               <div
                 className={cn(
                   "w-full h-full rounded-lg overflow-hidden transition-all duration-300",
-                  selectedEventIndex === index ? "ring-2 ring-cyan-400 scale-105" : "",
+                  selectedEventIndex === index
+                    ? "ring-2 ring-cyan-400 scale-105"
+                    : "",
                 )}
               >
                 <div className="absolute text-white inset-0 bg-gradient-to-t from-black/60 to-transparent" />
