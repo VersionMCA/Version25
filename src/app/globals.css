@@ -84,7 +84,7 @@
 
 @layer utilities {
   .wrapper {
-    @apply h-full w-full max-w-7xl px-4 py-4 md:px-12 lg:mx-auto;
+    @apply h-full w-full px-4 py-4 md:px-12 lg:mx-auto;  
   }
 
   .flex-center {
@@ -96,9 +96,6 @@
   }
 }
 
-* {
-  font-family: "Poppins", sans-serif !important;
-}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -107,3 +104,5 @@
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
+
+

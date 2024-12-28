@@ -1,8 +1,22 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Silkscreen,
+  Orbitron,
+  Doto,
+} from "next/font/google";
 
 import "./globals.css";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar/Navbar";
+import Navigation from "@/components/navbar/Navigation";
+
+const doto = Doto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-doto",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +26,22 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const pixie = Silkscreen({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-pixie",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-orb",
 });
 
 export const metadata = {
@@ -24,10 +54,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} antialiased`}
       >
         <Providers>
-          <Navbar />
+          <Navigation />
           {children}
         </Providers>
       </body>
