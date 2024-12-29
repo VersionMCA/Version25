@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Button from "@/components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 function page() {
   return (
@@ -55,8 +55,7 @@ function page() {
           fuga vitae accusamus quos! Pariatur fuga repellendus enim debitis unde
           dolor quas officiis dolorum quae.
         </p>
-
-        <Button text={"Go To Home Page"} />
+        <Button>Go to Home Page</Button>
       </div>
 
       <div className="w-1/2 flex items-center justify-center p-4">
