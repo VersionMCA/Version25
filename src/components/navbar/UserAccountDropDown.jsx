@@ -12,15 +12,20 @@ import {
 import { signOut, useSession } from "next-auth/react";
 import { LogOut, UserRound } from "lucide-react";
 import { useRouter } from "next/navigation";
-import UserImage from "./UserImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/Button";
+import UserImage from "../UserImage";
 
 const dropDownData = [
   {
     name: "Profile",
     icon: <UserRound size={15} />,
     href: "/profile",
+  },
+  {
+    name: "Registered Events",
+    icon: <UserRound size={15} />,
+    href: "/registered_events",
   },
 ];
 
