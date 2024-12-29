@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     clip-path: polygon(70% 0, 100% 30%, 100% 100%, 0 100%, 0 0);
     position: relative;
-    border: 2px solid #f4ffd8;
+    border: 2px solid #bff205;
 }
 
 .outer::after {
@@ -21,3 +21,4 @@
         rgba(0, 0, 0, 0.3) 0px -12px 30px, rgba(0, 0, 0, 0.3) 0px 4px 6px,
         rgba(0, 0, 0, 0.3) 0px 12px 13px, rgba(0, 0, 0, 0.3) 0px -3px 5px;
 }
+
