@@ -3,10 +3,10 @@ const EEC = {
   Chairperson: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
-        github: "https://github.com/andresberlin",
+        github: "",
         linkedin: "https://twitter.com/andresberlin",
         instagram: "https://instagram.com/andresberlin",
       },
@@ -15,7 +15,7 @@ const EEC = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -25,7 +25,7 @@ const EEC = {
     },
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -37,7 +37,7 @@ const EEC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -47,18 +47,7 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-        instagram: "https://instagram.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -69,7 +58,7 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -80,7 +69,7 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -91,7 +80,18 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+        instagram: "https://instagram.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -107,7 +107,7 @@ const Faculty = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -117,7 +117,7 @@ const Faculty = {
     },
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -132,7 +132,7 @@ const CCC = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -142,7 +142,7 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -153,7 +153,7 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -164,7 +164,7 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -175,7 +175,7 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -186,7 +186,7 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -198,7 +198,7 @@ const CCC = {
   ],
 };
 // const CCC_Members=[  {name: "Chirag Tomar",
-//   image: '@public/images/Chirag.jpg',
+//   image: '/profile_images/Chirag.jpg',
 //   designation:'Head',
 //   socialLinks: {
 //     github: "https://github.com/andresberlin",
@@ -207,7 +207,7 @@ const CCC = {
 //   }},
 // {
 //   name: "Vivek Kumar",
-//   image: '../assets/EEC_Images/Chirag.jpg',
+//   image: '/profile_images/Chirag.jpg',
 //   designation:'',
 
 //   socialLinks: {
@@ -218,7 +218,7 @@ const CCC = {
 // },
 // {
 //   name: "Vivek Kumar",
-//   image: '../assets/EEC_Images/Chirag.jpg',
+//   image: '/profile_images/Chirag.jpg',
 //   designation:'',
 
 //   socialLinks: {
@@ -229,7 +229,7 @@ const CCC = {
 // },
 // {
 //   name: "Vivek Kumar",
-//   image: '../assets/EEC_Images/Chirag.jpg',
+//   image: '/profile_images/Chirag.jpg',
 //   designation:'',
 
 //   socialLinks: {
@@ -240,7 +240,7 @@ const CCC = {
 // },
 // {
 //   name: "Vivek Kumar",
-//   image: '../assets/EEC_Images/Chirag.jpg',
+//   image: '/profile_images/Chirag.jpg',
 //   designation:'',
 
 //   socialLinks: {
@@ -251,7 +251,7 @@ const CCC = {
 // },
 // {
 //   name: "Vivek Kumar",
-//   image: '../assets/EEC_Images/Chirag.jpg',
+//   image: '/profile_images/Chirag.jpg',
 //   designation:'',
 
 //   socialLinks: {
@@ -264,7 +264,7 @@ const CCC = {
 // ]
 // const EEC_Members=[ {
 //     name: "Chirag Tomar",
-//     image: '@public/images/Chirag.jpg',
+//     image: '/profile_images/Chirag.jpg',
 //     designation:'',
 //     socialLinks: {
 //       github: "https://github.com/andresberlin",
@@ -273,7 +273,7 @@ const CCC = {
 //     }},
 // {
 //     name: "Vivek Kumar",
-//     image: '../assets/EEC_Images/Chirag.jpg',
+//     image: '/profile_images/Chirag.jpg',
 //     designation:'',
 
 //     socialLinks: {
@@ -284,7 +284,7 @@ const CCC = {
 // },
 // {
 //     name: "Vivek Kumar",
-//     image: '../assets/EEC_Images/Chirag.jpg',
+//     image: '/profile_images/Chirag.jpg',
 //     designation:'',
 
 //     socialLinks: {
@@ -295,7 +295,7 @@ const CCC = {
 // },
 // {
 //     name: "Vivek Kumar",
-//     image: '../assets/EEC_Images/Chirag.jpg',
+//     image: '/profile_images/Chirag.jpg',
 //     designation:'',
 
 //     socialLinks: {
@@ -306,7 +306,7 @@ const CCC = {
 // },
 // {
 //     name: "Vivek Kumar",
-//     image: '../assets/EEC_Images/Chirag.jpg',
+//     image: '/profile_images/Chirag.jpg',
 //     designation:'',
 
 //     socialLinks: {
@@ -317,7 +317,7 @@ const CCC = {
 // },
 // {
 //     name: "Vivek Kumar",
-//     image: '../assets/EEC_Images/Chirag.jpg',
+//     image: '/profile_images/Chirag.jpg',
 //     designation:'',
 
 //     socialLinks: {
@@ -331,7 +331,7 @@ const PPC = {
   Chairperson: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -343,7 +343,7 @@ const PPC = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -353,7 +353,7 @@ const PPC = {
     },
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -365,7 +365,7 @@ const PPC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -375,18 +375,7 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-        instagram: "https://instagram.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -397,7 +386,7 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -408,7 +397,7 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -419,7 +408,18 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+        instagram: "https://instagram.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -435,7 +435,7 @@ const PRC = {
   Chairperson: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -447,7 +447,7 @@ const PRC = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -457,7 +457,7 @@ const PRC = {
     },
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -469,7 +469,7 @@ const PRC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -479,18 +479,7 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-        instagram: "https://instagram.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -501,7 +490,7 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -512,7 +501,7 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -523,7 +512,18 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+        instagram: "https://instagram.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -539,7 +539,7 @@ const ARC = {
   Chairperson: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -551,7 +551,7 @@ const ARC = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -561,7 +561,7 @@ const ARC = {
     },
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -573,7 +573,7 @@ const ARC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -583,18 +583,7 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-        instagram: "https://instagram.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -605,7 +594,7 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -616,7 +605,7 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -627,7 +616,18 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+        instagram: "https://instagram.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -643,7 +643,7 @@ const HRC = {
   Chairperson: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -655,7 +655,7 @@ const HRC = {
   Heads: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -665,7 +665,7 @@ const HRC = {
     },
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "Head",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -677,7 +677,7 @@ const HRC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "@public/images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -687,18 +687,7 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-        instagram: "https://instagram.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -709,7 +698,7 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -720,7 +709,7 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
@@ -731,7 +720,18 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "../assets/EEC_Images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+        instagram: "https://instagram.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpg",
       designation: "",
 
       socialLinks: {
