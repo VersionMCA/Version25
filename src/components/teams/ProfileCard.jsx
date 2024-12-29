@@ -1,7 +1,13 @@
 import Image from "next/image";
 import "./team.css";
+import Teams from "@/helper/teams";
 
 const ProfileCard = ({ name, image, socialLinks, designation }) => {
+  // const {colors}=Teams;
+  // const col_data=colors.color
+  // const val=Math.floor(Math.random()*5+1);
+  // const bg_color=col_data[val];
+  const bg_color = "bg-gradient-to-r from-neutral-500 to-neutral-700";
   return (
     // <div
     //   style={{ backgroundImage: `url(${image})`,
@@ -72,15 +78,17 @@ const ProfileCard = ({ name, image, socialLinks, designation }) => {
     //   </div>
     // </div>
     <div
-      className="outer group flex items-center justify-center hover:scale-105 transition duration-300"
+      className="outer group flex items-center justify-center transition duration-300"
       style={{ backgroundImage: `url(${image})`, backgroundSize: "cover" }}
     >
-      <div className="bg-gradient-to-r from-lime-200 to-lime-400 p-2 sm:p-3 rounded-2xl border-2 border-black absolute bottom-3 sm:bottom-6 font-mono text-black flex justify-center flex-col items-center transition duration-500">
+      <div
+        className={` w-full  p-2 sm:p-3  border-2 border-black absolute bottom-5 sm:bottom-0 font-mono text-black flex justify-center flex-col items-center transition duration-500 ${bg_color}`}
+      >
         <div className="flex flex-col h-10 w-full items-center justify-center opacity-100 group-hover:hidden transition-opacity duration-500">
-          <p className="font-bold text-md sm:text-xl bg-gradient-to-r from-slate-400 to-gray-600 bg-clip-text text-transparent">
+          <p className="font-bold text-md sm:text-xl bg-gradient-to-r from-lime-400 to-lime-600 text-white bg-clip-text text-transparent">
             {name}
           </p>
-          <p className="text-sm sm:text-md bg-gradient-to-r from-zinc-400 to-stone-500 bg-clip-text text-transparent">
+          <p className="text-sm sm:text-md bg-gradient-to-r from-lime-400 to-lime-500 text-white bg-clip-text text-transparent">
             {designation}
           </p>
         </div>
@@ -88,7 +96,7 @@ const ProfileCard = ({ name, image, socialLinks, designation }) => {
           {socialLinks.github && (
             <a
               href={socialLinks.github}
-              className="mx-5"
+              className="mx-5 "
               aria-label="Github"
               rel="noopener noreferrer"
               target="_blank"
@@ -103,13 +111,13 @@ const ProfileCard = ({ name, image, socialLinks, designation }) => {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="feather feather-github"
+                className="feather feather-github "
               >
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
               </svg>
             </a>
           )}
-          
+
           {socialLinks.linkedin != "" && (
             <a
               href={socialLinks.linkedin}
