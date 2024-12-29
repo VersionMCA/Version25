@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import arrowUpIcon from "../../assets/svgs/arrow-up.svg";
 import Image from "next/image";
-import { faqItems } from "../../helper/faqs.js";
+import { faqItems } from "../../app/faq/faqs.js";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => (
   <div
@@ -65,7 +65,7 @@ const Accordion = ({ items }) => {
   );
 };
 
-export default function FAQ() {
+export default function page() {
   return (
     <div className="max-w-2xl mx-auto mt-8">
       <h1 className="text-4xl font-bold mb-6 text-theme-blue">

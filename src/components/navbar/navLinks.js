@@ -16,8 +16,8 @@ const navLinks = [
     link: "/team",
   },
   {
-    name: "Profile",
-    link: "/signin",
+    name: "Events",
+    link: "/events",
   },
 ];
 
