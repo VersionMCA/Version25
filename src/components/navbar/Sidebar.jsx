@@ -32,7 +32,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             return (
               <li key={name} className="mx-4 xl:mx-8 ">
                 {" "}
-                <Link href={link}>
+                <Link href={link} onClick={toggle}>
                   <p>{name}</p>
                 </Link>
               </li>
