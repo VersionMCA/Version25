@@ -19,21 +19,14 @@ function Events() {
   }
 
   return (
-    <div className="h-full relative w-full mt-40">
+    <div className="h-screen relative w-full  mt-0 overflow-clip">
       {showEvent ? (
         <EventCard
           event={events[selectedEventIndex]}
           setShowEvent={setShowEvent}
         />
       ) : (
-        <div className="h-screen overflow-hidden mt-44">
-          <EventSlider
-            selectedEventIndex={selectedEventIndex}
-            changeEvent={changeEvent}
-            event={events[selectedEventIndex]}
-            setShowEvent={setShowEvent}
-          />
-        </div>
+        <EventSlider changeEvent={changeEvent} setShowEvent={setShowEvent} />
       )}
     </div>
   );

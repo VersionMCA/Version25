@@ -37,7 +37,7 @@ const events = [
     venue: "Auditorium Hall A",
     image: "/public/event_images/cryptic-min.jpg",
     type: "Individual",
-    background_image: "/public/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
     thumbnail_image: "/public/event_images/cryptic-min.jpg",
     details: [
       {
@@ -90,7 +90,7 @@ Reach out for queries regarding registration or problem formats.
     venue: "Lab 304",
     image: "/images/designit_poster.jpg",
     type: "Team",
-    background_image: "/images/designit_bg.jpg",
+    background_image: "/event_images/coding.jpg",
     thumbnail_image: "/images/designit_thumb.jpg",
     details: [
       {
@@ -140,7 +140,7 @@ Reach out for queries regarding registration or problem formats.
     venue: "Computer Lab B",
     image: "/images/datadive_poster.jpg",
     type: "Individual",
-    background_image: "/images/datadive_bg.jpg",
+    background_image: "/event_images/coding2.jpg",
     thumbnail_image: "/images/datadive_thumb.jpg",
     details: [
       {
@@ -191,7 +191,7 @@ Reach out for queries regarding registration or problem formats.
     venue: "Lab 205",
     image: "/images/debugathon_poster.jpg",
     type: "Individual",
-    background_image: "/images/debugathon_bg.jpg",
+    background_image: "/event_images/coding.jpg",
     thumbnail_image: "/images/debugathon_thumb.jpg",
     details: [
       {
@@ -228,6 +228,152 @@ Reach out for queries regarding registration or problem formats.
   Phone: **+91 6543210987**
   Reach out for sample bug formats or IDE compatibility.
           `,
+      },
+    ],
+  },
+  {
+    id: "E005",
+    name: "Hack The Future",
+    description:
+      "An intensive 24-hour hackathon to innovate and create solutions.",
+    date: "24th February 2025",
+    venue: "Innovation Hub",
+    image: "/event_images/coding.jpg",
+    type: "Team",
+    background_image: "/event_images/coding.jpg",
+    thumbnail_image: "/public/event_images/coding.jpg",
+    details: [
+      {
+        title: "Description",
+        content: `
+  ### Event Overview
+  Hack The Future brings together innovators to create cutting-edge solutions for modern challenges. Work in teams to design, develop, and pitch your ideas.
+
+  - **Participants:** Teams of 3-5
+  - **Duration:** 24 Hours
+        `,
+      },
+      {
+        title: "Judging Criteria",
+        content: `
+  ### Judging Parameters
+  1. **Innovation:** Creativity and uniqueness of the idea.
+  2. **Feasibility:** Practicality and implementation potential.
+  3. **Presentation:** Clarity and persuasiveness of the pitch.
+        `,
+      },
+      {
+        title: "Rules",
+        content: `
+  ### Rules
+  - Teams must work on provided problem statements.
+  - Solutions must be built during the event duration.
+        `,
+      },
+      {
+        title: "Contact",
+        content: `
+  ### Need Assistance?
+  Email: **hackthefuture@versionfest.com**
+  Phone: **+91 5432109876**
+  Reach out for queries regarding team registration.
+        `,
+      },
+    ],
+  },
+  {
+    id: "E006",
+    name: "Quiz Quest",
+    description: "Test your general knowledge in this fun-filled quiz.",
+    date: "25th February 2025",
+    venue: "Seminar Hall",
+    image: "/event_images/coding2.jpg",
+    type: "Individual",
+    background_image: "/event_images/coding2.jpg",
+    thumbnail_image: "/public/event_images/coding1.jpg",
+    details: [
+      {
+        title: "Description",
+        content: `
+  ### Event Overview
+  Quiz Quest is an engaging trivia challenge covering a wide range of topics, including science, history, and pop culture.
+
+  - **Participants:** Individual
+  - **Duration:** 1.5 Hours
+        `,
+      },
+      {
+        title: "Judging Criteria",
+        content: `
+  ### Judging Parameters
+  1. **Accuracy:** Number of correct answers.
+  2. **Speed:** Time taken to answer each question.
+        `,
+      },
+      {
+        title: "Rules",
+        content: `
+  ### Rules
+  - Participants must answer without external help.
+  - The quiz will be conducted in multiple rounds.
+        `,
+      },
+      {
+        title: "Contact",
+        content: `
+  ### Need Assistance?
+  Email: **quizquest@versionfest.com**
+  Phone: **+91 4321098765**
+  Reach out for question formats or quiz structure.
+        `,
+      },
+    ],
+  },
+  {
+    id: "E007",
+    name: "RoboRace",
+    description: "Race your robots in this adrenaline-filled event.",
+    date: "26th February 2025",
+    venue: "Outdoor Arena",
+    image: "/event_images/coding.jpg",
+    type: "Team",
+    background_image: "/event_images/coding.jpg",
+    thumbnail_image: "/public/event_images/coding.jpg",
+    details: [
+      {
+        title: "Description",
+        content: `
+  ### Event Overview
+  RoboRace challenges teams to build and race robots capable of overcoming obstacles.
+
+  - **Participants:** Teams of 2-4
+  - **Duration:** 3 Hours
+        `,
+      },
+      {
+        title: "Judging Criteria",
+        content: `
+  ### Judging Parameters
+  1. **Speed:** Time taken to complete the course.
+  2. **Design:** Robustness and innovation of the robot.
+        `,
+      },
+      {
+        title: "Rules",
+        content: `
+  ### Rules
+  - Only self-built robots are allowed.
+  - Robots must adhere to specified size and weight constraints.
+        `,
+      },
+      {
+        title: "Contact",
+        content: `
+  ### Need Assistance?
+  Email: **roborace@versionfest.com**
+  Phone: **+91 3210987654**
+  Reach out for guidelines on robot specifications.
+        `,
       },
     ],
   },
