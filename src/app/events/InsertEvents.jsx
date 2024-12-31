@@ -5,8 +5,9 @@ const InsertEvents = () => {
 
     const eventName = e.target.eventName.value;
     const description = e.target.description.value;
+    const type = e.target.type.value; // type: team or !team
 
-    if (!eventName || !description) {
+    if (!eventName || !description || !type) {
       alert("Please fill all the fields");
       return;
     }
@@ -19,6 +20,7 @@ const InsertEvents = () => {
         body: JSON.stringify({
           eventName,
           description,
+          type,
         }),
       });
       const data = await res.json();
@@ -26,6 +28,7 @@ const InsertEvents = () => {
         console.log("Event inserted successfully");
         e.target.eventName.value = "";
         e.target.description.value = "";
+        e.target.type.value = "";
       }
     } catch (error) {
       console.log(error);
@@ -48,6 +51,12 @@ const InsertEvents = () => {
           required
           placeholder="Enter the event description"
           name="description"
+        />
+        <input
+          type="text"
+          required
+          placeholder="team or !team"
+          name="eventName"
         />
         <button
           type="submit"
