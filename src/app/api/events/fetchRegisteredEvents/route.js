@@ -1,30 +1,18 @@
-import { getServerSession } from "next-auth";
 import { prisma } from "@/db/index.mjs";
-import { authOptions } from "@/lib/auth.js";
 
-export async function GET() {
+export async function GET(req) {
   try {
-    const session = await getServerSession(authOptions);
-    // console.log(session);
-    if (!session || !session.user) {
+    const userId = req.headers.get("userId");
+    console.log(userId);
+    if (!userId) {
       return new Response(
         JSON.stringify({ error: "Login to register the events" }),
         { status: 401 },
       );
     }
 
-    const user = await prisma.user.findUnique({
-      where: { email: session.user.email },
-    });
-
-    if (!user) {
-      return new Response(JSON.stringify({ error: "User not found" }), {
-        status: 404,
-      });
-    }
-
     const registeredEvents = await prisma.registration.findMany({
-      where: { userId: user.id },
+      where: { userId: userId },
       select: { eventId: true },
     });
 
