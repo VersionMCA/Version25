@@ -15,7 +15,7 @@ const Navbar = ({ toggle }) => {
   const user = session.data?.user;
 
   return (
-    <nav className="sticky  mx-auto  wrapper  top-0 z-50 flex items-center gap-2 py-6 w-full">
+    <nav className="fixed mx-auto p-2 md:px-6 top-0 z-50 flex items-center gap-2 w-full">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -25,10 +25,10 @@ const Navbar = ({ toggle }) => {
           type: "spring",
           damping: 10,
         }}
-        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-6 rounded-2xl"
+        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-4 rounded-2xl"
       >
         <Link href={"/"} className="flex items-center cursor-pointer">
-          <Image src={versionLogo} alt="Logo" width={230} height={600} />
+          <Image src={versionLogo} alt="Logo" width={180} height={60} />
         </Link>
         <div className="flex justify-center items-center gap-2">
           {navLinks.map(({ name, link }) => {
