@@ -72,11 +72,6 @@ const NITTrichyMap = () => {
     };
   }, []);
 
-  return (
-    <div
-      id="map"
-      className="h-[500px] w-[500px] border-solid border-2 border-yellow-500 overflow-hidden"
-    />
-  );
+  return <div id="map" className="h-[400px] w-[400px] overflow-hidden" />;
 };
 export default NITTrichyMap;

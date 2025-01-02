@@ -2,29 +2,37 @@ import { Calendar } from "lucide-react";
 import CalendarContent from "./CalendarContent";
 
 import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalTrigger,
-} from "@/components/ui/animated-modal";
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function CalendarModal() {
   return (
-    <div className="py-40  flex items-center justify-center">
-      <Modal>
-        <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn">
+    <div className="py-40 flex items-center justify-center">
+      <Dialog>
+        <DialogTrigger
+          asChild
+          className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn"
+        >
           <span className="">
             <Calendar />
           </span>
-        </ModalTrigger>
-        <ModalBody>
-          <ModalContent>
-            <CalendarContent />
-          </ModalContent>
-          <ModalFooter className="gap-4">Version Events Calendar</ModalFooter>
-        </ModalBody>
-      </Modal>
+        </DialogTrigger>
+        <DialogContent>
+          <CalendarContent />
+          <DialogFooter className="sm:justify-start">
+            <DialogHeader>
+              <DialogTitle>Version Events Calendar</DialogTitle>
+            </DialogHeader>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
