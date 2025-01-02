@@ -370,7 +370,7 @@ Reach out for queries regarding registration or problem formats.
         title: "Contact",
         content: `
   ### Need Assistance?
-  Email: **roborace@versionfest.com**
+  Email: **roborace@versionfest.com** 
   Phone: **+91 3210987654**
   Reach out for guidelines on robot specifications.
         `,

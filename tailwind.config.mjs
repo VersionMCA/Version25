@@ -113,5 +113,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwind-clip-path"), require("tailwindcss-animate")],
+  plugins: [require("tailwind-clip-path"), require("tailwindcss-animate"),require('tailwind-scrollbar')],
 };
