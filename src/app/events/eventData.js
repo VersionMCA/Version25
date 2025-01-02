@@ -1,382 +1,262 @@
-//Event Schema
-// {
-//   id: "Event Id (from db)",
-//   name: "Event Name(from db)",
-//   description : "Short 2 line description"
-//   date: "Event Date as 21st March 2025",
-//   venue: "Event Venue",
-//   image: "path to poster image",
-//   type: "Individual/Team",
-//   background_image: "path_to_background_image",
-//   thumbnail_image: "path to thumbnail_image",
-//   details: [
-//     {
-//       title : "Description"
-//       content : "Event Description in markdown format  ",
-//     },
-//     {
-//       title : "Judging Criteria"
-//       content : "Event Judging Criteria in markdown format  ",
-//     },
-//     {
-//       title : "Rules"
-//       content : "Event Rules in markdown format  ",
-//     },
-//     {
-//       title : "Contact"
-//       content : "Event Contact in markdown format  ",
-//     },
-//   ],
-// },
-const events = [
+const eventsData = [
   {
-    id: "E001",
-    name: "CodeSprint",
-    description: "Test your coding skills in this exciting hackathon.",
-    date: "21st February 2025",
-    venue: "Auditorium Hall A",
-    image: "/public/event_images/cryptic-min.jpg",
+    id: "cm5eq9ogv00001vbw9smlhrai",
+    name: "CodeFest",
+    description: "A competitive coding event to test your algorithmic skills.",
+    date: "21st March 2025",
+    venue: "Main Auditorium",
     type: "Individual",
+    teamSize: [1],
+    image: "/event_images/cryptic-min.jpg",
     background_image: "/event_images/cryptic-min.jpg",
-    thumbnail_image: "/public/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
     details: [
       {
         title: "Description",
-        content: `
-### Event Overview  
-CodeSprint is a premier coding competition designed for individuals passionate about problem-solving. This event provides challenging problems that will test your coding skills, logical reasoning, and efficiency.
-
-- **Participants:** Individual  
-- **Duration:** 3 Hours  
-- **Level:** Intermediate to Advanced  
-        `,
+        content:
+          "CodeFest is a challenging programming contest aimed at testing problem-solving and algorithmic abilities. Compete against the best minds and climb the leaderboard.",
       },
       {
         title: "Judging Criteria",
-        content: `
-### How You Will Be Judged  
-1. **Correctness:** Accuracy of the solution.  
-2. **Efficiency:** Time and space complexity of the code.  
-3. **Creativity:** Innovative approaches to solving problems.  
-
-The participant with the highest score and least runtime wins.
-        `,
+        content:
+          "Accuracy of solutions, efficiency of algorithms, and time taken to solve problems.",
       },
       {
         title: "Rules",
-        content: `
-### Rules to Follow  
-- No external help or pre-written code is allowed.  
-- Internet access is restricted during the event.  
-- Solutions must be submitted within the allotted time.  
-        `,
+        content:
+          "1. Each participant will be given a set of problems to solve.\n2. No plagiarism; original code only.\n3. Time limit for each round must be adhered to.",
       },
       {
         title: "Contact",
-        content: `
-### Need Assistance?  
-Email: **codesprint@versionfest.com**  
-Phone: **+91 9876543210**  
-Reach out for queries regarding registration or problem formats.
-        `,
+        content: "John Doe (9876543210)",
       },
     ],
   },
   {
-    id: "E002",
-    name: "DesignIt",
-    description: "Showcase your UI/UX skills in this design competition.",
-    date: "22nd February 2025",
-    venue: "Lab 304",
-    image: "/images/designit_poster.jpg",
+    id: "cm5eq9oxz00011vbw5fex41c3",
+    name: "Hackathon",
+    description: "A 24-hour hackathon for building innovative solutions.",
+    date: "21st March 2025",
+    venue: "Innovation Lab",
     type: "Team",
-    background_image: "/event_images/coding.jpg",
-    thumbnail_image: "/images/designit_thumb.jpg",
+    teamSize: [2, 4],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
     details: [
       {
         title: "Description",
-        content: `
-  ### Event Overview
-  DesignIt challenges teams to design innovative UI/UX solutions for real-world applications. Teams will receive a problem statement and must develop wireframes, prototypes, and a complete user journey.
-
-  - **Participants:** Teams of 2-4
-  - **Duration:** 4 Hours
-          `,
+        content:
+          "A 24-hour adrenaline-pumping hackathon designed for tech enthusiasts. Build innovative solutions, collaborate, and solve real-world problems.",
       },
       {
         title: "Judging Criteria",
-        content: `
-  ### Judging Parameters
-  1. **Creativity:** How unique and visually appealing the design is.
-  2. **Usability:** User-friendliness and accessibility of the design.
-  3. **Execution:** Completeness and presentation quality.
-          `,
+        content:
+          "Originality, feasibility, technical complexity, and presentation.",
       },
       {
         title: "Rules",
-        content: `
-  ### Rules
-  - Teams must use design tools provided (e.g., Figma, Adobe XD).
-  - Designs must be original and completed during the event.
-  - Use of pre-made templates is prohibited.
-          `,
+        content:
+          "1. Teams must comprise 2-4 members.\n2. All work must be done during the hackathon period.\n3. Use of pre-built templates or solutions is not allowed.",
       },
       {
         title: "Contact",
-        content: `
-  ### Need Assistance?
-  Email: **designit@versionfest.com**
-  Phone: **+91 8765432109**
-  Connect for inquiries about tools or team requirements.
-          `,
+        content: "Jane Smith (9876543211)",
       },
     ],
   },
   {
-    id: "E003",
-    name: "Data Dive",
-    description: "Dive deep into datasets and uncover insights.",
-    date: "23rd February 2025",
-    venue: "Computer Lab B",
-    image: "/images/datadive_poster.jpg",
+    id: "cm5eq9p6i00021vbwkh7d9zck",
+    name: "TechQuiz",
+    description: "A quiz event to challenge your tech knowledge.",
+    date: "22nd March 2025",
+    venue: "Room 101",
     type: "Individual",
-    background_image: "/event_images/coding2.jpg",
-    thumbnail_image: "/images/datadive_thumb.jpg",
+    teamSize: [1],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
     details: [
       {
         title: "Description",
-        content: `
-  ### Event Overview
-  In Data Dive, participants will analyze complex datasets and extract meaningful insights. Prepare reports, visualizations, and actionable recommendations based on the data provided.
-
-  - **Participants:** Individual
-  - **Duration:** 5 Hours
-  - **Level:** Beginner to Intermediate
-          `,
+        content:
+          "Test your knowledge of the tech world in this exciting quiz event. Challenge yourself across multiple rounds of increasing difficulty.",
       },
       {
         title: "Judging Criteria",
-        content: `
-  ### Judging Parameters
-  1. **Accuracy:** Correct interpretation of data.
-  2. **Visualization:** Clarity and creativity in presenting insights.
-  3. **Impact:** Practicality of the recommendations.
-          `,
+        content: "Accuracy and speed of answers.",
       },
       {
         title: "Rules",
-        content: `
-  ### Rules
-  - Only provided datasets can be used.
-  - Participants must use tools like Python, R, or Excel.
-  - Collaboration with other participants is not allowed.
-          `,
+        content:
+          "1. Individual participation only.\n2. Use of electronic devices is strictly prohibited.\n3. Decisions by quizmasters will be final.",
       },
       {
         title: "Contact",
-        content: `
-  ### Need Assistance?
-  Email: **datadive@versionfest.com**
-  Phone: **+91 7654321098**
-  Reach out for dataset formats or tool usage guidelines.
-          `,
+        content: "Alice Johnson (9876543212)",
       },
     ],
   },
   {
-    id: "E004",
-    name: "Debugathon",
-    description: "Find and fix the bugs in record time.",
-    date: "21st February 2025",
-    venue: "Lab 205",
-    image: "/images/debugathon_poster.jpg",
-    type: "Individual",
-    background_image: "/event_images/coding.jpg",
-    thumbnail_image: "/images/debugathon_thumb.jpg",
-    details: [
-      {
-        title: "Description",
-        content: `
-  ### Event Overview
-  Debugathon tests your debugging skills under pressure. Participants will be provided with buggy code and must identify and fix the errors within the shortest time.
-
-  - **Participants:** Individual
-  - **Duration:** 2 Hours
-          `,
-      },
-      {
-        title: "Judging Criteria",
-        content: `
-  ### Judging Parameters
-  1. **Speed:** Time taken to debug.
-  2. **Accuracy:** Number of bugs fixed correctly.
-          `,
-      },
-      {
-        title: "Rules",
-        content: `
-  ### Rules
-  - Only standard IDEs will be provided.
-  - Participants cannot use online tools or references.
-          `,
-      },
-      {
-        title: "Contact",
-        content: `
-  ### Need Assistance?
-  Email: **debugathon@versionfest.com**
-  Phone: **+91 6543210987**
-  Reach out for sample bug formats or IDE compatibility.
-          `,
-      },
-    ],
-  },
-  {
-    id: "E005",
-    name: "Hack The Future",
-    description:
-      "An intensive 24-hour hackathon to innovate and create solutions.",
-    date: "24th February 2025",
-    venue: "Innovation Hub",
-    image: "/event_images/coding.jpg",
+    id: "cm5eq9pdo00031vbwyl3y2rrw",
+    name: "DesignSprint",
+    description: "A UI/UX design challenge for creative minds.",
+    date: "22nd March 2025",
+    venue: "Design Studio",
     type: "Team",
-    background_image: "/event_images/coding.jpg",
-    thumbnail_image: "/public/event_images/coding.jpg",
+    teamSize: [2, 3],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
     details: [
       {
         title: "Description",
-        content: `
-  ### Event Overview
-  Hack The Future brings together innovators to create cutting-edge solutions for modern challenges. Work in teams to design, develop, and pitch your ideas.
-
-  - **Participants:** Teams of 3-5
-  - **Duration:** 24 Hours
-        `,
+        content:
+          "Unleash your creativity in this UI/UX design challenge. Collaborate and present intuitive designs to a panel of judges.",
       },
       {
         title: "Judging Criteria",
-        content: `
-  ### Judging Parameters
-  1. **Innovation:** Creativity and uniqueness of the idea.
-  2. **Feasibility:** Practicality and implementation potential.
-  3. **Presentation:** Clarity and persuasiveness of the pitch.
-        `,
+        content: "Creativity, usability, and presentation.",
       },
       {
         title: "Rules",
-        content: `
-  ### Rules
-  - Teams must work on provided problem statements.
-  - Solutions must be built during the event duration.
-        `,
+        content:
+          "1. Teams must comprise 2-3 members.\n2. Use of pre-built design templates is not allowed.\n3. Designs must be submitted within the time limit.",
       },
       {
         title: "Contact",
-        content: `
-  ### Need Assistance?
-  Email: **hackthefuture@versionfest.com**
-  Phone: **+91 5432109876**
-  Reach out for queries regarding team registration.
-        `,
+        content: "Michael Brown (9876543213)",
       },
     ],
   },
   {
-    id: "E006",
-    name: "Quiz Quest",
-    description: "Test your general knowledge in this fun-filled quiz.",
-    date: "25th February 2025",
+    id: "cm5eq9plh00041vbwqyn9tigt",
+    name: "AI Workshop",
+    description: "A hands-on workshop on Artificial Intelligence.",
+    date: "23rd March 2025",
     venue: "Seminar Hall",
-    image: "/event_images/coding2.jpg",
     type: "Individual",
-    background_image: "/event_images/coding2.jpg",
-    thumbnail_image: "/public/event_images/coding1.jpg",
+    teamSize: [1],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
     details: [
       {
         title: "Description",
-        content: `
-  ### Event Overview
-  Quiz Quest is an engaging trivia challenge covering a wide range of topics, including science, history, and pop culture.
-
-  - **Participants:** Individual
-  - **Duration:** 1.5 Hours
-        `,
+        content:
+          "Explore the world of Artificial Intelligence in this workshop. Learn from experts and gain hands-on experience with AI tools and frameworks.",
       },
       {
         title: "Judging Criteria",
-        content: `
-  ### Judging Parameters
-  1. **Accuracy:** Number of correct answers.
-  2. **Speed:** Time taken to answer each question.
-        `,
+        content: "Not applicable (workshop event).",
       },
       {
         title: "Rules",
-        content: `
-  ### Rules
-  - Participants must answer without external help.
-  - The quiz will be conducted in multiple rounds.
-        `,
+        content:
+          "1. Individual participation only.\n2. Bring your own laptop.\n3. Follow the instructions given by the instructor.",
       },
       {
         title: "Contact",
-        content: `
-  ### Need Assistance?
-  Email: **quizquest@versionfest.com**
-  Phone: **+91 4321098765**
-  Reach out for question formats or quiz structure.
-        `,
+        content: "Emma Wilson (9876543214)",
       },
     ],
   },
   {
-    id: "E007",
-    name: "RoboRace",
-    description: "Race your robots in this adrenaline-filled event.",
-    date: "26th February 2025",
-    venue: "Outdoor Arena",
-    image: "/event_images/coding.jpg",
+    id: "cm5eq9pt700051vbwy7d3h5yt",
+    name: "WebDev Marathon",
+    description: "A competition to create stunning web applications.",
+    date: "23rd March 2025",
+    venue: "Computer Lab",
     type: "Team",
-    background_image: "/event_images/coding.jpg",
-    thumbnail_image: "/public/event_images/coding.jpg",
+    teamSize: [2, 3],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
     details: [
       {
         title: "Description",
-        content: `
-  ### Event Overview
-  RoboRace challenges teams to build and race robots capable of overcoming obstacles.
-
-  - **Participants:** Teams of 2-4
-  - **Duration:** 3 Hours
-        `,
+        content:
+          "Show off your web development skills in this exciting competition. Create innovative web apps and impress the judges.",
       },
       {
         title: "Judging Criteria",
-        content: `
-  ### Judging Parameters
-  1. **Speed:** Time taken to complete the course.
-  2. **Design:** Robustness and innovation of the robot.
-        `,
+        content: "Design, functionality, and creativity.",
       },
       {
         title: "Rules",
-        content: `
-  ### Rules
-  - Only self-built robots are allowed.
-  - Robots must adhere to specified size and weight constraints.
-        `,
+        content:
+          "1. Teams must comprise 2-3 members.\n2. All code must be written during the event.\n3. Use of pre-built libraries is allowed but must be disclosed.",
       },
       {
         title: "Contact",
-        content: `
-  ### Need Assistance?
-  Email: **roborace@versionfest.com**
-  Phone: **+91 3210987654**
-  Reach out for guidelines on robot specifications.
-        `,
+        content: "William Davis (9876543215)",
+      },
+    ],
+  },
+  {
+    id: "cm5eq9q000061vbw71gmow5c",
+    name: "DataDive",
+    description: "A data analysis event to showcase your analytical skills.",
+    date: "24th March 2025",
+    venue: "Analytics Lab",
+    type: "Individual",
+    teamSize: [1],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
+    details: [
+      {
+        title: "Description",
+        content:
+          "Dive into data and uncover insights in this data analysis challenge. Work on datasets and present your findings.",
+      },
+      {
+        title: "Judging Criteria",
+        content: "Accuracy of insights, methodology, and presentation.",
+      },
+      {
+        title: "Rules",
+        content:
+          "1. Individual participation only.\n2. Use of open-source tools is allowed.\n3. Datasets will be provided during the event.",
+      },
+      {
+        title: "Contact",
+        content: "Sophia Martinez (9876543216)",
+      },
+    ],
+  },
+  {
+    id: "cm5eq9q890071vbwkcvbk0db",
+    name: "CyberStrike",
+    description: "A cybersecurity event to defend against attacks.",
+    date: "24th March 2025",
+    venue: "Cyber Lab",
+    type: "Team",
+    teamSize: [2, 4],
+    image: "/event_images/cryptic-min.jpg",
+    background_image: "/event_images/cryptic-min.jpg",
+    thumbnail_image: "/event_images/cryptic-min.jpg",
+    details: [
+      {
+        title: "Description",
+        content:
+          "Test your cybersecurity skills in this defense challenge. Protect systems and data from simulated cyberattacks.",
+      },
+      {
+        title: "Judging Criteria",
+        content: "Effectiveness of defense, response time, and innovation.",
+      },
+      {
+        title: "Rules",
+        content:
+          "1. Teams must comprise 2-4 members.\n2. Attacks and defenses must stay within the simulated environment.\n3. No unauthorized tools or methods.",
+      },
+      {
+        title: "Contact",
+        content: "Liam Taylor (9876543217)",
       },
     ],
   },
 ];
 
-export default events;
+export default eventsData;

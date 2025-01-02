@@ -1,60 +1,99 @@
 import { prisma } from "@/db/index.mjs";
 
+// register for an event
+// For individual events, the request body should contain userId and eventId
+// For team events, the request body should contain teamName, teamMembers emails, eventId, and leaderUserId
 export async function POST(req) {
   try {
-    console.log("Request received for registration");
+    const { userId, eventId, teamName, teamMembers } = await req.json(); // Parse everything in one step
 
-    const { userId, eventId, teamName, participants } = await req.json();
-    console.log(userId, eventId, teamName, participants);
-    // user validation
+    // User validation
     if (!userId) {
-      return new Response(
-        JSON.stringify("Login to register the events", { status: 401 }),
-      );
+      return new Response(JSON.stringify("Login to register the events"), {
+        status: 401,
+      });
     }
 
     const event = await prisma.event.findUnique({
       where: { id: eventId },
     });
 
-    // event validation
+    // Event validation
     if (!event) {
-      console.log("Event not found");
       return new Response(JSON.stringify({ message: "Event not found" }), {
         status: 404,
       });
     }
 
-    if (event.type === "team") {
-      const members = [];
-      // check if all participants are valid(registered)
-      for (const gmail of participants) {
-        const participant = await prisma.user.findFirst({
-          where: { email: gmail },
+    // Check if user is already registered for the event
+    const checkRegistration = await prisma.registration.findFirst({
+      where: { userId: userId, eventId: event.id },
+    });
+    if (checkRegistration) {
+      return new Response(
+        JSON.stringify({
+          message: "You are already registered for this event!",
+        }),
+        { status: 400 },
+      );
+    }
+
+    // Individual event registration
+    if (event.type === "Individual") {
+      const individualRegistration = await prisma.registration.create({
+        data: {
+          userId: userId,
+          eventId: eventId,
+        },
+      });
+      if (!individualRegistration) {
+        return new Response(
+          JSON.stringify({ message: "Failed to register for the event" }),
+          { status: 500 },
+        );
+      }
+      return new Response(
+        JSON.stringify({ message: "Registered successfully" }),
+        { status: 201 },
+      );
+    }
+
+    // Team event registration
+    if (event.type === "Team") {
+      if (!teamName || !teamMembers || !Array.isArray(teamMembers)) {
+        return new Response(JSON.stringify({ message: "Invalid team data" }), {
+          status: 400,
         });
-
-        if (!participant) {
-          return new Response(
-            JSON.stringify(`${gmail} not registered!`, { status: 404 }),
-          );
-        }
-
-        // check if participant is already registered in the event
-        const checkRegistration = await prisma.registration.findFirst({
-          where: { userId: participant.id, eventId: event.id },
-        });
-
-        if (checkRegistration) {
-          return new Response(
-            JSON.stringify(`${gmail} is already registered!`, { status: 400 }),
-          );
-        }
-        members.push(participant.id);
       }
 
-      members.push(userId);
+      const members = [];
+      // Check if all teamMembers are valid (registered)
+      for (const email of teamMembers) {
+        const member = await prisma.user.findFirst({
+          where: { email: email },
+        });
+        if (!member) {
+          return new Response(JSON.stringify(`${email} not registered!`), {
+            status: 404,
+          });
+        }
 
-      // create Team in the database
+        // Check if participant is already registered in the event
+        const checkRegistration = await prisma.registration.findFirst({
+          where: { userId: member.id, eventId: event.id },
+        });
+        if (checkRegistration) {
+          return new Response(
+            JSON.stringify(`${email} is already registered for this event`),
+            { status: 400 },
+          );
+        }
+
+        members.push(member.id);
+      }
+      members.push(userId); // Add leader to the team
+
+      // Create Team in the database
       const team = await prisma.team.create({
         data: {
           teamName: teamName,
@@ -62,9 +101,8 @@ export async function POST(req) {
           eventId: eventId,
         },
       });
-      console.log(team);
 
-      // create team members data
+      // Create team members data
       const membersData = members.map((member) => {
         return {
           userId: member,
@@ -73,48 +111,22 @@ export async function POST(req) {
         };
       });
 
-      // do team registration
+      // Register team members
       const teamRegistration = await prisma.registration.createMany({
         data: membersData,
         skipDuplicates: true,
       });
-      console.log(teamRegistration);
+
       return new Response(
-        JSON.stringify(teamRegistration, {
-          status: 201,
+        JSON.stringify({
           message: "Team Successfully registered",
+          data: teamRegistration,
         }),
-      );
-    } else {
-      const checkRegistration = await prisma.registration.findFirst({
-        where: { userId: userId, eventId: event.id },
-      });
-
-      if (checkRegistration) {
-        return new Response(
-          JSON.stringify({
-            message: "You are already registered for this event!",
-          }),
-          { status: 400 },
-        );
-      }
-
-      const individualRegistration = await prisma.registration.create({
-        data: {
-          userId: userId,
-          eventId: eventId,
-        },
-      });
-      console.log(individualRegistration);
-      return new Response(
-        JSON.stringify(individualRegistration, {
-          status: 201,
-          message: "Successfully registered",
-        }),
+        { status: 201 },
       );
     }
   } catch (error) {
-    console.error("Error during registration:", error);
+    console.log(error.message);
     return new Response(
       JSON.stringify({
         message: "Internal server error",
