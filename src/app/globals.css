@@ -83,10 +83,6 @@
 }
 
 @layer utilities {
-  .wrapper {
-    @apply h-full w-full px-4 py-4 md:px-12 lg:mx-auto;  
-  }
-
   .flex-center {
     @apply flex items-center justify-center;
   }
