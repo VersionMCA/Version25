@@ -32,10 +32,16 @@ const IndividualRegister = ({ event, setRegistered }) => {
       }
     } catch (error) {
       toast.error(error.response.data.message, toastStyle);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  return <Button onClick={handleRegister}>Register</Button>;
+  return (
+    <Button isLoading={isSubmitting} onClick={handleRegister}>
+      Register
+    </Button>
+  );
 };
 
 export default IndividualRegister;
