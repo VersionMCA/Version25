@@ -11,7 +11,6 @@ const Page = async () => {
 
   try {
     session = await getServerSession(authOptions);
-    console.log(session);
     if (!session) {
       return <div>Please log in to view your registered events.</div>;
     }
