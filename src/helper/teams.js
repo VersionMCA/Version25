@@ -98,7 +98,7 @@ const Faculty = {
   Heads: [
     {
       name: "Dr. Michael Arock",
-      image: "/profile_images/hod_img.jpg",
+      image: "/profile_images/michael-sir.jpg",
       designation: "HOD",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -107,7 +107,7 @@ const Faculty = {
     },
     {
       name: "Dr.(Mrs.) S. Sangeetha",
-      image: "/profile_images/hod_img.jpg",
+      image: "/profile_images/sangeetha-mam.jpg",
       designation: "Staff Advisor",
       socialLinks: {
         github: "https://github.com/andresberlin",
