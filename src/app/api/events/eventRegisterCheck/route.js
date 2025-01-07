@@ -2,6 +2,7 @@ import { prisma } from "@/db/index.mjs";
 
 //check if user is registered for an event
 export async function POST(req) {
+  console.log("called");
   try {
     const { userId, eventId } = await req.json();
     const data = await prisma.registration.findFirst({
