@@ -1,77 +1,32 @@
-"use client";
-
-import { useState } from "react";
-import { Transition } from "@headlessui/react";
-import arrowUpIcon from "../../assets/svgs/arrow-up.svg";
-import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { faqItems } from "../../app/faq/faqs.js";
 
-const AccordionItem = ({ title, content, isOpen, onClick }) => (
-  <div
-    className="rounded-lg overflow-hidden bg-theme-black"
-    style={{ alignSelf: "start", border: "2px solid #3f444a" }}
-  >
-    <button
-      onClick={onClick}
-      className="w-full text-left flex justify-between px-4 py-3 font-medium bg-black-100 hover:bg-gray-700 focus:outline-none  focus:ring-gray-300 text-theme-lime"
-    >
-      Q. {title}
-      <Image
-        priority
-        src={arrowUpIcon}
-        alt="Arrow"
-        width={10}
-        style={
-          isOpen
-            ? { rotate: "180deg", transition: "rotate 500ms ease-in-out" }
-            : { rotate: "0deg", transition: "rotate 500ms ease-in-out" }
-        }
-      />
-    </button>
-    <Transition
-      show={isOpen}
-      enter="transition-all duration-300 ease-in-out"
-      enterFrom="transform scale-y-0 opacity-0"
-      enterTo="transform scale-y-100 opacity-100"
-      leave="transition-all duration-300 ease-in-out"
-      leaveFrom="transform scale-y-100 opacity-100"
-      leaveTo="transform scale-y-0 opacity-0"
-      className="overflow-hidden"
-    >
-      <div className="px-4 py-3 bg-theme-black text-theme-blue">{content}</div>
-    </Transition>
-  </div>
-);
-
-const Accordion = ({ items }) => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+function page() {
   return (
-    <div className="space-y-4">
-      {items.map((item, index) => (
-        <AccordionItem
-          key={index}
-          title={item.title}
-          content={item.content}
-          isOpen={openIndex === index}
-          onClick={() => toggleAccordion(index)}
-        />
-      ))}
-    </div>
-  );
-};
-
-export default function page() {
-  return (
-    <div className="max-w-2xl mx-auto mt-8">
-      <h1 className="text-4xl font-bold mb-6 text-theme-blue">
-        Frequently Asked Questions
-      </h1>
-      <Accordion items={faqItems} />
+    <div className=" max-w-2xl mx-auto mt-24 p-6">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full border rounded-md p-4"
+      >
+        {faqItems.map((item, index) => {
+          return (
+            <AccordionItem className="" value={`item-${index + 1}`} key={index}>
+              <AccordionTrigger className="">{item.title}</AccordionTrigger>
+              <AccordionContent className="text-gray-400">
+                {item.content}
+              </AccordionContent>
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
     </div>
   );
 }
+
+export default page;
