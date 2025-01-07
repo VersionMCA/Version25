@@ -1,7 +1,6 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import toastStyle from "@/utilities/toastStyle";
-import { Button } from "@headlessui/react";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import UserAddedItem from "./UserAddedItem";
@@ -17,7 +16,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-const BASE_URL = process.env.BACKEND_URL || "http://localhost:3000";
+import { Button } from "@/components/ui/Button";
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
 
 export default function TeamRegisterModal({ event, setRegistered }) {
   const session = useSession();
@@ -47,7 +47,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
     }
     try {
       setIsSubmitting(true);
-      const res = await axios.post(`${BASE_URL}/api/events/register`, {
+      const res = await axios.post(`${BACKEND_URL}/api/events/register`, {
         userId: session.data.user.id,
         eventId: event.id,
         teamName,
@@ -75,6 +75,10 @@ export default function TeamRegisterModal({ event, setRegistered }) {
       toast.error("Please enter a valid email", toastStyle);
       return;
     }
+    if (email === session.data.user.email) {
+      toast.error("You are already in team", toastStyle);
+      return;
+    }
     if (emailList.includes(email)) {
       toast.error("User already in team", toastStyle);
       return;
@@ -90,7 +94,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
     try {
       setIsAddingUser(true);
       const res = await axios.post(
-        `${BASE_URL}/api/events/eventRegisterCheckEmail`,
+        `${BACKEND_URL}/api/events/eventRegisterCheckEmail`,
         {
           email: email,
           eventId: event.id,
@@ -157,7 +161,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
               <Button
                 type="button"
                 onClick={handleAddUser}
-                isSubmitting={isAddingUser}
+                isLoading={isAddingUser}
               >
                 Add
               </Button>
@@ -181,22 +185,17 @@ export default function TeamRegisterModal({ event, setRegistered }) {
             </ul>
           </div>
 
-          <div className="flex mt-3 justify-center">
-            <Button
-              type="submit"
-              onClick={handleSubmit}
-              isSubmitting={isSubmitting}
-            >
-              Register
-            </Button>
-          </div>
+          <div className="flex mt-3 justify-center"></div>
         </form>
-        <DialogFooter className="sm:justify-start">
+        <DialogFooter className="">
           <DialogClose asChild>
             <Button type="button" variant="secondary">
-              Close
+              Cancel
             </Button>
           </DialogClose>
+          <Button type="submit" onClick={handleSubmit} isLoading={isSubmitting}>
+            Register
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
