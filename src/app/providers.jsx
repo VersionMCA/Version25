@@ -1,10 +1,12 @@
-'use client';
-import { SessionProvider } from 'next-auth/react';
+"use client";
+import { SessionProvider } from "next-auth/react";
+import { ToastContainer } from "react-toastify";
 
 export const Providers = ({ children }) => {
   return (
     <SessionProvider>
-        {children}
+      <ToastContainer />
+      {children}
     </SessionProvider>
   );
 };

@@ -76,6 +76,7 @@ model Event {
   createdAt   DateTime  @default(now())
 
   // Relations
+  teams       Team[]
   registrations Registration[]
 }
 
@@ -85,7 +86,6 @@ model Registration {
   userId            String
   eventId           String
   teamId            String?         // Nullable for individual events
-
   user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   event             Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
   team              Team?           @relation(fields: [teamId], references: [id], onDelete: Cascade)
