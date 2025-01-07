@@ -41,7 +41,6 @@ export default function page() {
       }
     }
     if (session?.data?.user?.id) {
-      console.log("here");
       eventRegisterCheck();
     }
   }, []);
