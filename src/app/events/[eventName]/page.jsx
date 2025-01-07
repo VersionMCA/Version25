@@ -6,7 +6,6 @@ import MapDrop from "../../../../public/assets/MapDrop.png";
 import { toast } from "react-toastify";
 import Markdown from "react-markdown";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import eventsData from "../eventData";
 import axios from "axios";
@@ -27,9 +26,6 @@ export default function page() {
   const [registered, setRegistered] = useState(false);
 
   useEffect(() => {
-    if (session?.data?.user?.id) {
-      eventRegisterCheck();
-    }
     async function eventRegisterCheck() {
       try {
         const response = await axios.post(
@@ -43,6 +39,10 @@ export default function page() {
       } catch (e) {
         toast.error("Error fetching events registration status", toastStyle);
       }
+    }
+    if (session?.data?.user?.id) {
+      console.log("here");
+      eventRegisterCheck();
     }
   }, []);
 
