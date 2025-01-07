@@ -1,6 +1,6 @@
 const eventsData = [
   {
-    id: "cm5eq9ogv00001vbw9smlhrai",
+    id: "cm5m3znwv0000rzdo7zxtsklp",
     name: "CodeFest",
     description: "A competitive coding event to test your algorithmic skills.",
     date: "21st March 2025",
@@ -33,7 +33,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9oxz00011vbw5fex41c3",
+    id: "cm5m3znx20001rzdourekvyz7",
     name: "Hackathon",
     description: "A 24-hour hackathon for building innovative solutions.",
     date: "21st March 2025",
@@ -66,7 +66,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9p6i00021vbwkh7d9zck",
+    id: "cm5m3znx30002rzdop06ey5yx",
     name: "TechQuiz",
     description: "A quiz event to challenge your tech knowledge.",
     date: "22nd March 2025",
@@ -98,7 +98,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9pdo00031vbwyl3y2rrw",
+    id: "cm5m3znx30003rzdou47re9xh",
     name: "DesignSprint",
     description: "A UI/UX design challenge for creative minds.",
     date: "22nd March 2025",
@@ -130,7 +130,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9plh00041vbwqyn9tigt",
+    id: "cm5m3znx40004rzdogqzma9f",
     name: "AI Workshop",
     description: "A hands-on workshop on Artificial Intelligence.",
     date: "23rd March 2025",
@@ -162,7 +162,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9pt700051vbwy7d3h5yt",
+    id: "cm5m3znx50005rzdojxio0jc2",
     name: "WebDev Marathon",
     description: "A competition to create stunning web applications.",
     date: "23rd March 2025",
@@ -194,7 +194,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9q000061vbw71gmow5c",
+    id: "cm5m3znx60006rzdoqnco0b91",
     name: "DataDive",
     description: "A data analysis event to showcase your analytical skills.",
     date: "24th March 2025",
@@ -226,7 +226,7 @@ const eventsData = [
     ],
   },
   {
-    id: "cm5eq9q890071vbwkcvbk0db",
+    id: "cm5m3znx60007rzdogkbqtrl",
     name: "CyberStrike",
     description: "A cybersecurity event to defend against attacks.",
     date: "24th March 2025",
