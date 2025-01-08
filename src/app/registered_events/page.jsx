@@ -1,9 +1,11 @@
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
-import axios from "axios";
 import React from "react";
 
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
+
+export const dynamic = "force-dynamic";
 
 const Page = async () => {
   let session;
@@ -15,14 +17,21 @@ const Page = async () => {
       return <div>Please log in to view your registered events.</div>;
     }
 
-    const response = await axios.post(
+    const response = await fetch(
       `${BACKEND_URL}/api/events/fetchRegisteredEvents`,
       {
-        userId: session.user.id,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: session.user.id }),
       },
     );
-    console.log(response.data);
-    registeredEvents = response.data;
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch registered events");
+    }
+    registeredEvents = await response.json();
   } catch (error) {
     console.error("Error fetching registered events:", error);
     const errorMessage =

@@ -17,7 +17,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/Button";
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
+
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
 
 export default function TeamRegisterModal({ event, setRegistered }) {
   const session = useSession();
