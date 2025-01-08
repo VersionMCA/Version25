@@ -1,7 +1,7 @@
 import React from "react";
 import UserImage from "../../components/UserImage";
-import { Label } from "../../components/ui/Label";
-import { Input } from "../../components/ui/Input";
+import { Label } from "../../components/ui/label";
+import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/Button";
 
 export default function UserDetailForm({ user }) {
