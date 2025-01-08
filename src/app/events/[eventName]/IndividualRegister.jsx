@@ -5,7 +5,8 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { toast } from "react-toastify";
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
 
 const IndividualRegister = ({ event, setRegistered }) => {
   const session = useSession();
