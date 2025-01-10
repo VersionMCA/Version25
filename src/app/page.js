@@ -1,9 +1,8 @@
-import Home from "@/components/home/Home";
-
+import About from "@/components/home/About";
 const page = () => {
   return (
     <div>
-      <Home />
+      <About />
     </div>
   );
 };
