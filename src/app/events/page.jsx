@@ -1,118 +1,117 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import EventThumbnail from "./EventThumbnail";
-import eventsData from "./eventData";
-import arrowSvg from "@public/assets/carouselArrow.svg";
-import EventCard from "./EventCard";
-import Image from "next/image";
+"use client"
+import React, { useEffect, useRef } from 'react';
+import eventData from './eventData';
+import './page.scss';
+import EventCard from './EventCard';
+import EventThumbnail from './EventThumbnail';
+import { CodeSquare } from 'lucide-react';
 
-function Page() {
-  const [newItemActive, setNewItemActive] = useState(0);
-  const thumbnailRef = useRef(null);
+function Events() {
+  const [newItemActive, setNewItemActive] = React.useState(0);
+
+  const Thumbnail = useRef(null);
 
   useEffect(() => {
     const showSlider = (nextItem) => {
       const items = document.querySelectorAll(
-        `.event__slider .allEvents .eventCard__item`,
+        `.event__slider .allEvents .eventCard__item`
       );
       const thumbnails = document.querySelectorAll(
-        `.thumbnail .thumbnail__item`,
+        `.thumbnail .thumbnail__item`
       );
 
       const itemActiveOld = document.querySelector(
-        `.event__slider .allEvents .eventCard__item.active`,
+        `.event__slider .allEvents .eventCard__item.active`
       );
+
       const thumbnailActiveOld = document.querySelector(
-        `.thumbnail .thumbnail__item.active`,
+        `.thumbnail .thumbnail__item.active`
       );
 
-      // Remove active class from old active item
-      if (itemActiveOld) itemActiveOld.classList.remove("active");
-      if (thumbnailActiveOld) thumbnailActiveOld.classList.remove("active");
+      // remove active class from old active item
+      if (itemActiveOld !== null) itemActiveOld.classList.remove(`active`);
+      if (thumbnailActiveOld !== null)
+        thumbnailActiveOld.classList.remove(`active`);
 
-      // Add active class to new active item
-      if (items[nextItem]) items[nextItem].classList.add("active");
-      if (thumbnails[nextItem]) thumbnails[nextItem].classList.add("active");
+      // add active class to new active item
+      items[nextItem].classList.add(`active`);
+      thumbnails[nextItem].classList.add(`active`);
     };
 
     showSlider(newItemActive);
   }, [newItemActive]);
 
-  const moveLeft = () => {
-    const scrollAmount = thumbnailRef.current.clientWidth / 3; // Scroll by a fraction of the container width
-    thumbnailRef.current.scrollBy({
+  function moveLeft() {
+    const scrollAmount = Thumbnail.current.clientWidth;
+    Thumbnail.current.scrollBy({
       top: 0,
-      left: -scrollAmount,
-      behavior: "smooth",
+      left: -scrollAmount - 15,
+      behavior: 'smooth',
     });
+  }
 
-    setNewItemActive((prev) => (prev > 0 ? prev - 1 : eventsData.length - 1));
-  };
-
-  const moveRight = () => {
-    const scrollAmount = thumbnailRef.current.clientWidth / 3; // Scroll by a fraction of the container width
-    thumbnailRef.current.scrollBy({
+  function moveRight() {
+    const scrollAmount = Thumbnail.current.clientWidth;
+    Thumbnail.current.scrollBy({
       top: 0,
-      left: scrollAmount,
-      behavior: "smooth",
+      left: scrollAmount + 15,
+      behavior: 'smooth',
     });
-
-    setNewItemActive((prev) => (prev < eventsData.length - 1 ? prev + 1 : 0));
-  };
+  }
 
   return (
-    <div
-      className="overflow-hidden h-[100vh] w-[100vw] flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${eventsData[newItemActive].image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundBlendMode: "multiply", // Overlay the image with a color
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // The color to overlay
-      }}
-    >
-      {/* Event Card  */}
-      <EventCard event={eventsData[newItemActive]} />
-      {/* Bottom Slider */}
-      <div className="fixed bottom-0 z-10 flex justify-center items-center">
-        {/* Left Arrow Button */}
-        <div
-          className="arrowContainer left cursor-pointer w-24 rotate-180"
-          aria-hidden="true"
-          onClick={moveLeft}
-        >
-          <Image src={arrowSvg} alt="leftArrow" className="h-12" />
-        </div>
-        {/* Thumbnails Container */}
-        <div
-          className="thumbnail flex justify-center items-center gap-3 h-64 box-border overflow-auto font-primary no-scrollbar"
-          ref={thumbnailRef}
-          style={{ width: "40vw" }}
-        >
-          {eventsData.map((event, index) => {
+    <div>
+      <div className="event__slider font-secondary">
+        <div className="allEvents">
+          {eventData.map((event) => {
             return (
-              <EventThumbnail
+              <EventCard
                 key={event.id}
-                event={event}
-                isActive={index === newItemActive}
-                setNewItemActive={() => setNewItemActive(index)}
+                id={event.id}
+                content={event.description}
+                imgLink={event.image}
+                name={event.name}
+                date={event.date}
+                teamSize={event?.teamSize}
               />
             );
           })}
         </div>
-
-        {/* Right Arrow Button */}
-        <div
-          className="arrowContainer right cursor-pointer w-24"
-          aria-hidden="true"
-          onClick={moveRight}
-        >
-          <Image src={arrowSvg} alt="rightArrow" className="h-12" />
+        <div className="thumbnailContainer">
+          <div
+            className="arrowContainer left"
+            aria-hidden="true"
+            onClick={moveLeft}
+          >
+            <img src="/assets/carouselArrow.svg" alt="leftArrow" className="h-12" />
+          </div>
+          <div
+            className="thumbnail font-primary no-scrollbar"
+            ref={Thumbnail}
+          >
+            {eventData.map((event, index) => {
+              return (
+                <EventThumbnail
+                  setNewItemActive={setNewItemActive}
+                  key={index}
+                  index={index}
+                  imgLink={event.image}
+                  name={event.name}
+                />
+              );
+            })}
+          </div>
+          <div
+            className="arrowContainer right"
+            aria-hidden="true"
+            onClick={moveRight}
+          >
+            <img src="/assets/carouselArrow.svg" alt="rightArrow" className="h-12" />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Page;
+export default Events;

@@ -1,25 +1,32 @@
-"use client";
-import React from "react";
-import { Button } from "../../components/ui/Button";
-import { useRouter } from "next/navigation";
+/* eslint-disable no-nested-ternary */
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import './EventCard.scss';
+import formatDate from '../../utilities/formatDate';
+import { useRouter } from 'next/navigation';
 
-function EventCard({ event }) {
-  const { name, date, description, image } = event;
+
+function EventCard({ name, date, content, imgLink }) {
   const router = useRouter();
 
-  function handleClick() {
-    router.push(`/events/${name}`);
-  }
+  const todaysDate = new Date();
+  const eventDate = new Date(date);
+  eventDate.setHours(23);
+  eventDate.setMinutes(59);
 
+  const newContent = content.split('\n').map((str, i) => <p key={i}>{str}</p>);
   return (
-    <div className="relative -top-32 flex flex-col md:w-[80%] gap-y-6 mx-auto  justify-center">
-      <div className="">{date}</div>
-      <div className="text-6xl ">{name}</div>
-      <div className="">{description}</div>
-      <div className="btn-container font-primary font-light mt-4 md:mt-8">
-        <Button className="btn-register" onClick={handleClick}>
+    <div className="eventCard__item">
+      <LazyLoadImage src={imgLink} alt={name} />
+      <div className="content  max-sm:translate-y-14">
+        <p className="font-primary content__date">{formatDate(date)}</p>
+        <h2 className="font-primary content__name">{name}</h2>
+        <div className="[&>*]:font-light [&>*]:font-xs [&>*]:tracking-normal content__info">
+          {newContent}
+        </div>
+        <button className="btn-container font-primary font-light mt-4 md:mt-8" onClick={() => router.push(`/events/${name}`)}>
           See Details
-        </Button>
+        </button>
       </div>
     </div>
   );

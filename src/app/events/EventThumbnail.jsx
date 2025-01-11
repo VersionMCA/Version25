@@ -1,17 +1,17 @@
-import Image from "next/image";
-import "./EventThumbnail.css";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import './EventThumbnail.scss';
 
-function EventThumbnail({ event, setNewItemActive }) {
-  const { id, name, image } = event;
-  const thumbnailClass = `thumbnail__item ${id === 0 ? "active" : ""}`;
+function EventThumbnail({ index, imgLink, name, setNewItemActive }) {
+  const thumbnailClass = `thumbnail__item ${index === 0 ? 'active' : ''}`;
   return (
     <div
       className={thumbnailClass}
-      onClick={() => setNewItemActive(id)}
+      onClick={() => setNewItemActive(index)}
       aria-hidden="true"
     >
-      <Image src={image} width={200} height={500} alt={name} />
-      <div className="content">{name}</div>
+      <LazyLoadImage src={imgLink} alt={name} />
+      <div className="content max-sm:text-sm">{name}</div>
     </div>
   );
 }
