@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import MapDrop from "../../../../public/assets/MapDrop.png";
@@ -13,6 +12,9 @@ import TeamRegisterModal from "./TeamRegisterModal";
 import toastStyle from "@/utilities/toastStyle";
 import { useSession } from "next-auth/react";
 import IndividualRegister from "./IndividualRegister";
+import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -47,72 +49,74 @@ export default function page() {
   }, []);
 
   return (
-    <div
-      className={`h-screen w-screen overflow-hidden relative flex justify-center items-center`}
-    >
-      <div className={`border p-6 flex flex-col gap-y-8 rounded-xl`}>
-        {/* Header Section */}
-        <div className=" flex flex-row justify-between items-center">
-          <button onClick={() => router.push("/events")}>BACK</button>
-          <div className="text-6xl text-center">{event?.name}</div>
+    <div className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden">
+      <div className="w-full p-2 max-w-4xl translate-y-4 flex flex-col items-center gap-2 sm:gap-6 lg:gap-10">
+        {/* Event Header */}
+        <div className="flex  w-full p-6 justify-between items-center">
+          <div className="flex flex-row ">
+            <ChevronLeft />
+            <button onClick={() => router.push("/events")} className="max-sm:hidden">BACK</button>
+            <ChevronRight className="max-sm:hidden" />
+          </div>
+          <h1 className=" text-4xl lg:text-6xl font-primary">{event?.name}</h1>
           <div></div>
         </div>
-        {/* Content Section */}
-        <div className=" border h-60 w-[1000px] overflow-y-scroll p-2">
-          <div>
-            <Markdown>{event?.details[contentIndex].content}</Markdown>
+        <div className="border w-full h-[22rem] md:h-[24rem] lg:h-[26rem] shadow-lg p-4 md:px-6 lg:px-8 shadow-primary/10 rounded-lg">
+          {/* Navigation */}
+          <div className="flex gap-2 h-[19%] w-full items-center justify-between py-4 overflow-x-scroll">
+            {event?.details.map(({ title }, idx) => (
+              <div
+                key={idx}
+                className={`text-sm md:text-lg md:font-primary cursor-pointer ${contentIndex === idx ? "border-b-2 border-lime-400" : ""}`}
+                onClick={() => setContentIndex(idx)}
+              >
+                {title}
+              </div>
+            ))}
           </div>
-        </div>
-        {/* Footer Section  */}
-        <div className=" flex flex-row justify-between items-center ">
-          <div>{event?.date}</div>
-          <div className="flex flex-row gap-2">
-            <Image src={MapDrop} alt="Map" />
-            <span>{event?.venue}</span>
+          <Separator />
+          {/* Content Section */}
+          <div className="overflow-y-scroll h-[64%] py-2">
+            <Markdown>{event?.details[contentIndex]?.content}</Markdown>
           </div>
-          {session?.data?.user?.id ? (
-            registered ? (
-              <Button variant="ghost">Registered</Button>
-            ) : event?.type === "Team" ? (
-              <TeamRegisterModal
-                userId={session?.data?.user?.id}
-                event={event}
-                setRegistered={setRegistered}
-              />
+          <Separator />
+          {/* Footer Section */}
+          <div className="flex max-sm:text-xs  h-[15%] w-full justify-between items-center py-2 pt-4">
+            <span>{event?.date}</span>
+            {session?.data?.user?.id ? (
+              registered ? (
+                <Button variant="ghost">Registered</Button>
+              ) : event?.type === "Team" ? (
+                <TeamRegisterModal
+                  userId={session.data.user.id}
+                  event={event}
+                  setRegistered={setRegistered}
+                />
+              ) : (
+                <IndividualRegister
+                  event={event}
+                  setRegistered={setRegistered}
+                />
+              )
             ) : (
-              <IndividualRegister
-                userId={session?.data?.user?.id} //not required
-                event={event}
-                setRegistered={setRegistered}
-              />
-            )
-          ) : (
-            <Button
-              onClick={() =>
-                toast.error("Login to register for the event", toastStyle)
-              }
-            >
-              Register
-            </Button>
-          )}
-        </div>
-      </div>
-      {/* Footer Navigation */}
-      <div className="flex flex-row gap-10 w-full absolute bottom-0 justify-around bg-primary/5 p-8 rounded-2xl border border-primary/10 shadow-xl shadow-primary/5 min-w-[30vw]">
-        {event?.details.map(({ title, content }, idx) => (
-          <div
-            key={idx}
-            className={`font-Orbitron text-xs cursor-pointer ${
-              contentIndex === idx ? "border-b-4 border-lime-400" : ""
-            }`}
-            onClick={() => {
-              setContentIndex(idx);
-            }}
-          >
-            <div className="text-xl">{title.toUpperCase()}</div>
+              <Button
+                onClick={() => toast.error("Login to register for the event", toastStyle)}
+              >
+                Register
+              </Button>
+            )}
+            <div className="flex gap-2 items-center ">
+              <div className="w-5 h-10 flex justify-center items-center">
+                <Image src={MapDrop} alt="Map" className=" object-fill" />
+              </div>
+              <span>{event?.venue}</span>
+            </div>
           </div>
-        ))}
+
+        </div>
+
       </div>
     </div>
+
   );
 }

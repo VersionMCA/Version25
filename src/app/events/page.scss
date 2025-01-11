@@ -1,0 +1,77 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/variable.scss';
+
+.allEvents {
+  height: 100vh;
+  @include respond(minTab) {
+    height: 130vh;
+  }
+}
+
+.event__slider {
+  //   margin-top: -90px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .thumbnailContainer {
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include respond(tab) {
+      width: 95%;
+    }
+  }
+  .thumbnail {
+    display: flex;
+    gap: 10px;
+    width: 40rem;
+    height: 16rem;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include respond(phone) {
+      gap: 5px;
+    }
+  }
+  .arrowContainer {
+    cursor: pointer;
+    width: 6rem;
+    @include respond(tab) {
+      display: none;
+    }
+  }
+  .arrowContainer.left {
+    width: 100px;
+    img {
+      rotate: 180deg;
+      max-width: none;
+      width: 100px;
+    }
+  }
+  .arrowContainer.right {
+    width: 100px;
+    img {
+      max-width: none;
+      width: 100px;
+    }
+  }
+
+  .thumbnail::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
