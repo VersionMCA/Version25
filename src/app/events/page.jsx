@@ -1,10 +1,9 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import eventData from './eventData';
-import './page.scss';
-import EventCard from './EventCard';
-import EventThumbnail from './EventThumbnail';
-import { CodeSquare } from 'lucide-react';
+"use client";
+import React, { useEffect, useRef } from "react";
+import eventData from "./eventData";
+import "./page.scss";
+import EventCard from "./EventCard";
+import EventThumbnail from "./EventThumbnail";
 
 function Events() {
   const [newItemActive, setNewItemActive] = React.useState(0);
@@ -14,18 +13,18 @@ function Events() {
   useEffect(() => {
     const showSlider = (nextItem) => {
       const items = document.querySelectorAll(
-        `.event__slider .allEvents .eventCard__item`
+        `.event__slider .allEvents .eventCard__item`,
       );
       const thumbnails = document.querySelectorAll(
-        `.thumbnail .thumbnail__item`
+        `.thumbnail .thumbnail__item`,
       );
 
       const itemActiveOld = document.querySelector(
-        `.event__slider .allEvents .eventCard__item.active`
+        `.event__slider .allEvents .eventCard__item.active`,
       );
 
       const thumbnailActiveOld = document.querySelector(
-        `.thumbnail .thumbnail__item.active`
+        `.thumbnail .thumbnail__item.active`,
       );
 
       // remove active class from old active item
@@ -46,7 +45,7 @@ function Events() {
     Thumbnail.current.scrollBy({
       top: 0,
       left: -scrollAmount - 15,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
@@ -55,7 +54,7 @@ function Events() {
     Thumbnail.current.scrollBy({
       top: 0,
       left: scrollAmount + 15,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
@@ -83,12 +82,13 @@ function Events() {
             aria-hidden="true"
             onClick={moveLeft}
           >
-            <img src="/assets/carouselArrow.svg" alt="leftArrow" className="h-12" />
+            <img
+              src="/assets/carouselArrow.svg"
+              alt="leftArrow"
+              className="h-12"
+            />
           </div>
-          <div
-            className="thumbnail font-primary no-scrollbar"
-            ref={Thumbnail}
-          >
+          <div className="thumbnail font-primary no-scrollbar" ref={Thumbnail}>
             {eventData.map((event, index) => {
               return (
                 <EventThumbnail
@@ -106,7 +106,11 @@ function Events() {
             aria-hidden="true"
             onClick={moveRight}
           >
-            <img src="/assets/carouselArrow.svg" alt="rightArrow" className="h-12" />
+            <img
+              src="/assets/carouselArrow.svg"
+              alt="rightArrow"
+              className="h-12"
+            />
           </div>
         </div>
       </div>

@@ -1,10 +1,9 @@
 /* eslint-disable no-nested-ternary */
-import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import './EventCard.scss';
-import formatDate from '../../utilities/formatDate';
-import { useRouter } from 'next/navigation';
-
+import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "./EventCard.scss";
+import formatDate from "../../utilities/formatDate";
+import { useRouter } from "next/navigation";
 
 function EventCard({ name, date, content, imgLink }) {
   const router = useRouter();
@@ -14,7 +13,7 @@ function EventCard({ name, date, content, imgLink }) {
   eventDate.setHours(23);
   eventDate.setMinutes(59);
 
-  const newContent = content.split('\n').map((str, i) => <p key={i}>{str}</p>);
+  const newContent = content.split("\n").map((str, i) => <p key={i}>{str}</p>);
   return (
     <div className="eventCard__item">
       <LazyLoadImage src={imgLink} alt={name} />
@@ -24,7 +23,10 @@ function EventCard({ name, date, content, imgLink }) {
         <div className="[&>*]:font-light [&>*]:font-xs [&>*]:tracking-normal content__info">
           {newContent}
         </div>
-        <button className="btn-container font-primary font-light mt-4 md:mt-8" onClick={() => router.push(`/events/${name}`)}>
+        <button
+          className="btn-container font-primary font-light mt-4 md:mt-8"
+          onClick={() => router.push(`/events/${name}`)}
+        >
           See Details
         </button>
       </div>

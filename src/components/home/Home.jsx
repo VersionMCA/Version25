@@ -9,12 +9,26 @@ import cloud from "../../../public/assets/cloud.svg";
 
 import React, { useEffect, useRef, useState } from "react";
 
+import { useSession } from "next-auth/react";
+import { redirect, useSearchParams } from "next/navigation";
+
 const Home = () => {
   const [active, setActive] = useState(false);
   const [gameWidth, setGameWidth] = useState(1600);
   const [isFacingRight, setFacingRight] = useState(true);
   const [obstacleRect, setObstacleRect] = useState(null);
   const [over, setOver] = useState(false);
+
+  const { data: session } = useSession();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const from = searchParams.get("from");
+
+    if (from === "login" && session?.user?.incompleteProfile) {
+      redirect("/profile");
+    }
+  }, [session, searchParams]);
 
   const gameArea = useRef(null);
   const player = useRef(null);

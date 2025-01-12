@@ -3,12 +3,10 @@ import { prisma } from "@/db/index.mjs";
 export async function POST(req) {
   try {
     const { eventName, description, type } = await req.json();
-    console.log(eventName, description, type);
 
     const existingEvent = await prisma.event.findUnique({
       where: { eventName: eventName },
     });
-    console.log(existingEvent);
 
     if (existingEvent) {
       return new Response(JSON.stringify({ error: "Event already exists" }), {
@@ -23,8 +21,6 @@ export async function POST(req) {
         type: type,
       },
     });
-
-    console.log(newEvent);
     return new Response(JSON.stringify(newEvent), { status: 201 });
   } catch (error) {
     console.error(error); // Log the error for debugging
