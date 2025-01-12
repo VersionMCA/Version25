@@ -55,7 +55,12 @@ export default function page() {
         <div className="flex  w-full p-6 justify-between items-center">
           <div className="flex flex-row ">
             <ChevronLeft />
-            <button onClick={() => router.push("/events")} className="max-sm:hidden">BACK</button>
+            <button
+              onClick={() => router.push("/events")}
+              className="max-sm:hidden"
+            >
+              BACK
+            </button>
             <ChevronRight className="max-sm:hidden" />
           </div>
           <h1 className=" text-4xl lg:text-6xl font-primary">{event?.name}</h1>
@@ -100,7 +105,9 @@ export default function page() {
               )
             ) : (
               <Button
-                onClick={() => toast.error("Login to register for the event", toastStyle)}
+                onClick={() =>
+                  toast.error("Login to register for the event", toastStyle)
+                }
               >
                 Register
               </Button>
@@ -112,11 +119,8 @@ export default function page() {
               <span>{event?.venue}</span>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
-
   );
 }

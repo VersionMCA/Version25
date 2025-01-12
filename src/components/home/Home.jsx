@@ -24,17 +24,10 @@ const Home = () => {
   useEffect(() => {
     const from = searchParams.get("from");
 
-    if (from === "login" && session?.dbUser) {
-      const { collegeRollNumber, collegeName, phoneNumber } = session.dbUser;
-
-      // If profile details are incomplete, redirect to the profile page
-      if (!collegeRollNumber || !collegeName || !phoneNumber) {
-        redirect("/profile");
-      }
+    if (from === "login" && session?.user?.incompleteProfile) {
+      redirect("/profile");
     }
   }, [session, searchParams]);
-
-
 
   const gameArea = useRef(null);
   const player = useRef(null);
@@ -135,7 +128,6 @@ const Home = () => {
   useEffect(() => {
     updateBoundaries();
   }, [gameWidth]);
-
 
   return (
     <div className="min-h-screen overflow-x-hidden">
