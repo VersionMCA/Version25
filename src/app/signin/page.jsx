@@ -7,7 +7,7 @@ import React from "react";
 const SigninPage = async () => {
   const session = await getServerSession(authOptions);
   if (session?.user) {
-    redirect("/");
+    redirect("/?from=login");
   }
   return <Signin />;
 };
