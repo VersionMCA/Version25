@@ -53,9 +53,12 @@ export default function page() {
       <div className="w-full p-2 max-w-4xl translate-y-4 flex flex-col items-center gap-2 sm:gap-6 lg:gap-10">
         {/* Event Header */}
         <div className="flex  w-full p-6 justify-between items-center">
-          <div className="flex flex-row ">
+          <div
+            className="flex flex-row  cursor-pointer"
+            onClick={() => router.push("/events")}
+          >
             <ChevronLeft />
-            <button onClick={() => router.push("/events")} className="max-sm:hidden">BACK</button>
+            <div className="max-sm:hidden">BACK</div>
             <ChevronRight className="max-sm:hidden" />
           </div>
           <h1 className=" text-4xl lg:text-6xl font-primary">{event?.name}</h1>
@@ -63,7 +66,7 @@ export default function page() {
         </div>
         <div className="border w-full h-[22rem] md:h-[24rem] lg:h-[26rem] shadow-lg p-4 md:px-6 lg:px-8 shadow-primary/10 rounded-lg">
           {/* Navigation */}
-          <div className="flex gap-2 h-[19%] w-full items-center justify-between py-4 overflow-x-scroll">
+          <div className="flex gap-2 h-[19%] w-full items-center justify-between py-4 overflow-x-scroll no_scrollbar">
             {event?.details.map(({ title }, idx) => (
               <div
                 key={idx}
@@ -100,23 +103,22 @@ export default function page() {
               )
             ) : (
               <Button
-                onClick={() => toast.error("Login to register for the event", toastStyle)}
+                onClick={() =>
+                  toast.error("Login to register for the event", toastStyle)
+                }
               >
                 Register
               </Button>
             )}
-            <div className="flex gap-2 items-center ">
+            <div className="flex gap-2 items-center  ">
               <div className="w-5 h-10 flex justify-center items-center">
                 <Image src={MapDrop} alt="Map" className=" object-fill" />
               </div>
               <span>{event?.venue}</span>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
-
   );
 }
