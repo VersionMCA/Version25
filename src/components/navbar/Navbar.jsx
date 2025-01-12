@@ -9,10 +9,33 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import navLinks from "./navLinks";
+import { redirect } from "next/navigation";
+
 
 const Navbar = ({ toggle }) => {
   const session = useSession();
   const user = session.data?.user;
+
+
+  const handleLogin = async () => {
+    await signIn();
+    return;
+
+    // handle incomplete profile
+    const { data: session } = useSession();
+
+    // Redirect to profile completion page
+    console.log("My session ", session);
+    console.log("My dbuser ", session.dbUser);
+    if (session?.dbUser) {
+      const { collegeRollNumber, collegeName, phoneNumber } = session.dbUser;
+
+      if (!collegeRollNumber || !collegeName || !phoneNumber)
+        redirect("/profile");
+    }
+  }
+
+
 
   return (
     <nav className="fixed mx-auto p-2 md:px-6 top-0 z-50 flex items-center gap-2 w-full">
@@ -48,9 +71,7 @@ const Navbar = ({ toggle }) => {
           {!user ? (
             <Button
               size={"lg"}
-              onClick={async () => {
-                await signIn();
-              }}
+              onClick={handleLogin}
             >
               Login
             </Button>

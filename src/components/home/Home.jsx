@@ -8,6 +8,8 @@ import boy from "../../../public/assets/boy.svg";
 import cloud from "../../../public/assets/cloud.svg";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useSession } from "next-auth/react";
+import { redirect, useSearchParams } from "next/navigation";
 
 const Home = () => {
   const [active, setActive] = useState(false);
@@ -15,6 +17,24 @@ const Home = () => {
   const [isFacingRight, setFacingRight] = useState(true);
   const [obstacleRect, setObstacleRect] = useState(null);
   const [over, setOver] = useState(false);
+
+  const { data: session } = useSession();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const from = searchParams.get("from");
+
+    if (from === "login" && session?.dbUser) {
+      const { collegeRollNumber, collegeName, phoneNumber } = session.dbUser;
+
+      // If profile details are incomplete, redirect to the profile page
+      if (!collegeRollNumber || !collegeName || !phoneNumber) {
+        redirect("/profile");
+      }
+    }
+  }, [session, searchParams]);
+
+
 
   const gameArea = useRef(null);
   const player = useRef(null);
@@ -115,6 +135,7 @@ const Home = () => {
   useEffect(() => {
     updateBoundaries();
   }, [gameWidth]);
+
 
   return (
     <div className="min-h-screen overflow-x-hidden">
