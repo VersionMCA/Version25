@@ -14,10 +14,6 @@ const Navbar = ({ toggle }) => {
   const session = useSession();
   const user = session.data?.user;
 
-
-
-
-
   return (
     <nav className="fixed mx-auto p-2 md:px-6 top-0 z-50 flex items-center gap-2 w-full">
       <motion.div

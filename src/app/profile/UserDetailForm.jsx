@@ -8,7 +8,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -58,8 +58,18 @@ export default function UserDetailForm({ user }) {
   };
 
   useEffect(() => {
-    if (session?.dbUser) setCurrUser((prev) => session.dbUser);
-  }, [session]);
+    const fetchMyDetails = async () => {
+      try {
+        const res = await axios.get(`${BACKEND_URL}/api/user`);
+        console.log("me", res.data);
+        setCurrUser((prev) => res.data);
+      } catch (error) {
+        toast.error("Unable to fetch your details");
+        console.log("fetch me error", error);
+      }
+    };
+    fetchMyDetails();
+  }, []);
 
   return (
     <form className="flex flex-col gap-4">
