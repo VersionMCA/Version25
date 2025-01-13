@@ -56,7 +56,7 @@ export const authOptions = {
       if (token) {
         // Assign user ID to session
         session.user.id = token.sub;
-        session.dbUser = token.dbUser; // use on frontend
+        session.dbUser = dbUser || token.dbUser; // use on frontend
       }
       return session;
     },
