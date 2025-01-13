@@ -9,7 +9,7 @@ import cloud from "../../../public/assets/cloud.svg";
 
 import React, { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 
 const Home = () => {
   const [active, setActive] = useState(false);
@@ -145,7 +145,7 @@ const Home = () => {
           <Image
             src={velo_svg}
             alt="LOGO"
-            className="relative mainText m-auto w-full sm:w-[90%] xl:w-[80%] rounded-3xl p-20 z-30"
+            className="relative mainText m-auto w-full sm:w-[90%] xl:w-[80%] max-sm:pt-32 max-sm:p-5 rounded-3xl sm:p-20 md:p-32 lg:p-40 z-30"
           />
         </div>
 

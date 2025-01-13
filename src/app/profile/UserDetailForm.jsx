@@ -8,7 +8,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -48,9 +47,10 @@ export default function UserDetailForm({ user }) {
         collegeRollNumber: currUser.collegeRollNumber,
         phoneNumber: currUser.phoneNumber,
       });
-      console.log(response.data);
 
       toast.success("Profile updated successfully");
+      router.push("/");
+      
     } catch (error) {
       console.log("Profile Update Error", error);
       toast.error("Error while updating profile");
@@ -79,7 +79,6 @@ export default function UserDetailForm({ user }) {
           <UserImage image={currUser.image} key={currUser.image} />
         </div>
       </div>
-
       <div>
         <Label className="">Name</Label>
         <Input

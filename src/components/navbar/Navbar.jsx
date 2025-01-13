@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import versionLogo from "../../../public/assets/logo2.png";
+import versionLogo from "../../../public/assets/version_logo.png";
 import UserAccountDropDown from "./UserAccountDropDown";
 // import "./navbar.css"   working without importing
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "../ui/Button";
 import navLinks from "./navLinks";
+import { Button } from "../ui/Button";
 
 const Navbar = ({ toggle }) => {
   const session = useSession();
@@ -25,17 +25,25 @@ const Navbar = ({ toggle }) => {
           type: "spring",
           damping: 10,
         }}
-        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-4 rounded-2xl"
+        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-2 sm:p-4 rounded-xl"
       >
-        <Link href={"/"} className="flex items-center cursor-pointer">
-          <Image src={versionLogo} alt="Logo" width={180} height={60} />
+        <Link
+          href={"/"}
+          className="relative cursor-pointer max-sm:w-[145px] max-sm:h-[34px]  w-[170px] h-[40px] overflow-hidden"
+        >
+          <Image
+            src={versionLogo}
+            fill={true}
+            className="object-contain"
+            alt="Logo"
+          />
         </Link>
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
           {navLinks.map(({ name, link }) => {
             return (
               <li
                 key={name}
-                className="mx-4 pixie md:text-2xl xl:mx-8  hidden md:block"
+                className="mx-3 lg:mx-4 pixie  xl:mx-8  hidden md:block"
               >
                 <Link href={link}>
                   <p className="transition-all codedText tempp   ease-in-out">
@@ -47,12 +55,12 @@ const Navbar = ({ toggle }) => {
           })}
           {!user ? (
             <Button
-              size={"lg"}
+              className="font-semibold max-sm:h-8 max-sm:text-xs bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight"
               onClick={async () => {
                 await signIn();
               }}
             >
-              Login
+              LOGIN{" "}
             </Button>
           ) : (
             ""
@@ -60,7 +68,7 @@ const Navbar = ({ toggle }) => {
           <UserAccountDropDown />
 
           {/* Hamburger */}
-          <li className="flex justify-end border-white text-white items-center basis-full">
+          <li className="flex justify-end  max-sm:h-2 border-white text-white items-center basis-full">
             <button type="button" className="md:hidden " onClick={toggle}>
               <svg
                 // className="invert"
@@ -68,6 +76,7 @@ const Navbar = ({ toggle }) => {
                 width="40"
                 height="40"
                 viewBox="0 0 24 24"
+                className="max-sm:h-8 "
               >
                 <path
                   fill="#fff"
