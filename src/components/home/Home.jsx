@@ -8,6 +8,8 @@ import boy from "../../../public/assets/boy.svg";
 import cloud from "../../../public/assets/cloud.svg";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 
 const Home = () => {
   const [active, setActive] = useState(false);
