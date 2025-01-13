@@ -50,6 +50,7 @@ export default function UserDetailForm({ user }) {
 
       toast.success("Profile updated successfully");
       router.push("/");
+      
     } catch (error) {
       console.log("Profile Update Error", error);
       toast.error("Error while updating profile");
@@ -57,11 +58,27 @@ export default function UserDetailForm({ user }) {
   };
 
   useEffect(() => {
-    if (session?.dbUser) setCurrUser((prev) => session.dbUser);
-  }, [session]);
+    const fetchMyDetails = async () => {
+      try {
+        const res = await axios.get(`${BACKEND_URL}/api/user`);
+        console.log("me", res.data);
+        setCurrUser((prev) => res.data);
+      } catch (error) {
+        toast.error("Unable to fetch your details");
+        console.log("fetch me error", error);
+      }
+    };
+    fetchMyDetails();
+  }, []);
 
   return (
     <form className="flex flex-col gap-4">
+      <Label className="mb-2">Profile Picture</Label>
+      <div className="flex items-center justify-center">
+        <div className="!w-[6rem] !h-[6rem] flex items-center hover:bg-[#030712] p-[0.2rem] justify-center ">
+          <UserImage image={currUser.image} key={currUser.image} />
+        </div>
+      </div>
       <div>
         <Label className="">Name</Label>
         <Input

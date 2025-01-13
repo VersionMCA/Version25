@@ -11,7 +11,7 @@ import {
 } from "../ui/dropdown-menu";
 import { signOut, useSession } from "next-auth/react";
 import { LogOut, UserRound } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/Button";
 import UserImage from "../UserImage";
@@ -101,7 +101,7 @@ export default function UserAccountDropDown() {
                 className="focus:bg-theme-lime group hover:text-black group hover:bg-theme-lime flex cursor-pointer items-center space-x-3 rounded-lg p-3 transition-all duration-200 hover:shadow-md"
                 onClick={async () => {
                   await signOut();
-                  router.push("/");
+                  redirect("/");
                 }}
               >
                 <LogOut

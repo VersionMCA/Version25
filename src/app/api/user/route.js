@@ -3,6 +3,35 @@ import { authOptions } from "@/lib/auth";
 import { prisma } from "@/db/index.mjs";
 import { NextResponse } from "next/server";
 
+export async function GET() {
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session.user)
+    return new NextResponse(JSON.stringify({ message: "Unauthorized" }), {
+      status: 401,
+    });
+
+  const { email } = session.user;
+
+  try {
+    const me = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+
+    return new NextResponse(JSON.stringify(me), { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return new NextResponse(
+      JSON.stringify({ message: "Internal server error." }),
+      {
+        status: 500,
+      },
+    );
+  }
+}
+
 export async function PATCH(req) {
   const session = await getServerSession(authOptions);
 
