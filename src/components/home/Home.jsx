@@ -127,6 +127,7 @@ const Home = () => {
     updateBoundaries();
   }, [gameWidth]);
 
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <section
