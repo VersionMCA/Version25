@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { CardContainer, CardItem } from "../../components/ui/3d-card";
 import Link from "next/link";
+import FaculyMessage from "./FaculyMessageModal";
 function ProfileCard2({ person }) {
-  const { name, image, designation, socialLinks } = person;
+  const { name, image, designation, socialLinks, message } = person;
   return (
     <CardContainer className="inter-var">
       <CardItem translateZ="25">
@@ -27,6 +28,9 @@ function ProfileCard2({ person }) {
                 <Link href={socialLinks.linkedin} target="_blank">
                   Linkedin
                 </Link>
+              )}
+              {message && (
+                <FaculyMessage message={message} designation={designation} />
               )}
             </div>
           </div>
