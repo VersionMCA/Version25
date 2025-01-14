@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import versionLogo from "../../../public/assets/version_logo.png";
+import versionLogo from "../../../public/assets/version_logo_light.png";
 import UserAccountDropDown from "./UserAccountDropDown";
 // import "./navbar.css"   working without importing
 
@@ -38,7 +38,7 @@ const Navbar = ({ toggle }) => {
             alt="Logo"
           />
         </Link>
-        <div className="flex justify-center items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
+        <div className="flex justify-center text-theme-cream items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
           {navLinks.map(({ name, link }) => {
             return (
               <li
