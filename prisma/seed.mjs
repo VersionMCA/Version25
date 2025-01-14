@@ -1,68 +1,61 @@
 import { prisma } from "../src/db/index.mjs";
-
-async function seedEvents() {
-  const events = [
-    {
-      eventName: "CodeFest",
+async function main() {
+  // Create some events
+  const individualEvent = await prisma.event.create({
+    data: {
+      name: "Solo Coding Challenge",
       description:
-        "A competitive coding event to test your algorithmic skills.",
-      type: "Individual",
+        "A coding competition where individuals can participate and showcase their skills.",
+      date: new Date("2025-02-15"),
+      startTime: new Date("2025-02-15T09:00:00"),
+      endTime: new Date("2025-02-15T12:00:00"),
+      venue: "Conference Hall A",
+      type: "INDIVIDUAL", // Individual event
+      minTeamSize: 1,
+      maxTeamSize: 1,
+      image: "https://example.com/solo-event-image.jpg",
     },
-    {
-      eventName: "Hackathon",
-      description: "A 24-hour hackathon for building innovative solutions.",
-      type: "Team",
-    },
-    {
-      eventName: "TechQuiz",
-      description: "A quiz event to challenge your tech knowledge.",
-      type: "Individual",
-    },
-    {
-      eventName: "DesignSprint",
-      description: "A UI/UX design challenge for creative minds.",
-      type: "Team",
-    },
-    {
-      eventName: "AI Workshop",
-      description: "A hands-on workshop on Artificial Intelligence.",
-      type: "Individual",
-    },
-    {
-      eventName: "WebDev Marathon",
-      description: "A competition to create stunning web applications.",
-      type: "Team",
-    },
-    {
-      eventName: "DataDive",
-      description: "A data analysis event to showcase your analytical skills.",
-      type: "Individual",
-    },
-    {
-      eventName: "CyberStrike",
-      description: "A cybersecurity event to defend against attacks.",
-      type: "Team",
-    },
-  ];
+  });
 
-  for (const event of events) {
-    await prisma.event.create({ data: event });
-  }
+  const teamEvent = await prisma.event.create({
+    data: {
+      name: "Hackathon 2025",
+      description:
+        "A team-based hackathon where developers, designers, and creators come together to build amazing projects.",
+      date: new Date("2025-03-20"),
+      startTime: new Date("2025-03-20T10:00:00"),
+      endTime: new Date("2025-03-20T18:00:00"),
+      venue: "Tech Park",
+      type: "TEAM", // Team-based event
+      minTeamSize: 2,
+      maxTeamSize: 5,
+      image: "https://example.com/hackathon-event-image.jpg",
+    },
+  });
+
+  // Create event details for the events
+  await prisma.eventDetail.create({
+    data: {
+      title: "Event Rules",
+      content:
+        "Read the event rules and guidelines carefully before participating.",
+      eventId: individualEvent.id,
+    },
+  });
+
+  await prisma.eventDetail.create({
+    data: {
+      title: "Judging Criteria",
+      content:
+        "The judging will be based on creativity, functionality, and presentation.",
+      eventId: teamEvent.id,
+    },
+  });
+
+  console.log("Seeding completed successfully.");
 }
 
-async function seedDatabase() {
-  try {
-    await seedEvents();
-    console.log("Database seeding completed successfully.");
-  } catch (error) {
-    console.error("Error seeding database:", error);
-    throw error;
-  } finally {
-    await prisma.$disconnect();
-  }
-}
-
-seedDatabase().catch((error) => {
+main().catch((error) => {
   console.error("An unexpected error occurred during seeding:", error);
   process.exit(1);
 });
