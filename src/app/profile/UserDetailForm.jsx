@@ -14,7 +14,7 @@ const BACKEND_URL =
 
 export default function UserDetailForm({ user }) {
   const { data: session } = useSession();
-  const [currUser, setCurrUser] = useState(user);
+  const [currUser, setCurrUser] = useState(null);
   const router = useRouter();
 
   const handleProfileChange = async (e) => {
@@ -75,7 +75,7 @@ export default function UserDetailForm({ user }) {
       <Label className="mb-2">Profile Picture</Label>
       <div className="flex items-center justify-center">
         <div className="!w-[6rem] !h-[6rem] flex items-center hover:bg-[#030712] p-[0.2rem] justify-center ">
-          <UserImage image={currUser.image} key={currUser.image} />
+          <UserImage image={currUser?.image} key={currUser?.image} />
         </div>
       </div>
       <div>
@@ -83,7 +83,7 @@ export default function UserDetailForm({ user }) {
         <Input
           disabled
           placeholder="Enter your name"
-          value={currUser.name}
+          value={currUser?.name}
           className="p-2 mt-2"
         />
       </div>
@@ -92,7 +92,7 @@ export default function UserDetailForm({ user }) {
         <Input
           disabled
           placeholder="Enter your email"
-          value={currUser.email}
+          value={currUser?.email}
           className="p-2 mt-2"
         />
       </div>
@@ -100,7 +100,7 @@ export default function UserDetailForm({ user }) {
         <Label className="">College Name</Label>
         <Input
           placeholder="Enter your college name"
-          value={currUser.collegeName}
+          value={currUser?.collegeName}
           className="p-2 mt-2"
           onChange={(e) =>
             setCurrUser((prev) => ({ ...prev, collegeName: e.target.value }))
@@ -111,7 +111,7 @@ export default function UserDetailForm({ user }) {
         <Label className="">College RollNumber</Label>
         <Input
           placeholder="Enter your college roll number"
-          value={currUser.collegeRollNumber}
+          value={currUser?.collegeRollNumber}
           className="p-2 mt-2"
           onChange={(e) =>
             setCurrUser((prev) => ({
@@ -126,7 +126,7 @@ export default function UserDetailForm({ user }) {
         <Input
           type="tel"
           placeholder="Enter your contact number"
-          value={currUser.phoneNumber}
+          value={currUser?.phoneNumber}
           className="p-2 mt-2"
           onChange={(e) =>
             setCurrUser((prev) => ({ ...prev, phoneNumber: e.target.value }))

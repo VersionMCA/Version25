@@ -4,6 +4,9 @@ import eventData from "./eventData";
 import "./page.scss";
 import EventCard from "./EventCard";
 import EventThumbnail from "./EventThumbnail";
+import axios from "axios";
+
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
 
 function Events() {
   const [newItemActive, setNewItemActive] = React.useState(0);
@@ -39,6 +42,14 @@ function Events() {
 
     showSlider(newItemActive);
   }, [newItemActive]);
+
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      const res = await axios.get(`${BACKEND_URL}/api/events/fetchEvents`);
+      console.log("event ", res.data);
+    };
+    fetchAllEvents();
+  }, []);
 
   function moveLeft() {
     const scrollAmount = Thumbnail.current.clientWidth;
