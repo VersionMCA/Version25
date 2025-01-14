@@ -58,7 +58,12 @@ export default function page() {
             onClick={() => router.push("/events")}
           >
             <ChevronLeft />
-            <div className="max-sm:hidden">BACK</div>
+            <button
+              onClick={() => router.push("/events")}
+              className="max-sm:hidden"
+            >
+              BACK
+            </button>
             <ChevronRight className="max-sm:hidden" />
           </div>
           <h1 className=" text-4xl lg:text-6xl font-primary">{event?.name}</h1>

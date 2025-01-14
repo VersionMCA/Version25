@@ -4,7 +4,6 @@ import eventData from "./eventData";
 import "./page.scss";
 import EventCard from "./EventCard";
 import EventThumbnail from "./EventThumbnail";
-import { CodeSquare } from "lucide-react";
 
 function Events() {
   const [newItemActive, setNewItemActive] = React.useState(0);

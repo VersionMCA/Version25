@@ -11,6 +11,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import { redirect, useSearchParams } from "next/navigation";
 
+import { useSession } from "next-auth/react";
+import { redirect, useSearchParams } from "next/navigation";
+
 const Home = () => {
   const [active, setActive] = useState(false);
   const [gameWidth, setGameWidth] = useState(1600);
