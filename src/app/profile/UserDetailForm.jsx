@@ -50,7 +50,6 @@ export default function UserDetailForm({ user }) {
 
       toast.success("Profile updated successfully");
       router.push("/");
-      
     } catch (error) {
       console.log("Profile Update Error", error);
       toast.error("Error while updating profile");
