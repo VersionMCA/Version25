@@ -5,6 +5,19 @@ export async function PUT(request, { params }) {
   const { id } = await params;
   try {
     const body = await request.json();
+    const eventDate = body.date ? new Date(body.date) : null;
+    const eventStartTime = eventDate ? new Date(body.date) : null;
+    const eventEndTime = eventDate ? new Date(body.date) : null;
+    if (body.date) {
+      if (body.startTime) {
+        eventStartTime.setHours(body.startTime.split(":")[0]);
+        eventStartTime.setMinutes(body.startTime.split(":")[1]);
+      }
+      if (body.endTime) {
+        eventEndTime.setHours(body.endTime.split(":")[0]);
+        eventEndTime.setMinutes(body.endTime.split(":")[1]);
+      }
+    }
 
     const updatedEvent = await prisma.event.update({
       where: { id: Number(id) },
@@ -12,8 +25,8 @@ export async function PUT(request, { params }) {
         name: body.name,
         description: body.description,
         date: body.date ? new Date(body.date) : null,
-        startTime: body.startTime ? new Date(body.startTime) : null,
-        endTime: body.endTime ? new Date(body.endTime) : null,
+        startTime: body.date && body.startTime ? eventStartTime : null,
+        endTime: body.date && body.endTime ? eventEndTime : null,
         venue: body.venue,
         type: body.type,
         minTeamSize: body.minTeamSize,
@@ -31,7 +44,7 @@ export async function PUT(request, { params }) {
 
     return NextResponse.json(updatedEvent, { status: 200 });
   } catch (error) {
-    console.error("Error updating event:", error);
+    console.log("Error updating event:", error.stack);
     return NextResponse.json(
       { error: "Error updating event" },
       { status: 500 },
