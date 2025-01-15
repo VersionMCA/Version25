@@ -51,6 +51,7 @@ export default function Page() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [, updateEvents] = useAtom(updateEventAtom);
 
+
   const {
     register,
     control,
@@ -73,7 +74,6 @@ export default function Page() {
     if (event) {
       setValue("name", event.name);
       setValue("description", event.description);
-
       const formattedDate = new Date(event.date).toISOString().split("T")[0];
       const formattedStartTime = new Date(event.startTime)
         .toISOString()

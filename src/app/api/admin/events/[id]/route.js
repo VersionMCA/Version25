@@ -18,7 +18,6 @@ export async function PUT(request, { params }) {
         eventEndTime.setMinutes(body.endTime.split(":")[1]);
       }
     }
-
     const updatedEvent = await prisma.event.update({
       where: { id: Number(id) },
       data: {
