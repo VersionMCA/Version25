@@ -51,7 +51,6 @@ export default function Page() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [, updateEvents] = useAtom(updateEventAtom);
 
-
   const {
     register,
     control,
