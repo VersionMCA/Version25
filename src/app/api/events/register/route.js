@@ -1,11 +1,8 @@
 import { prisma } from "@/db/index.mjs";
 
-// register for an event
-// For individual events, the request body should contain userId and eventId
-// For team events, the request body should contain teamName, teamMembers emails, eventId, and leaderUserId
 export async function POST(req) {
   try {
-    const { userId, eventId, teamName, teamMembers } = await req.json(); // Parse everything in one step
+    const { userId, eventId, teamName, teamMembers } = await req.json();
 
     // User validation
     if (!userId) {
@@ -13,12 +10,21 @@ export async function POST(req) {
         status: 401,
       });
     }
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+    });
 
+    if (!user) {
+      return new Response(JSON.stringify("User not found"), {
+        status: 404,
+      });
+    }
+
+    // Event validation
     const event = await prisma.event.findUnique({
       where: { id: eventId },
     });
 
-    // Event validation
     if (!event) {
       return new Response(JSON.stringify({ message: "Event not found" }), {
         status: 404,
@@ -39,7 +45,7 @@ export async function POST(req) {
     }
 
     // Individual event registration
-    if (event.type === "Individual") {
+    if (event.type === "INDIVIDUAL") {
       const individualRegistration = await prisma.registration.create({
         data: {
           userId: userId,
@@ -59,7 +65,7 @@ export async function POST(req) {
     }
 
     // Team event registration
-    if (event.type === "Team") {
+    if (event.type === "TEAM") {
       if (!teamName || !teamMembers || !Array.isArray(teamMembers)) {
         return new Response(JSON.stringify({ message: "Invalid team data" }), {
           status: 400,

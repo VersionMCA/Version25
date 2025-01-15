@@ -35,7 +35,7 @@ export async function POST(req) {
       });
     }
   } catch (error) {
-    console.error("Error fetching event registeration status", error);
+    console.log("Error fetching event registeration status", error.stack);
     return new Response(JSON.stringify({ error: "Internal server error" }), {
       status: 500,
     });

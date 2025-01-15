@@ -31,8 +31,6 @@ const eventsData = [
         title: "Event Structure",
         content:
           "1. **Preliminary Round**: A short duration round with relatively easier problems to qualify participants for the final round.\n2. **Final Round**: A longer round featuring challenging problems to determine the winners.\n3. Real-time leaderboards will be displayed to keep the competition intense and exciting.",
-<<<<<<< HEAD
-=======
       },
       {
         title: "Description",
@@ -53,16 +51,11 @@ const eventsData = [
         title: "Event Structure",
         content:
           "1. **Preliminary Round**: A short duration round with relatively easier problems to qualify participants for the final round.\n2. **Final Round**: A longer round featuring challenging problems to determine the winners.\n3. Real-time leaderboards will be displayed to keep the competition intense and exciting.",
->>>>>>> 88d2dba4147c6293fbf16eebd17b82635761e950
       },
       {
         title: "Contact",
         content:
-<<<<<<< HEAD
-          "For any queries or assistance, feel free to contact:\n- **John Doe**: +91 9876543210\n- **Jane Smith**: +91 9123456789",
-=======
           "For any queries or assistance, feel free to contact:\n- **John Doe**: +91 9876543210\n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789",
->>>>>>> 88d2dba4147c6293fbf16eebd17b82635761e950
       },
     ],
   },

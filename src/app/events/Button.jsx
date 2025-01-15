@@ -34,6 +34,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  onClick: () => { },
-  onKeyDown: () => { },
+  onClick: () => {},
+  onKeyDown: () => {},
 };

@@ -15,23 +15,19 @@ function Events() {
   useEffect(() => {
     const showSlider = (nextItem) => {
       const items = document.querySelectorAll(
-        `.event__slider .allEvents .eventCard__item`
+        `.event__slider .allEvents .eventCard__item`,
       );
-      console.log("items", items.length);
       const thumbnails = document.querySelectorAll(
-        `.thumbnail .thumbnail__item`
+        `.thumbnail .thumbnail__item`,
       );
-      console.log("thumbnails", thumbnails.length);
 
       const itemActiveOld = document.querySelector(
-        `.event__slider .allEvents .eventCard__item.active`
+        `.event__slider .allEvents .eventCard__item.active`,
       );
-      console.log("itemActiveOld", itemActiveOld);
 
       const thumbnailActiveOld = document.querySelector(
-        `.thumbnail .thumbnail__item.active`
+        `.thumbnail .thumbnail__item.active`,
       );
-      console.log("thumbnailActiveOld", thumbnailActiveOld);
 
       // remove active class from old active item
       if (itemActiveOld) itemActiveOld.classList.remove(`active`);
