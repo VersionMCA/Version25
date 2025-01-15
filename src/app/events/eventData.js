@@ -31,11 +31,38 @@ const eventsData = [
         title: "Event Structure",
         content:
           "1. **Preliminary Round**: A short duration round with relatively easier problems to qualify participants for the final round.\n2. **Final Round**: A longer round featuring challenging problems to determine the winners.\n3. Real-time leaderboards will be displayed to keep the competition intense and exciting.",
+<<<<<<< HEAD
+=======
+      },
+      {
+        title: "Description",
+        content:
+          "CodeFest is the ultimate test of programming and problem-solving prowess. Participants will face a variety of algorithmic challenges, ranging from beginner to advanced levels, aimed at assessing logical thinking, efficiency, and technical expertise. Compete against the brightest minds, solve complex problems, and secure a spot at the top of the leaderboard. Whether you're a coding enthusiast or a seasoned competitive programmer, CodeFest offers a thrilling experience that will push your limits.",
+      },
+      {
+        title: "Judging Criteria",
+        content:
+          "1. **Accuracy**: Each solution must correctly solve the given problem as per the specified constraints.\n2. **Efficiency**: Algorithms will be evaluated based on their time and space complexity.\n3. **Speed**: Time taken to submit accurate solutions will influence rankings.\n4. **Code Quality**: Bonus points may be awarded for clean, well-documented, and readable code.",
+      },
+      {
+        title: "Rules",
+        content:
+          "1. Each participant will compete individually and solve a series of programming problems.\n2. The use of any plagiarized or pre-written code is strictly prohibited. Original solutions are mandatory.\n3. Participants must adhere to the time limits specified for each round.\n4. The use of online resources is allowed only for syntax or documentation reference.\n5. Any violation of the rules may result in disqualification at the organizers' discretion.",
+      },
+      {
+        title: "Event Structure",
+        content:
+          "1. **Preliminary Round**: A short duration round with relatively easier problems to qualify participants for the final round.\n2. **Final Round**: A longer round featuring challenging problems to determine the winners.\n3. Real-time leaderboards will be displayed to keep the competition intense and exciting.",
+>>>>>>> 88d2dba4147c6293fbf16eebd17b82635761e950
       },
       {
         title: "Contact",
         content:
+<<<<<<< HEAD
           "For any queries or assistance, feel free to contact:\n- **John Doe**: +91 9876543210\n- **Jane Smith**: +91 9123456789",
+=======
+          "For any queries or assistance, feel free to contact:\n- **John Doe**: +91 9876543210\n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789 \n- **Jane Smith**: +91 9123456789",
+>>>>>>> 88d2dba4147c6293fbf16eebd17b82635761e950
       },
     ],
   },

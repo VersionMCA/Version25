@@ -8,6 +8,8 @@ import boy from "../../../public/assets/boy.svg";
 import cloud from "../../../public/assets/cloud.svg";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useSession } from "next-auth/react";
+import { redirect, useSearchParams } from "next/navigation";
 
 const Home = () => {
   const [active, setActive] = useState(false);
@@ -15,6 +17,17 @@ const Home = () => {
   const [isFacingRight, setFacingRight] = useState(true);
   const [obstacleRect, setObstacleRect] = useState(null);
   const [over, setOver] = useState(false);
+
+  const { data: session } = useSession();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const from = searchParams.get("from");
+
+    if (from === "login" && session?.user?.incompleteProfile) {
+      redirect("/profile");
+    }
+  }, [session, searchParams]);
 
   const gameArea = useRef(null);
   const player = useRef(null);
@@ -117,7 +130,7 @@ const Home = () => {
   }, [gameWidth]);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="relative h-screen w-screen overflow-hidden ">
       <section
         className=" h-screen max-w-screen overflow-x-hidden"
         id="gameSection"
@@ -125,18 +138,18 @@ const Home = () => {
         onMouseLeave={() => setActive(false)}
       >
         <div className="absolute inset-0 z-20 animateThis">
-          <div className="gridAnimate absolute top-0 -left-4 w-1/4 h-2/4 bg-[#370657] opacity-40 transform blur-[60px] -rotate-12 animate-circle2" />
-          <div className="gridAnimate1 absolute bottom-0 -right-0 w-1/2 h-3/4 bg-[#370657] opacity-40 blur-[120px] animate-circle2" />
+          <div className="gridAnimate border absolute top-0 -left-4 w-1/4 h-2/4 bg-theme-blue_dark opacity-50 transform blur-[60px] -rotate-12 animate-circle2" />
+          <div className="gridAnimate1 absolute bottom-0 -right-0 w-1/2 h-3/4 bg-theme-blue_light opacity-20 blur-[120px] animate-circle2" />
         </div>
         <div className="absoulte top-1/2 left-1/2 -transform-x-1/2 -transform-y-1/2  mt-[5%] md:mt-0 select-none">
           <Image
             src={velo_svg}
             alt="LOGO"
-            className="relative mainText m-auto w-full sm:w-[90%] xl:w-[80%] rounded-3xl p-20 z-30"
+            className="relative mainText m-auto w-full sm:w-[90%] xl:w-[80%] max-sm:pt-32 max-sm:p-5 rounded-3xl sm:p-20 md:p-32 lg:p-40 z-30"
           />
         </div>
 
-        <div className="absolute top-0 myGrid w-screen h-[110%] z-20"></div>
+        <div className="absolute top-0 myGrid w-screen h-screen z-20"></div>
         <div className="">
           <div
             className="absolute bottom-0 right-10 h-screen w-20"
@@ -182,7 +195,7 @@ const Home = () => {
               className="w-full sm:w-1/2 select-none"
             />
           </div>
-          <div className="absolute -bottom-16 h-20 w-screen ">
+          {/* <div className="absolute -bottom-16 h-20 w-screen ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1000 100"
@@ -190,7 +203,7 @@ const Home = () => {
             >
               <path d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z"></path>
             </svg>
-          </div>
+          </div> */}
         </div>
         <div
           id="fireworks"
@@ -202,11 +215,6 @@ const Home = () => {
           <div className="firework"></div>
         </div>
       </section>
-      {/*Add shadow property... */}
-
-      {/* <section className = "w-screen bg-theme-black mt-[5%] h-screen">   
-    ABOUT US...
-   </section> */}
     </div>
   );
 };

@@ -1,13 +1,14 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import eventData from './eventData';
-import './page.scss';
-import EventCard from './EventCard';
-import EventThumbnail from './EventThumbnail';
-import { CodeSquare } from 'lucide-react';
+"use client";
+import React, { useEffect, useRef } from "react";
+import "./page.scss";
+import EventCard from "./EventCard";
+import EventThumbnail from "./EventThumbnail";
+import { useAtom } from "jotai";
+import { eventsAtom } from "../../atoms/eventsAtom";
 
 function Events() {
   const [newItemActive, setNewItemActive] = React.useState(0);
+  const [eventData] = useAtom(eventsAtom);
 
   const Thumbnail = useRef(null);
 
@@ -16,26 +17,30 @@ function Events() {
       const items = document.querySelectorAll(
         `.event__slider .allEvents .eventCard__item`
       );
+      console.log("items", items.length);
       const thumbnails = document.querySelectorAll(
         `.thumbnail .thumbnail__item`
       );
+      console.log("thumbnails", thumbnails.length);
 
       const itemActiveOld = document.querySelector(
         `.event__slider .allEvents .eventCard__item.active`
       );
+      console.log("itemActiveOld", itemActiveOld);
 
       const thumbnailActiveOld = document.querySelector(
         `.thumbnail .thumbnail__item.active`
       );
+      console.log("thumbnailActiveOld", thumbnailActiveOld);
 
       // remove active class from old active item
-      if (itemActiveOld !== null) itemActiveOld.classList.remove(`active`);
-      if (thumbnailActiveOld !== null)
-        thumbnailActiveOld.classList.remove(`active`);
+      if (itemActiveOld) itemActiveOld.classList.remove(`active`);
+      if (thumbnailActiveOld) thumbnailActiveOld.classList.remove(`active`);
 
       // add active class to new active item
-      items[nextItem].classList.add(`active`);
-      thumbnails[nextItem].classList.add(`active`);
+      if (nextItem < items.length) items[nextItem].classList.add(`active`);
+      if (nextItem < thumbnails.length)
+        thumbnails[nextItem].classList.add(`active`);
     };
 
     showSlider(newItemActive);
@@ -46,7 +51,7 @@ function Events() {
     Thumbnail.current.scrollBy({
       top: 0,
       left: -scrollAmount - 15,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
@@ -55,7 +60,7 @@ function Events() {
     Thumbnail.current.scrollBy({
       top: 0,
       left: scrollAmount + 15,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
@@ -64,17 +69,7 @@ function Events() {
       <div className="event__slider font-secondary">
         <div className="allEvents">
           {eventData.map((event) => {
-            return (
-              <EventCard
-                key={event.id}
-                id={event.id}
-                content={event.description}
-                imgLink={event.image}
-                name={event.name}
-                date={event.date}
-                teamSize={event?.teamSize}
-              />
-            );
+            return <EventCard key={event.id} event={event} />;
           })}
         </div>
         <div className="thumbnailContainer">
@@ -83,12 +78,13 @@ function Events() {
             aria-hidden="true"
             onClick={moveLeft}
           >
-            <img src="/assets/carouselArrow.svg" alt="leftArrow" className="h-12" />
+            <img
+              src="/assets/carouselArrow.svg"
+              alt="leftArrow"
+              className="h-12"
+            />
           </div>
-          <div
-            className="thumbnail font-primary no-scrollbar"
-            ref={Thumbnail}
-          >
+          <div className="thumbnail font-primary no-scrollbar" ref={Thumbnail}>
             {eventData.map((event, index) => {
               return (
                 <EventThumbnail
@@ -106,7 +102,11 @@ function Events() {
             aria-hidden="true"
             onClick={moveRight}
           >
-            <img src="/assets/carouselArrow.svg" alt="rightArrow" className="h-12" />
+            <img
+              src="/assets/carouselArrow.svg"
+              alt="rightArrow"
+              className="h-12"
+            />
           </div>
         </div>
       </div>

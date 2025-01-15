@@ -18,7 +18,7 @@ model User {
   collegeRollNumber String?
   phoneNumber       String?
 
-  accounts          Account[]
+  accounts          Account[] // can it be null?
   sessions          Session[]
   registrations     Registration[]
   teams             Team[]
@@ -48,7 +48,6 @@ model Account {
   @@id([provider, providerAccountId])
 }
 
- 
 model Session {
   sessionToken String   @unique
   userId       String
@@ -66,32 +65,48 @@ model VerificationToken {
  
   @@id([identifier, token])
 }
+enum EventType {
+  INDIVIDUAL
+  TEAM
+}
 
- 
 model Event {
-  id          String    @id @default(cuid())
-  eventName   String    @unique
-  description String
-  type        String
-  createdAt   DateTime  @default(now())
+  id            Int     @id @default(autoincrement()) 
+  name          String  @unique
+  description   String?
+  date          DateTime?
+  startTime     DateTime?
+  endTime       DateTime?
+  venue         String?
+  type          EventType
+  minTeamSize   Int
+  maxTeamSize   Int
+  image         String
 
-  // Relations
-  teams       Team[]
+  eventDetails  EventDetail[]
+  teams        Team[]  
   registrations Registration[]
+}
+
+model EventDetail {
+  id       String   @id @default(cuid())
+  title    String
+  content  String
+  eventId  Int
+  event    Event    @relation(fields: [eventId], references: [id], onDelete: Cascade,onUpdate: Cascade)
 }
 
 
 model Registration {
   id                String          @id @default(cuid())
   userId            String
-  eventId           String
+  eventId           Int
   teamId            String?         // Nullable for individual events
   user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  event             Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  team              Team?           @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  event             Event           @relation(fields: [eventId], references: [id], onDelete: Cascade,onUpdate: Cascade)
+  team              Team?           @relation(fields: [teamId], references: [id], onDelete: Cascade,onUpdate: Cascade) 
 
   createdAt         DateTime        @default(now())
-
   @@unique([userId, eventId])       // Ensures unique registration for the same user in an event
 }
 
@@ -100,7 +115,7 @@ model Team {
   id                String          @id @default(cuid())
   teamName          String
   leaderId          String          // Foreign key referencing User (leader)
-  eventId           String          // Foreign key referencing Event
+  eventId           Int             // Foreign key referencing Event
   createdAt         DateTime        @default(now())
 
   registrations     Registration[]  // Relation to Registration model

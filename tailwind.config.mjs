@@ -139,7 +139,11 @@ export default {
       },
       clipPath: {
         custom:
+<<<<<<< HEAD
           "polygon(0 0, calc(100% - 17px) 0, 100% 17px, 100% 100%, 17px 100%, 0 calc(100% - 17px))",
+=======
+          "polygon(0 0, calc(100% - 18px) 0, 100% 12px, 100% 100%, 18px 100%, 0 calc(100% - 12px))",
+>>>>>>> 88d2dba4147c6293fbf16eebd17b82635761e950
       },
     },
   },
