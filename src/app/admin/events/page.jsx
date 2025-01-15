@@ -9,56 +9,24 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/Button";
-import { eventsAtom } from "../../../atoms/eventsAtom";
 import { useAtom } from "jotai";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import {
+  eventsAtom,
+  removeEventAtom,
+  removeTodoAtom,
+} from "../../../atoms/eventsAtom";
 
 export default function EventsPage() {
   const [events, setEvents] = useAtom(eventsAtom);
-  const [loading, setLoading] = useState(false);
-
-  const fetchEvents = async () => {
-    try {
-      const res = await fetch("/api/events");
-      if (!res.ok) throw new Error("Failed to fetch events");
-      const data = await res.json();
-      setEvents(data);
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to fetch events.");
-    }
-  };
-
-  useEffect(() => {
-    if (events.length === 0) fetchEvents();
-  }, []);
-
-  // Delete event by ID
-  const handleDelete = async (id) => {
-    setLoading(true);
-    if (confirm("Are you sure you want to delete this event?")) {
-      try {
-        const res = await fetch(`/api/admin/events/${id}`, {
-          method: "DELETE",
-        });
-        fetchEvents();
-        if (!res.ok) throw new Error("Failed to delete event");
-        toast.success("Event deleted successfully!");
-      } catch (error) {
-        toast.error("Error deleting event.");
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
 
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">All Events</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event) => (
-          <EventCard key={event.id} event={event} handleDelete={handleDelete} />
+          <EventCard key={event.id} event={event} />
         ))}
       </div>
 
@@ -69,8 +37,27 @@ export default function EventsPage() {
   );
 }
 
-const EventCard = ({ event, handleDelete }) => {
+const EventCard = ({ event }) => {
   const [loading, setLoading] = useState(false);
+  const [, removeEvent] = useAtom(removeEventAtom);
+
+  // Delete event by ID
+  const handleDelete = async (id) => {
+    if (confirm("Are you sure you want to delete this event?")) {
+      setLoading(true);
+      try {
+        const res = await fetch(`/api/admin/events/${id}`, {
+          method: "DELETE",
+        });
+        removeEvent(id);
+        toast.success("Event deleted successfully!");
+      } catch (error) {
+        toast.error("Error deleting event.");
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
 
   return (
     <Card className="shadow-lg text-foreground border rounded-lg">
@@ -99,7 +86,6 @@ const EventCard = ({ event, handleDelete }) => {
         </Link>
         <Button
           variant="destructive"
-          disabled={loading}
           onClick={() => handleDelete(event.id)}
           className="w-full"
         >

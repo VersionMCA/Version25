@@ -60,8 +60,6 @@ export default function AddEventPage() {
 
   // Form submission
   const onSubmit = async (data) => {
-    console.log(data);
-
     setIsSubmitting(true);
     if (data.minTeamSize > data.maxTeamSize) {
       toast.error(
@@ -175,7 +173,7 @@ export default function AddEventPage() {
           <select
             id="type"
             {...register("type")}
-            className="w-full mt-1 bg-black"
+            className="w-full mt-1 bg-black  border h-9"
           >
             <option value="INDIVIDUAL">INDIVIDUAL</option>
             <option value="TEAM">TEAM</option>

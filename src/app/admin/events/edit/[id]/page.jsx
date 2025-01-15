@@ -9,8 +9,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useAtom } from "jotai";
-import { eventsAtom } from "../../../../../atoms/eventsAtom";
+import {
+  eventByIdAtom,
+  eventsAtom,
+  updateEventAtom,
+} from "../../../../../atoms/eventsAtom";
 import { z } from "zod";
+import { toast } from "react-toastify";
+import toastStyle from "@/utilities/toastStyle";
 
 const eventSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -39,11 +45,12 @@ const eventSchema = z.object({
 
 export default function Page() {
   const { id } = useParams();
+  const [getEventById] = useAtom(eventByIdAtom);
+  const event = getEventById(id);
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [events, setEvents] = useAtom(eventsAtom);
-  const [event, setEvent] = useState(null);
+  const [, updateEvents] = useAtom(updateEventAtom);
+
 
   const {
     register,
@@ -63,45 +70,32 @@ export default function Page() {
     name: "eventDetails",
   });
 
-  const fetchEvents = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/events");
-      if (!res.ok) throw new Error("Failed to fetch events");
-      const data = await res.json();
-      setEvents(data);
-      const selectedEvent = data.find((event) => event.id == parseInt(id));
-      setEvent(selectedEvent);
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to fetch events.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (events.length === 0) {
-      fetchEvents();
-    } else {
-      const selectedEvent = events.find((event) => event.id == parseInt(id));
-      setEvent(selectedEvent);
-    }
-  }, [events, id]);
-
   useEffect(() => {
     if (event) {
       setValue("name", event.name);
       setValue("description", event.description);
-      setValue("date", event.date);
-      setValue("startTime", event.startTime);
-      setValue("endTime", event.endTime);
+      const formattedDate = new Date(event.date).toISOString().split("T")[0];
+      const formattedStartTime = new Date(event.startTime)
+        .toISOString()
+        .split("T")[1]
+        .split(".")[0];
+      const formattedEndTime = new Date(event.endTime)
+        .toISOString()
+        .split("T")[1]
+        .split(".")[0];
+      setValue("date", formattedDate);
+      setValue("startTime", formattedStartTime);
+      setValue("endTime", formattedEndTime);
+
       setValue("venue", event.venue);
       setValue("type", event.type);
       setValue("minTeamSize", event.minTeamSize);
       setValue("maxTeamSize", event.maxTeamSize);
       setValue("image", event.image);
       setValue("eventDetails", event.eventDetails);
+    } else {
+      toast.error("Error fetching event data");
+      router.push("/admin/events");
     }
   }, [event, setValue]);
 
@@ -117,20 +111,16 @@ export default function Page() {
       });
 
       if (!response.ok) throw new Error("Failed to update event");
-
-      alert("Event updated successfully!");
+      updateEvents(data);
+      toast.success("Event updated successfully!", toastStyle);
       router.push("/events");
     } catch (error) {
       console.error(error);
-      alert("Error updating event!");
+      toast.error("Error updating event!", toastStyle);
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  if (loading) {
-    return <p>Loading event details...</p>;
-  }
 
   if (!event) {
     return <p>Event not found!</p>;
@@ -210,12 +200,14 @@ export default function Page() {
         {/* Event Type */}
         <div>
           <Label htmlFor="type">Event Type</Label>
-          <Input
+          <select
             id="type"
             {...register("type")}
-            className="w-full mt-1"
-            placeholder="Enter event type"
-          />
+            className="w-full mt-1 bg-black border h-9"
+          >
+            <option value="INDIVIDUAL">INDIVIDUAL</option>
+            <option value="TEAM">TEAM</option>
+          </select>
           {errors.type && (
             <span className="text-red-500">{errors.type.message}</span>
           )}
