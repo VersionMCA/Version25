@@ -3,7 +3,7 @@ const EEC = {
   Chairperson: [
     {
       name: "Abhiusnees Nandi",
-      image: "/profile_images/Abhi_Nandi.jpg",
+      image: "/profile_images/Abhi_Nandi.jpeg",
       designation: "EEC Chairperson",
       socialLinks: {
         github: "#",
@@ -14,7 +14,7 @@ const EEC = {
   Heads: [
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Vivek_Kumar.jpg",
+      image: "/profile_images/Vivek_Kumar.jpeg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/109-Vivek",
@@ -23,7 +23,7 @@ const EEC = {
     },
     {
       name: "Nikhil Chhipa",
-      image: "/profile_images/Nikhil_Chippa.jpg",
+      image: "/profile_images/Nikhil_Chippa.jpeg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/chhipanikhil9",
@@ -34,7 +34,7 @@ const EEC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -43,17 +43,7 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -63,7 +53,7 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -73,7 +63,7 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -83,7 +73,17 @@ const EEC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -98,7 +98,7 @@ const Faculty = {
   Heads: [
     {
       name: "Dr. Michael Arock",
-      image: "/profile_images/michael-sir.jpg",
+      image: "/profile_images/michael-sir.jpeg",
       message:
         "I am a Professor in the Department of Computer Science and Engineering at the National Institute of Technology, Tiruchirappalli. I received my Ph.D. in Computer Science from the Indian Institute of Technology, Madras, India. My research interests include Data Mining, Machine Learning, and Bioinformatics. I am a member of the ACM and the IEEE.",
       designation: "HOD",
@@ -109,7 +109,7 @@ const Faculty = {
     },
     {
       name: "Dr.(Mrs.) S. Sangeetha",
-      image: "/profile_images/sangeetha-mam.jpg",
+      image: "/profile_images/sangeetha.png",
       message:
         "I am an Assistant Professor in the Department of Computer Science and Engineering at the National Institute of Technology, Tiruchirappalli. I received my Ph.D. in Computer Science from the Indian Institute of Technology, Madras, India. My research interests include Data Mining, Machine Learning, and Bioinformatics. I am a member of the ACM and the IEEE.",
       designation: "Staff Advisor",
@@ -125,7 +125,7 @@ const CCC = {
   Chairperson: [
     {
       name: "Chirag Agarwal",
-      image: "/profile_images/Chirag_Agarwal.png",
+      image: "/profile_images/Chirag_Agarwal.jpeg",
       designation: "Chairperson",
       socialLinks: {
         github: "https://github.com/Chiragarwall",
@@ -136,7 +136,7 @@ const CCC = {
   Heads: [
     {
       name: "Rohit Mishra",
-      image: "/profile_images/Rohit_Mishra.jpg",
+      image: "/profile_images/Rohit_Mishra.jpeg",
       designation: "Secratory",
 
       socialLinks: {
@@ -146,7 +146,7 @@ const CCC = {
     },
     {
       name: "Astik Verma",
-      image: "/profile_images/Astik_Varma.jpg",
+      image: "/profile_images/Astik_Varma.jpeg",
       designation: "Treasurer",
 
       socialLinks: {
@@ -156,7 +156,7 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Vivek_Kumar.jpg",
+      image: "/profile_images/Vivek_Kumar.jpeg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/109-Vivek",
@@ -165,7 +165,7 @@ const CCC = {
     },
     {
       name: "Nikhil Chhipa",
-      image: "/profile_images/Nikhil_Chippa.jpg",
+      image: "/profile_images/Nikhil_Chippa.jpeg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/chhipanikhil9",
@@ -174,7 +174,7 @@ const CCC = {
     },
     {
       name: "Nitin Pandey",
-      image: "/profile_images/Nitin_Pandey.jpg",
+      image: "/profile_images/Nitin_Pandey.jpeg",
       designation: "PPC Head",
 
       socialLinks: {
@@ -184,7 +184,7 @@ const CCC = {
     },
     {
       name: "Sahil Kumar",
-      image: "/profile_images/Sahil_Kumar.jpg",
+      image: "/profile_images/Sahil_Kumar.jpeg",
       designation: "PRC Head",
 
       socialLinks: {
@@ -194,7 +194,7 @@ const CCC = {
     },
     {
       name: "Prateek Dwivedi",
-      image: "/profile_images/Prateek_Dwiwedi.jpg",
+      image: "/profile_images/Prateek_Dwiwedi.jpeg",
       designation: "ARC Head",
 
       socialLinks: {
@@ -205,7 +205,7 @@ const CCC = {
     },
     {
       name: "Amandeep",
-      image: "/profile_images/Amandeep_vaid.jpg",
+      image: "/profile_images/Amandeep_vaid.jpeg",
       designation: "HRC Head",
 
       socialLinks: {
@@ -215,7 +215,7 @@ const CCC = {
     },
     {
       name: "Vaibhav Gupta",
-      image: "/profile_images/Vaibhav_Gupta.jpg",
+      image: "/profile_images/Vaibhav_Gupta.jpeg",
       designation: "HRC Head",
 
       socialLinks: {
@@ -230,7 +230,7 @@ const PPC = {
   Chairperson: [
     {
       name: "Pawan Agarwal",
-      image: "/profile_images/Pawan_Agarwal.jpg",
+      image: "/profile_images/Pawan_Agarwal.jpeg",
       designation: "Chairperson",
       socialLinks: {
         github: "https://github.com/pawan-git7979",
@@ -241,7 +241,7 @@ const PPC = {
   Heads: [
     {
       name: "Nitin Pandey",
-      image: "/profile_images/Nitin_Pandey.jpg",
+      image: "/profile_images/Nitin_Pandey.jpeg",
       designation: "PPC Head",
 
       socialLinks: {
@@ -253,7 +253,7 @@ const PPC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -262,17 +262,7 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -282,7 +272,7 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -292,7 +282,7 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -302,7 +292,17 @@ const PPC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -317,7 +317,7 @@ const PRC = {
   Chairperson: [
     {
       name: "Aman Kumar Singh",
-      image: "/profile_images/Aman_Singh.jpg",
+      image: "/profile_images/Aman_Singh.jpeg",
       designation: "Chairperson",
       socialLinks: {
         github: "https://github.com/amanks009",
@@ -328,7 +328,7 @@ const PRC = {
   Heads: [
     {
       name: "Sahil Kumar",
-      image: "/profile_images/Sahil_Kumar.jpg",
+      image: "/profile_images/Sahil_Kumar.jpeg",
       designation: "PRC Head",
 
       socialLinks: {
@@ -340,7 +340,7 @@ const PRC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -349,17 +349,7 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -369,7 +359,7 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -379,7 +369,7 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -389,7 +379,17 @@ const PRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -404,7 +404,7 @@ const ARC = {
   Chairperson: [
     {
       name: "Nandini Kumari",
-      image: "/profile_images/nandini_Sahu.jpg",
+      image: "/profile_images/nandini_Sahu.jpeg",
       designation: "Chairperson",
       socialLinks: {
         github: "https://github.com/nandinisahu99",
@@ -415,7 +415,7 @@ const ARC = {
   Heads: [
     {
       name: "Prateek Dwivedi",
-      image: "/profile_images/Prateek_Dwiwedi.jpg",
+      image: "/profile_images/Prateek_Dwiwedi.jpeg",
       designation: "ARC Head",
 
       socialLinks: {
@@ -428,7 +428,7 @@ const ARC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -437,17 +437,7 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -457,7 +447,7 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -467,7 +457,7 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -477,7 +467,17 @@ const ARC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -492,7 +492,7 @@ const HRC = {
   Chairperson: [
     {
       name: "Harsha Jha",
-      image: "/profile_images/Harsha_Jha.jpg",
+      image: "/profile_images/Harsha_Jha.jpeg",
       designation: "Chairperson",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -503,7 +503,7 @@ const HRC = {
   Heads: [
     {
       name: "Amandeep",
-      image: "/profile_images/Amandeep_vaid.jpg",
+      image: "/profile_images/Amandeep_vaid.jpeg",
       designation: "HRC Head",
 
       socialLinks: {
@@ -513,7 +513,7 @@ const HRC = {
     },
     {
       name: "Vaibhav Gupta",
-      image: "/profile_images/Vaibhav_Gupta.jpg",
+      image: "/profile_images/Vaibhav_Gupta.jpeg",
       designation: "HRC Head",
 
       socialLinks: {
@@ -525,7 +525,7 @@ const HRC = {
   Members: [
     {
       name: "Chirag Tomar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
       socialLinks: {
         github: "https://github.com/andresberlin",
@@ -534,17 +534,7 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
-      designation: "",
-
-      socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
-      },
-    },
-    {
-      name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -554,7 +544,7 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -564,7 +554,7 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {
@@ -574,7 +564,17 @@ const HRC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Chirag.jpg",
+      image: "/profile_images/Chirag.jpeg",
+      designation: "",
+
+      socialLinks: {
+        github: "https://github.com/andresberlin",
+        linkedin: "https://twitter.com/andresberlin",
+      },
+    },
+    {
+      name: "Vivek Kumar",
+      image: "/profile_images/Chirag.jpeg",
       designation: "",
 
       socialLinks: {

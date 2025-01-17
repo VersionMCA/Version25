@@ -1,8 +1,28 @@
 import React from "react";
 import "./member.css";
 
+const colors = [
+  "#6BBDBA",
+  "#FFD601",
+  "#01B9FF",
+  "#01FFFF",
+  "#4BC343",
+  "#1D70D8",
+  "#0A3C64",
+  "#420420",
+  "#551533",
+  "#4E7300",
+  "#0AE098",
+  "#8A6F4C",
+  "#B70300",
+  "#FFA500",
+];
+
 const ProfileCard2 = ({ person }) => {
   const { name, image, designation, socialLinks } = person;
+
+  const color = colors[Math.floor(Math.random() * colors.length)];
+
   return (
     <div className="batch-2025 member-card z-20" data-astro-cid-hu6ywz6e>
       <div
@@ -10,7 +30,7 @@ const ProfileCard2 = ({ person }) => {
         data-astro-cid-6qtsqqpf
       >
         <div
-          style={{ backgroundColor: "#5CABFF" }}
+          style={{ backgroundColor: color }}
           className="row-start-3 row-end-4 col-start-2 col-end-3 z-10"
           data-astro-cid-6qtsqqpf
         ></div>
@@ -29,7 +49,7 @@ const ProfileCard2 = ({ person }) => {
           </div>
         </div>
         <div
-          style={{ backgroundColor: "#5CABFF" }}
+          style={{ backgroundColor: color }}
           className="row-start-2 row-end-3 col-start-1 col-end-2"
           data-astro-cid-6qtsqqpf
         ></div>
@@ -47,6 +67,15 @@ const ProfileCard2 = ({ person }) => {
             >
               {name}
             </p>
+            {designation && (
+              <p
+                className="font-bold text-center line-clamp-2 md:text-sm text-xs"
+                data-astro-cid-6qtsqqpf
+              >
+                {designation}
+              </p>
+            )}
+
             <div
               className="flex flex-row items-center justify-center space-x-2 py-2 md:py-4"
               data-astro-cid-6qtsqqpf
@@ -114,7 +143,7 @@ const ProfileCard2 = ({ person }) => {
         </div>
         <div
           style={{
-            backgroundImage: "linear-gradient(#5CABFF 20%, transparent 90%)",
+            backgroundImage: `linear-gradient(${color} 20%, transparent 90%)`,
             filter: "saturate(100%) brightness(50%)",
           }}
           className="row-start-3 row-end-5 col-start-1 col-end-3 bg-[#1E1E1E00] bg-image-noise -z-10"
