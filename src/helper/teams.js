@@ -99,23 +99,19 @@ const Faculty = {
     {
       name: "Dr. Michael Arock",
       image: "/profile_images/michael-sir.jpeg",
-      message:
-        "I am a Professor in the Department of Computer Science and Engineering at the National Institute of Technology, Tiruchirappalli. I received my Ph.D. in Computer Science from the Indian Institute of Technology, Madras, India. My research interests include Data Mining, Machine Learning, and Bioinformatics. I am a member of the ACM and the IEEE.",
       designation: "HOD",
       socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
+        message:
+          "I am a Professor in the Department of Computer Science and Engineering at the National Institute of Technology, Tiruchirappalli. I received my Ph.D. in Computer Science from the Indian Institute of Technology, Madras, India. My research interests include Data Mining, Machine Learning, and Bioinformatics. I am a member of the ACM and the IEEE.",
       },
     },
     {
       name: "Dr.(Mrs.) S. Sangeetha",
       image: "/profile_images/sangeetha.png",
-      message:
-        "I am an Assistant Professor in the Department of Computer Science and Engineering at the National Institute of Technology, Tiruchirappalli. I received my Ph.D. in Computer Science from the Indian Institute of Technology, Madras, India. My research interests include Data Mining, Machine Learning, and Bioinformatics. I am a member of the ACM and the IEEE.",
       designation: "Staff Advisor",
       socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
+        message:
+          "I am an Assistant Professor in the Department of Computer Science and Engineering at the National Institute of Technology, Tiruchirappalli. I received my Ph.D. in Computer Science from the Indian Institute of Technology, Madras, India. My research interests include Data Mining, Machine Learning, and Bioinformatics. I am a member of the ACM and the IEEE.",
       },
     },
   ],
