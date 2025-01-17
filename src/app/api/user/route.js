@@ -57,8 +57,6 @@ export async function PATCH(req) {
       data: { collegeName, collegeRollNumber, phoneNumber },
     });
 
-    console.log(updatedUser);
-
     return new NextResponse(
       JSON.stringify({
         message: "Profile updated successfully.",
