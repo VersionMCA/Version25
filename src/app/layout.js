@@ -8,7 +8,7 @@ import {
 
 import "./globals.css";
 import { Providers } from "./providers";
-import Navigation from "@/components/navbar/Navigation";
+import Navbar from "@/components/navbar/Navbar";
 
 const doto = Doto({
   subsets: ["latin"],
@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} antialiased`}
       >
         <Providers>
-          <Navigation />
+          <Navbar />
           {children}
         </Providers>
       </body>

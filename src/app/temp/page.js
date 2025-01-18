@@ -1,12 +1,10 @@
 import MapModal from "@/components/map/MapModal";
-import CalendarModal from "@/components/calendar/CalendarModal";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div className="mt-48">
       <MapModal />
-      <CalendarModal />
     </div>
   );
 };
