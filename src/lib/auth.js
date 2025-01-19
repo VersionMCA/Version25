@@ -1,6 +1,7 @@
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/db/index.mjs";
+import admins from "@/utilities/admins";
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
@@ -15,8 +16,12 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET || "secr3t",
   callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.role = admins.includes(user.email) ? "admin" : "user";
+
+      return token;
+    },
     async session({ session, token }) {
-      // Fetch user details from the database
       const user = await prisma.user.findUnique({
         where: { id: token.sub },
         select: {
@@ -33,6 +38,7 @@ export const authOptions = {
       if (token) {
         // Assign user ID to session
         session.user.id = token.sub;
+        session.user.role = token.role;
       }
       return session;
     },
