@@ -4,7 +4,7 @@ import Social from "@/components/social/Social";
 const page = () => {
   return (
     <div>
-      <Social />
+      // <Social />
     </div>
   );
 };
