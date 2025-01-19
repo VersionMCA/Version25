@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
@@ -6,20 +5,18 @@ import versionLogo from "../../../public/assets/version_logo_light.png";
 import UserAccountDropDown from "./UserAccountDropDown";
 // import "./navbar.css"   working without importing
 
-import NavbarMobile from "@/components/navbar/NavbarMobile";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import navLinks from "./navLinks";
 import { Button } from "../ui/Button";
 import { useAtom } from "jotai";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { eventsAtom } from "../../atoms/eventsAtom";
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   const session = useSession();
   const user = session.data?.user;
   const [, setEvents] = useAtom(eventsAtom);
-  const navBar = useRef();
 
   const fetchEvents = async () => {
     try {
@@ -38,10 +35,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className="sticky mx-auto top-0 z-50 flex items-center gap-2 w-full"
-      ref={navBar}
-    >
+    <nav className="fixed mx-auto p-2 md:px-6 top-0 z-50 flex items-center gap-2 w-full">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -51,7 +45,7 @@ const Navbar = () => {
           type: "spring",
           damping: 10,
         }}
-        className="flex w-full justify-between mx-auto bg-black shadow-lg shadow-neutral-600/5 backdrop-blur-lg p-2 sm:p-4 rounded-xl"
+        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-2 sm:p-4 rounded-xl"
       >
         <Link
           href={"/"}
@@ -92,7 +86,25 @@ const Navbar = () => {
             ""
           )}
           <UserAccountDropDown />
-          <NavbarMobile navBar={navBar} />
+
+          {/* Hamburger */}
+          <li className="flex justify-end  max-sm:h-2 border-white text-white items-center basis-full">
+            <button type="button" className="md:hidden " onClick={toggle}>
+              <svg
+                // className="invert"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                className="max-sm:h-8 "
+              >
+                <path
+                  fill="#fff"
+                  d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"
+                />
+              </svg>
+            </button>
+          </li>
         </div>
       </motion.div>
     </nav>
