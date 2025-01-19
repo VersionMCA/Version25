@@ -8,6 +8,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
+import toastStyle from "@/utilities/toastStyle";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -29,7 +30,7 @@ export default function UserDetailForm({ user }) {
       return;
     }
     if (!/^[0-9]+$/.test(currUser.collegeRollNumber)) {
-      toast.error("College Roll Number must be numeric.");
+      toast.error("College Roll Number must be numeric.", toastStyle);
       return;
     }
 
@@ -37,7 +38,7 @@ export default function UserDetailForm({ user }) {
       !/^[0-9]+$/.test(currUser.phoneNumber) ||
       currUser.phoneNumber.length != 10
     ) {
-      toast.error("Invalid Phone Number");
+      toast.error("Invalid Phone Number", toastStyle);
       return;
     }
 
@@ -48,11 +49,11 @@ export default function UserDetailForm({ user }) {
         phoneNumber: currUser.phoneNumber,
       });
 
-      toast.success("Profile updated successfully");
+      toast.success("Profile updated successfully", toastStyle);
       router.push("/");
     } catch (error) {
       console.log("Profile Update Error", error);
-      toast.error("Error while updating profile");
+      toast.error("Error while updating profile", toastStyle);
     }
   };
 
@@ -63,7 +64,7 @@ export default function UserDetailForm({ user }) {
         console.log("me", res.data);
         setCurrUser((prev) => res.data);
       } catch (error) {
-        toast.error("Unable to fetch your details");
+        toast.error("Unable to fetch your details", toastStyle);
         console.log("fetch me error", error);
       }
     };

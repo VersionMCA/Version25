@@ -17,6 +17,7 @@ import {
   removeEventAtom,
   removeTodoAtom,
 } from "../../../atoms/eventsAtom";
+import toastStyle from "@/utilities/toastStyle";
 
 export default function EventsPage() {
   const [events, setEvents] = useAtom(eventsAtom);
@@ -50,9 +51,9 @@ const EventCard = ({ event }) => {
           method: "DELETE",
         });
         removeEvent(id);
-        toast.success("Event deleted successfully!");
+        toast.success("Event deleted successfully!", toastStyle);
       } catch (error) {
-        toast.error("Error deleting event.");
+        toast.error("Error deleting event.", toastStyle);
       } finally {
         setLoading(false);
       }

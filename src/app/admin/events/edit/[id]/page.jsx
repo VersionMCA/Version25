@@ -93,7 +93,7 @@ export default function Page() {
       setValue("image", event.image);
       setValue("eventDetails", event.eventDetails);
     } else {
-      toast.error("Error fetching event data");
+      toast.error("Error fetching event data", toastStyle);
       router.push("/admin/events");
     }
   }, [event, setValue]);
