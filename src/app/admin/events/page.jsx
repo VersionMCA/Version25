@@ -67,16 +67,19 @@ const EventCard = ({ event }) => {
   const handleExport = async (id) => {
     setExporing(true);
     try {
-      const res = await axios.post(`${BACKEND_URL}/api/admin/export/registrations`, {
-        eventId: id,
-      })
+      const res = await axios.post(
+        `${BACKEND_URL}/api/admin/export/registrations`,
+        {
+          eventId: id,
+        },
+      );
       toast.success("Exported successfully!");
     } catch (error) {
       toast.error("Error exporting data.");
     } finally {
       setExporing(false);
     }
-  }
+  };
 
   return (
     <Card className="shadow-lg text-foreground border rounded-lg">

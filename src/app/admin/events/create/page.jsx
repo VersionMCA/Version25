@@ -91,7 +91,7 @@ export default function AddEventPage() {
         body: JSON.stringify(data),
       });
       toast.success("Event added successfully!", toastStyle);
-      router.push("/admin/events")
+      router.push("/admin/events");
     } catch (error) {
       toast.error("Error adding event.", toastStyle);
     } finally {
