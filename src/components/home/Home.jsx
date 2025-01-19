@@ -6,6 +6,7 @@ import version_back from "../../../public/assets/version_back.svg";
 import road from "../../../public/assets/road.svg";
 import boy from "../../../public/assets/boy.svg";
 import cloud from "../../../public/assets/cloud.svg";
+import Social from "@/components/social/Social";
 
 import React, { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
@@ -131,6 +132,7 @@ const Home = () => {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden ">
+      <Social />
       <section
         className=" h-screen max-w-screen overflow-x-hidden"
         id="gameSection"

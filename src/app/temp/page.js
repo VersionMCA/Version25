@@ -1,12 +1,10 @@
-import MapModal from "@/components/map/MapModal";
-import CalendarModal from "@/components/calendar/CalendarModal";
 import React from "react";
+import Social from "@/components/social/Social";
 
 const page = () => {
   return (
     <div>
-      <MapModal />
-      <CalendarModal />
+      <Social />
     </div>
   );
 };

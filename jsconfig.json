@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"], // Adjusted to point to 'src' folder
+      "@/*": ["./src/*"],
       "@public/*": ["./public/*"]
     }
   },
@@ -12,6 +12,6 @@
     "**/*.jsx",
     "components/**/*",
     "public/**/*",
-    "src/**/*" // Include the 'src' folder for JavaScript files
+    "src/**/*"
   ]
 }
