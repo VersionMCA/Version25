@@ -6,13 +6,13 @@ const Sidebar = ({ isOpen, toggle }) => {
   return (
     <>
       <div
-        className="md:hidden sidebar-container fixed w-full h-full overflow-hidden justify-center bg-[#94dc18bd] backdrop-blur-sm grid pt-[120px] left-0 z-[100] "
+        className="md:hidden sidebar-container fixed w-full h-full overflow-hidden justify-center bg-black backdrop-blur-sm grid pt-[120px] left-0 z-[100] "
         style={{
           opacity: `${isOpen ? "1" : "0"}`,
           top: ` ${isOpen ? "0" : "-100%"}`,
         }}
       >
-        <button className="absolute right-0 p-5 text-black" onClick={toggle}>
+        <button className="absolute right-0 p-5 text-white" onClick={toggle}>
           {/* Close icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +27,10 @@ const Sidebar = ({ isOpen, toggle }) => {
           </svg>
         </button>
 
-        <ul className="sidebar-nav text-center leading-relaxed text-4xl lg:text-7xl font-extrabold text-black max-h-screen pixie">
+        <ul className="sidebar-nav text-center leading-relaxed text-4xl lg:text-7xl font-extrabold text-white max-h-screen pixie">
           {navLinks.map(({ name, link }) => {
             return (
-              <li key={name} className="mx-4 xl:mx-8 ">
+              <li key={name} className="mx-4 xl:mx-8 " onClick={toggle}>
                 {" "}
                 <Link href={link}>
                   <p>{name}</p>
