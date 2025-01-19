@@ -1,12 +1,14 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import eventData from "./eventData";
 import "./page.scss";
 import EventCard from "./EventCard";
 import EventThumbnail from "./EventThumbnail";
+import { useAtom } from "jotai";
+import { eventsAtom } from "../../atoms/eventsAtom";
 
 function Events() {
   const [newItemActive, setNewItemActive] = React.useState(0);
+  const [eventData] = useAtom(eventsAtom);
 
   const Thumbnail = useRef(null);
 
@@ -28,13 +30,13 @@ function Events() {
       );
 
       // remove active class from old active item
-      if (itemActiveOld !== null) itemActiveOld.classList.remove(`active`);
-      if (thumbnailActiveOld !== null)
-        thumbnailActiveOld.classList.remove(`active`);
+      if (itemActiveOld) itemActiveOld.classList.remove(`active`);
+      if (thumbnailActiveOld) thumbnailActiveOld.classList.remove(`active`);
 
       // add active class to new active item
-      items[nextItem].classList.add(`active`);
-      thumbnails[nextItem].classList.add(`active`);
+      if (nextItem < items.length) items[nextItem].classList.add(`active`);
+      if (nextItem < thumbnails.length)
+        thumbnails[nextItem].classList.add(`active`);
     };
 
     showSlider(newItemActive);
@@ -63,17 +65,7 @@ function Events() {
       <div className="event__slider font-secondary">
         <div className="allEvents">
           {eventData.map((event) => {
-            return (
-              <EventCard
-                key={event.id}
-                id={event.id}
-                content={event.description}
-                imgLink={event.image}
-                name={event.name}
-                date={event.date}
-                teamSize={event?.teamSize}
-              />
-            );
+            return <EventCard key={event.id} event={event} />;
           })}
         </div>
         <div className="thumbnailContainer">

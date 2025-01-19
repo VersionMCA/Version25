@@ -1,0 +1,10 @@
+.member-container[data-astro-cid-6qtsqqpf] {
+    display: grid;
+    grid-template-rows: 1fr 5px 5px .5fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.image-container[data-astro-cid-6qtsqqpf] {
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr 50px;
+}

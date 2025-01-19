@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import versionLogo from "../../../public/assets/version_logo.png";
+import versionLogo from "../../../public/assets/version_logo_light.png";
 import UserAccountDropDown from "./UserAccountDropDown";
 // import "./navbar.css"   working without importing
 
@@ -9,10 +9,30 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import navLinks from "./navLinks";
 import { Button } from "../ui/Button";
+import { useAtom } from "jotai";
+import { useEffect } from "react";
+import { eventsAtom } from "../../atoms/eventsAtom";
 
 const Navbar = ({ toggle }) => {
   const session = useSession();
   const user = session.data?.user;
+  const [, setEvents] = useAtom(eventsAtom);
+
+  const fetchEvents = async () => {
+    try {
+      const res = await fetch("/api/events");
+      if (!res.ok) throw new Error("Failed to fetch events");
+      const data = await res.json();
+      setEvents(data);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to fetch events.");
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
   return (
     <nav className="fixed mx-auto p-2 md:px-6 top-0 z-50 flex items-center gap-2 w-full">
@@ -25,11 +45,11 @@ const Navbar = ({ toggle }) => {
           type: "spring",
           damping: 10,
         }}
-        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-2 sm:p-4 rounded-xl"
+        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-2 sm:p-3 rounded-xl"
       >
         <Link
           href={"/"}
-          className="relative cursor-pointer max-sm:w-[145px] max-sm:h-[34px]  w-[170px] h-[40px] overflow-hidden"
+          className="relative cursor-pointer max-sm:w-[145px] max-sm:h-[34px]  w-[160px] h-[37px] overflow-hidden"
         >
           <Image
             src={versionLogo}
@@ -38,7 +58,7 @@ const Navbar = ({ toggle }) => {
             alt="Logo"
           />
         </Link>
-        <div className="flex justify-center items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
+        <div className="flex justify-center text-theme-cream items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
           {navLinks.map(({ name, link }) => {
             return (
               <li
