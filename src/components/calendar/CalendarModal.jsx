@@ -14,14 +14,18 @@ import {
 
 export default function CalendarModal() {
   return (
-    <div className="py-40 flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <Dialog>
         <DialogTrigger
           asChild
-          className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn"
+          className="transition-transform transform hover:scale-110 group"
+          // className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn"
         >
-          <span className="">
-            <Calendar />
+          <span>
+            <Calendar className="h-6 w-6" />
+            <span className="absolute right-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs px-3 py-1 rounded-md transition-opacity">
+              Events Calendar
+            </span>
           </span>
         </DialogTrigger>
         <DialogContent>

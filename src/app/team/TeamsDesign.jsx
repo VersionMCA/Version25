@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileCard2 from "./ProfileCard2";
+import ProfileCard from "./ProfileCard";
 
 function TeamsDesign({ Data }) {
   return (
@@ -11,21 +11,21 @@ function TeamsDesign({ Data }) {
         {Data.Chairperson && (
           <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-8 md:gap-y-14 lg:gap-y-20">
             {Data.Chairperson.map((person, index) => (
-              <ProfileCard2 key={index} person={person} />
+              <ProfileCard key={index} person={person} />
             ))}
           </div>
         )}
         {Data.Heads && (
           <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-8 md:gap-y-14 lg:gap-y-20">
             {Data.Heads.map((person, index) => (
-              <ProfileCard2 key={index} person={person} />
+              <ProfileCard key={index} person={person} />
             ))}
           </div>
         )}
         {Data.Members && (
           <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-8 md:gap-y-14 lg:gap-y-20">
             {Data.Members.map((person, index) => (
-              <ProfileCard2 key={index} person={person} />
+              <ProfileCard key={index} person={person} />
             ))}
           </div>
         )}
