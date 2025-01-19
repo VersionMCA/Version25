@@ -15,13 +15,6 @@ export default {
       "open-poppins": ["Poppins", "sans-serif"],
       "open-montserrat": ["Montserrat Alternates", "sans-serif"],
     },
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       screens: {
         "2.5xl": "1730px",

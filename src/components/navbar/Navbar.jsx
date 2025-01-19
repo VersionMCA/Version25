@@ -45,11 +45,11 @@ const Navbar = ({ toggle }) => {
           type: "spring",
           damping: 10,
         }}
-        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-2 sm:p-4 rounded-xl"
+        className="flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-primary/20 p-2 sm:p-3 rounded-xl"
       >
         <Link
           href={"/"}
-          className="relative cursor-pointer max-sm:w-[145px] max-sm:h-[34px]  w-[170px] h-[40px] overflow-hidden"
+          className="relative cursor-pointer max-sm:w-[145px] max-sm:h-[34px]  w-[160px] h-[37px] overflow-hidden"
         >
           <Image
             src={versionLogo}
