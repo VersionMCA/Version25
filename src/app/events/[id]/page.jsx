@@ -7,7 +7,7 @@ import Markdown from "react-markdown";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import axios from "axios";
-import TeamRegisterModal2 from "./TeamRegisterModal2";
+import TeamRegisterModal from "./TeamRegisterModal";
 import toastStyle from "@/utilities/toastStyle";
 import { useSession } from "next-auth/react";
 import IndividualRegister from "./IndividualRegister";
@@ -92,7 +92,7 @@ export default function page() {
               registered ? (
                 <Button variant="ghost">Registered</Button>
               ) : event?.type === "TEAM" ? (
-                <TeamRegisterModal2
+                <TeamRegisterModal
                   userId={session.data.user.id}
                   event={event}
                   setRegistered={setRegistered}

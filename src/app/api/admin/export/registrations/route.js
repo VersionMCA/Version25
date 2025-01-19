@@ -48,7 +48,7 @@ export async function POST(req) {
 
         const spreadsheetId = createResponse.data.spreadsheetId;
 
-        const userEmail = "chhipanikhil9@gmail.com";
+        const userEmail = process.env.GOOGLE_USER;
         await drive.permissions.create({
             fileId: spreadsheetId,
             requestBody: {
@@ -70,6 +70,7 @@ export async function POST(req) {
                     },
                 },
             });
+            console.log("Teams: ", teams);
 
             for (const team of teams) {
                 const teamMembers = team.registrations.map((registration) => [
@@ -105,6 +106,7 @@ export async function POST(req) {
                         ],
                     },
                 });
+                // console.log(team);
 
                 // Add data to the team sheet
                 await sheets.spreadsheets.values.batchUpdate({
@@ -163,7 +165,7 @@ export async function POST(req) {
                 resource: {
                     data: [
                         {
-                            range: "Users!A1",
+                            range: "Users",
                             values: [
                                 ["ID", "Name", "Email", "College Name", "College Roll Number", "Phone Number"],
                                 ...userRows,

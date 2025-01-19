@@ -17,6 +17,10 @@ import {
   removeEventAtom,
   removeTodoAtom,
 } from "../../../atoms/eventsAtom";
+import axios from "axios";
+
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
 
 export default function EventsPage() {
   const [events, setEvents] = useAtom(eventsAtom);
@@ -38,13 +42,14 @@ export default function EventsPage() {
 }
 
 const EventCard = ({ event }) => {
-  const [loading, setLoading] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [exporting, setExporing] = useState(false);
   const [, removeEvent] = useAtom(removeEventAtom);
 
   // Delete event by ID
   const handleDelete = async (id) => {
     if (confirm("Are you sure you want to delete this event?")) {
-      setLoading(true);
+      setDeleting(true);
       try {
         const res = await fetch(`/api/admin/events/${id}`, {
           method: "DELETE",
@@ -54,10 +59,24 @@ const EventCard = ({ event }) => {
       } catch (error) {
         toast.error("Error deleting event.");
       } finally {
-        setLoading(false);
+        setDeleting(false);
       }
     }
   };
+
+  const handleExport = async (id) => {
+    setExporing(true);
+    try {
+      const res = await axios.post(`${BACKEND_URL}/api/admin/export/registrations`, {
+        eventId: id,
+      })
+      toast.success("Exported successfully!");
+    } catch (error) {
+      toast.error("Error exporting data.");
+    } finally {
+      setExporing(false);
+    }
+  }
 
   return (
     <Card className="shadow-lg text-foreground border rounded-lg">
@@ -88,8 +107,16 @@ const EventCard = ({ event }) => {
           variant="destructive"
           onClick={() => handleDelete(event.id)}
           className="w-full"
+          disabled={deleting}
         >
-          Delete
+          {deleting ? "Deleting..." : "Delete"}
+        </Button>
+        <Button
+          onClick={() => handleExport(event.id)}
+          className="w-full"
+          disabled={exporting}
+        >
+          {exporting ? "Exporting..." : "Export"}
         </Button>
       </CardFooter>
     </Card>

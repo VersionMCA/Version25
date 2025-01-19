@@ -49,7 +49,7 @@ export async function POST(req) {
 
 
         // grant the permission to the admin by the service account
-        const userEmail = "chhipanikhil9@gmail.com";
+        const userEmail = process.env.GOOGLE_USER
         await drive.permissions.create({
             fileId: spreadsheetId,
             requestBody: {

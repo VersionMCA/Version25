@@ -10,6 +10,7 @@ import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
 import toastStyle from "@/utilities/toastStyle";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const eventSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -38,6 +39,7 @@ const eventSchema = z.object({
 
 export default function AddEventPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   // React Hook Form setup
   const {
@@ -89,6 +91,7 @@ export default function AddEventPage() {
         body: JSON.stringify(data),
       });
       toast.success("Event added successfully!", toastStyle);
+      router.push("/admin/events")
     } catch (error) {
       toast.error("Error adding event.", toastStyle);
     } finally {
