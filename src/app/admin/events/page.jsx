@@ -17,18 +17,9 @@ import {
   removeEventAtom,
   removeTodoAtom,
 } from "../../../atoms/eventsAtom";
-import { adminCheck } from "@/utilities/admins";
-import { useSession } from "next-auth/react";
 
 export default function EventsPage() {
   const [events, setEvents] = useAtom(eventsAtom);
-
-  // Admin restriction
-  const { data: session } = useSession();
-
-  useEffect(() => {
-    if (session && session.user) adminCheck(session.user.email);
-  }, [session]);
 
   return (
     <div className="container mx-auto p-6">

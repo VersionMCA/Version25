@@ -17,8 +17,6 @@ import {
 import { z } from "zod";
 import { toast } from "react-toastify";
 import toastStyle from "@/utilities/toastStyle";
-import { useSession } from "next-auth/react";
-import { adminCheck } from "@/utilities/admins";
 
 const eventSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -70,13 +68,6 @@ export default function Page() {
     control,
     name: "eventDetails",
   });
-
-  // ADMIN Check
-  const { data: session } = useSession();
-
-  useEffect(() => {
-    if (session && session.user) adminCheck(session.user.email);
-  }, [session]);
 
   useEffect(() => {
     if (event) {

@@ -10,8 +10,6 @@ import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
 import toastStyle from "@/utilities/toastStyle";
 import { toast } from "react-toastify";
-import { adminCheck } from "@/utilities/admins";
-import { useSession } from "next-auth/react";
 
 const eventSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -97,13 +95,6 @@ export default function AddEventPage() {
       setIsSubmitting(false);
     }
   };
-
-  // Admin check
-  const { data: session } = useSession();
-
-  useEffect(() => {
-    if (session && session.user) adminCheck(session.user.email);
-  }, [session]);
 
   return (
     <div className="max-w-4xl mx-auto p-6">

@@ -6,7 +6,7 @@ export async function middleware(req) {
 
   const pathname = req.nextUrl.pathname;
 
-  if (pathname.startsWith("/api/admin")) {
+  if (pathname.startsWith("/admin") || pathname.startsWith("/api/admin")) {
     if (!token) {
       return NextResponse.json(
         { message: "Unauthorized access" },
@@ -26,5 +26,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/api/admin/:path*"],
+  matcher: ["/admin:path*", "/api/admin/:path*"],
 };
