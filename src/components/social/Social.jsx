@@ -3,7 +3,7 @@ import React from "react";
 import { Instagram } from "lucide-react";
 import { FaYoutube, FaLinkedin, FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import MapModal from "../map/MapModal";
+// import MapModal from "../map/MapModal";
 import CalendarModal from "../calendar/CalendarModal";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -54,7 +54,7 @@ const SocialIcons = () => {
         </Link>
       ))}
       {/* <Separator /> */}
-      <MapModal />
+      {/* <MapModal /> */}
       <CalendarModal />
     </div>
   );

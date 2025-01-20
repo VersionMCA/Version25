@@ -1,4 +1,3 @@
-// import { Map } from "lucide-react";
 import { MapPinned } from "lucide-react";
 
 import NITTrichyMap from "./NITTMap";
