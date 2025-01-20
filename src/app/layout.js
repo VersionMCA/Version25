@@ -53,6 +53,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Version25" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} antialiased`}
       >
