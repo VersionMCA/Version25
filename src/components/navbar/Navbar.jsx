@@ -12,6 +12,7 @@ import { Button } from "../ui/Button";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 import { eventsAtom } from "../../atoms/eventsAtom";
+import toastStyle from "@/utilities/toastStyle";
 
 const Navbar = ({ toggle }) => {
   const session = useSession();
@@ -26,7 +27,7 @@ const Navbar = ({ toggle }) => {
       setEvents(data);
     } catch (error) {
       console.error(error);
-      toast.error("Failed to fetch events.");
+      toast.error("Failed to fetch events.", toastStyle);
     }
   };
 

@@ -1,9 +1,15 @@
+import { Flip } from "react-toastify";
+
 const toastStyle = {
-  position: "bottom-center",
-  className: "toast",
-  bodyClassName: "toast__body",
-  progressClassName: "toast__progress",
-  closeButton: false,
+  position: "bottom-right",
+  autoClose: 2000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "dark",
+  transition: Flip,
 };
 
 export default toastStyle;

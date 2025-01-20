@@ -47,6 +47,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
       else
         toast.error(
           `This event needs ${event.minTeamSize} to ${event.maxTeamSize} members. `,
+          toastStyle,
         );
       return;
     }
