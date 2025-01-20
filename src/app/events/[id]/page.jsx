@@ -16,6 +16,7 @@ import { Separator } from "@/components/ui/separator";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useAtom } from "jotai";
 import { eventByIdAtom } from "../../../atoms/eventsAtom";
+const BACKGROUND_IMAGE = "/public/profile_images/bg-2.jpg";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -51,7 +52,10 @@ export default function page() {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden">
+    <div
+      className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{ backgroundImage: `url(${BACKGROUND_IMAGE})` }}
+    >
       <div className="w-full p-2 max-w-4xl translate-y-4 flex flex-col items-center gap-2 sm:gap-6 lg:gap-10">
         {/* Event Header */}
         <div className="flex  w-full p-6 justify-between items-center">
