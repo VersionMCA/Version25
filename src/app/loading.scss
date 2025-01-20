@@ -40,7 +40,7 @@
     animation-direction: reverse;
   }
   .preloader__sector {
-    color: #C6FF00;
+    color: #c8ff00a4;
     font-weight: 600;
     position: absolute;
     top: 0;
@@ -58,7 +58,7 @@
   .preloader__sector:empty:before {
     background: linear-gradient(
       transparent 45%,
-      #C6FF00 45% 55%,
+      #c8ff00a4 45% 55%,
       transparent 55%
     );
     content: '';
