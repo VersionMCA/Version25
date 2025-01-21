@@ -59,7 +59,7 @@ const Navbar = ({ toggle }) => {
             alt="Logo"
           />
         </Link>
-        <div className="flex justify-center text-theme-cream items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
+        <div className="flex justify-center items-center gap-1  lg:gap-2 md:text-xl lg:text-2xl">
           {navLinks.map(({ name, link }) => {
             return (
               <li
@@ -76,7 +76,7 @@ const Navbar = ({ toggle }) => {
           })}
           {!user ? (
             <Button
-              className="font-semibold max-sm:h-8 max-sm:text-xs bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight"
+              className="font-semibold max-sm:h-8 max-sm:text-xs bg-gradient-to-b tracking-tight"
               onClick={async () => {
                 await signIn();
               }}

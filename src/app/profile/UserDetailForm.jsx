@@ -1,20 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import UserImage from "../../components/UserImage";
 import { Label } from "../../components/ui/label";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/Button";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import toastStyle from "@/utilities/toastStyle";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
 
 export default function UserDetailForm({ user }) {
-  const { data: session } = useSession();
   const [currUser, setCurrUser] = useState(user);
   const router = useRouter();
 
@@ -73,12 +71,6 @@ export default function UserDetailForm({ user }) {
 
   return (
     <form className="flex flex-col gap-4">
-      <Label className="mb-2">Profile Picture</Label>
-      <div className="flex items-center justify-center">
-        <div className="!w-[6rem] !h-[6rem] flex items-center hover:bg-[#030712] p-[0.2rem] justify-center ">
-          <UserImage image={currUser.image} key={currUser.image} />
-        </div>
-      </div>
       <div>
         <Label className="">Name</Label>
         <Input

@@ -14,7 +14,7 @@ function NotFound() {
         </div>
         <div>
           <Link href="/">
-            <button className="font-semibold rounded-xl text-black bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight mt-10 p-3 ">
+            <button className="font-semibold rounded-xl bg-primary tracking-tight text-sm mt-10 p-3 ">
               Back To Home
             </button>
           </Link>

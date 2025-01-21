@@ -4,6 +4,8 @@ import {
   Silkscreen,
   Orbitron,
   Doto,
+  Audiowide,
+  Iceland,
 } from "next/font/google";
 
 import "./globals.css";
@@ -16,6 +18,22 @@ const doto = Doto({
   style: ["normal"],
   display: "swap",
   variable: "--font-doto",
+});
+
+const autowide = Audiowide({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-autowide",
+});
+
+const iceland = Iceland({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-iceland",
 });
 
 const geistSans = Geist({
@@ -57,7 +75,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Version25" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} antialiased`}
+        className={`${geistSans.variable} ${iceland.variable} ${autowide.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} antialiased`}
       >
         <Providers>
           <Navigation />

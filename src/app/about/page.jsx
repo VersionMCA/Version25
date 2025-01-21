@@ -13,7 +13,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#171616] text-gray-300 flex flex-col w-4/5 mx-auto border border-[#171616] rounded-xl">
       {/* Header */}
-      <header className="py-4 bg-[#171616] shadow-md border border-[#171616] rounded-md">
+      <header className="py-4 bg-[#171616] shadow-md border rounded-md">
         <h1 className="text-center text-3xl font-bold text-[#C6FF00]">
           Version 2025
         </h1>

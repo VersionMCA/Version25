@@ -4,8 +4,8 @@ import velocium from "../../../public/assets/velocium.svg";
 
 export default function CalendarContent() {
   return (
-    <div className="bg-gray-900 w-full flex gap-y-4 h-full bg-opacity-50 flex-col items-center justify-center">
-      <h2 className="text-4xl font-bold text-theme-lime">Calendar</h2>
+    <div className="w-full flex gap-y-4 h-full bg-opacity-50 flex-col items-center justify-center">
+      <h2 className="text-4xl font-bold">Calendar</h2>
       <div className="mx-auto">
         <Image src={velocium} alt="Velocium Logo" height={64} width={300} />
       </div>
@@ -39,13 +39,13 @@ function EventSection({ day, events }) {
 
 function EventRow({ time, duration, name, location }) {
   return (
-    <div className="p-4 bg-theme-lime rounded-lg shadow-md">
-      <div className="flex justify-between items-center text-black text-lg font-semibold mb-2">
+    <div className="p-4 bg-primary text-primary-foreground rounded-lg shadow-md">
+      <div className="flex justify-between items-center  text-lg font-semibold mb-2">
         <span>{time}</span>
         <span>{duration}</span>
       </div>
-      <p className="text-black text-xl font-bold">{name}</p>
-      <p className="text-black text-md font-medium">{location}</p>
+      <p className="text-xl font-bold">{name}</p>
+      <p className="text-md font-medium">{location}</p>
     </div>
   );
 }

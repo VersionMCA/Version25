@@ -98,7 +98,7 @@ export default function UserAccountDropDown() {
               ))}
               <DropdownMenuSeparator className="bg-primary/10 my-2" />
               <DropdownMenuItem
-                className="focus:bg-theme-lime group hover:text-black group hover:bg-theme-lime flex cursor-pointer items-center space-x-3 rounded-lg p-3 transition-all duration-200 hover:shadow-md"
+                className="focus:bg-destructive focus:text-destructive-foreground group hover:text-destructive-foreground group hover:bg-destructive flex cursor-pointer items-center space-x-3 rounded-lg p-3 transition-all duration-200 hover:shadow-md"
                 onClick={async () => {
                   await signOut();
                   redirect("/");
@@ -106,9 +106,11 @@ export default function UserAccountDropDown() {
               >
                 <LogOut
                   size={15}
-                  className="hover:text-black group-hover:text-black"
+                  className="hover:text-black group-hover:text-destructive-foreground"
                 />
-                <span className="group-hover:text-black">Logout</span>
+                <span className="group-hover:text-destructive-foreground">
+                  Logout
+                </span>
               </DropdownMenuItem>
             </motion.div>
           </DropdownMenuContent>
