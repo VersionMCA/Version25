@@ -73,6 +73,7 @@ export default {
       fontFamily: {
         primary: ["Orbitron", "sans-serif"],
         secondary: ["Raleway", "sans-serif"],
+        chakra: ["var(--font-chakra)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

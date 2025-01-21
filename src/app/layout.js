@@ -3,6 +3,7 @@ import {
   Geist_Mono,
   Silkscreen,
   Orbitron,
+  Chakra_Petch,
   Doto,
 } from "next/font/google";
 
@@ -44,6 +45,14 @@ const orbitron = Orbitron({
   variable: "--font-orb",
 });
 
+const chakra = Chakra_Petch({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-chakra",
+});
+
 export const metadata = {
   title: "Version'25 : All India MCA Meet",
   description:
@@ -57,7 +66,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Version25" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} ${chakra.variable} antialiased`}
       >
         <Providers>
           <Navigation />
