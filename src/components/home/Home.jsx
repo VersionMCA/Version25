@@ -133,7 +133,7 @@ const Home = () => {
 
   return (
     <>
-      <ShootingStars />
+      {/* <ShootingStars /> */}
       <div className="relative h-screen w-screen overflow-hidden ">
         <Social />
         <section
