@@ -18,7 +18,6 @@ export default function About() {
   ];
 
   return (
-    <>
       <div
         className=" md:pt-0 sm:pt-[10%] h-max min-w-[90%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:mt-[2.5%] sm:mt-[3%] rounded-xl"
         id="final"
