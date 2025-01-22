@@ -17,7 +17,7 @@ const FaculyMessage = ({ designation, message }) => {
       <DialogTrigger>
         <MessageSquareQuote />
       </DialogTrigger>
-      <DialogContent className="border border-red-100">
+      <DialogContent className="border w-[95%]">
         {message}
         <DialogFooter className="sm:justify-start">
           <DialogHeader>
