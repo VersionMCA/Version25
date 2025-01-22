@@ -10,12 +10,6 @@ import Link from "next/link";
 
 const icons = [
   {
-    id: 1,
-    href: "https://www.facebook.com/versionmeet",
-    icon: <FaFacebookF className="h-6 w-6" />,
-    label: "Facebook",
-  },
-  {
     id: 2,
     href: "https://www.instagram.com/version_nit_trichy",
     icon: <Instagram className="h-6 w-6" />,

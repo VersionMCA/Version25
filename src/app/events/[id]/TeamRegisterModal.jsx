@@ -29,17 +29,19 @@ export default function TeamRegisterModal({ event, setRegistered }) {
   const [emailList, setEmailList] = useState([]);
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
+  const [teamNameError, setTeamNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleSubmit = async () => {
     if (!teamName) {
-      toast.error("Please fill the Team Name", toastStyle);
+      setTeamNameError("Team Name is required");
       return;
     }
 
     if (
       !(
-        event.minTeamSize <= emailList.length &&
-        emailList.length <= event.maxTeamSize
+        event.minTeamSize <= emailList.length + 1 &&
+        emailList.length + 1 <= event.maxTeamSize
       )
     ) {
       if (event.type === "INDIVIDUAL")
@@ -54,13 +56,28 @@ export default function TeamRegisterModal({ event, setRegistered }) {
 
     try {
       setIsSubmitting(true);
-      const res = await axios.post(`${BACKEND_URL}/api/events/register`, {
+      const res = await axios.post(
+        `${BACKEND_URL}/api/events/teamNameAvailabilityCheck`,
+        {
+          eventId: event.id,
+          teamName: teamName,
+        },
+      );
+      if (res.status === 500) {
+        toast.error(res.data.message, toastStyle);
+        return;
+      }
+      if (!res.data.available) {
+        setTeamNameError("Team name not available !");
+        return;
+      }
+      const response = await axios.post(`${BACKEND_URL}/api/events/register`, {
         userId: session.data.user.id,
         eventId: event.id,
         teamName,
         teamMembers: emailList,
       });
-      if (res.data?.message) {
+      if (response.data?.message) {
         toast.success(
           res.data.message || "Registered Successfully",
           toastStyle,
@@ -79,23 +96,15 @@ export default function TeamRegisterModal({ event, setRegistered }) {
   const handleAddUser = async () => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!regex.test(email)) {
-      toast.error("Please enter a valid email", toastStyle);
+      setEmailError("Invalid email");
       return;
     }
     if (email === session.data.user.email) {
-      toast.error("You are already in team", toastStyle);
+      setEmailError("You are already in team");
       return;
     }
     if (emailList.includes(email)) {
-      toast.error("User already in team", toastStyle);
-      return;
-    }
-    const teamSize = event.teamSize;
-    if (emailList.length >= teamSize) {
-      toast.error(
-        `This Event can have atmost ${teamSize[teamSize.length - 1]} members.`,
-        toastStyle,
-      );
+      setEmailError("User already in team");
       return;
     }
     try {
@@ -108,18 +117,18 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         },
       );
       if (res.data.message === "YES") {
-        toast.error(
+        setEmailError(
           "User already registered for the event with another team",
-          toastStyle,
         );
         return;
       }
       if (res.data.message === "NO") {
         setEmailList(() => [...emailList, email]);
         setEmail("");
+        setEmailError("");
       }
     } catch (error) {
-      toast.error(error.response.data.message, toastStyle);
+      setEmailError(error.response.data.message);
     } finally {
       setIsAddingUser(false);
     }
@@ -136,7 +145,9 @@ export default function TeamRegisterModal({ event, setRegistered }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline">Register</Button>
+        <Button className="font-thin font-iceland text-sm  md:text-xl">
+          Register
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -146,38 +157,54 @@ export default function TeamRegisterModal({ event, setRegistered }) {
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={(e) => e.preventDefault()}>
-          <label htmlFor="teamName" className="uppercase mb-2 font-normal">
-            Team Name
-          </label>
-          <Input
-            type="text"
-            onChange={(e) => setTeamName(e.target.value)}
-            value={teamName}
-          />
-          <div className="flex flex-col mb-7">
-            <label htmlFor="email" className="uppercase mb-2 font-normal">
-              Add Members (Email)*
+          <div>
+            <label htmlFor="teamName" className="mb-2 font-normal">
+              Team Name
             </label>
-            <div className="flex flex-row justify-between">
+            <Input
+              type="text"
+              onChange={(e) => {
+                setTeamName(e.target.value);
+                setTeamNameError("");
+              }}
+              value={teamName}
+            />
+            {teamNameError && (
+              <p className="text-red-500 text-sm mt-1">{teamNameError}</p>
+            )}
+          </div>
+          <div className="flex flex-col mb-7">
+            <label htmlFor="email" className=" mb-2 font-normal">
+              Add Members (Email)
+            </label>
+            <div className="flex flex-row gap-x-1 sm:gap-x-2  justify-between">
               <Input
                 type="email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
+                  setEmailError("");
                 }}
                 className="w-[90%]"
               />
               <Button
                 type="button"
+                className="font-iceland"
                 onClick={handleAddUser}
                 isLoading={isAddingUser}
               >
                 Add
               </Button>
-              {/* {emailBox.error && <div className="text bg-red-300"> </div>} */}
             </div>
+            {emailError && (
+              <p className="text-red-500 text-sm mt-1">{emailError}</p>
+            )}
           </div>
           <div>
+            <label className=" mb-2 font-normal">
+              Members{" "}
+              <span className="text-xs ">{`This event needs ${event.minTeamSize} to ${event.maxTeamSize} members`}</span>
+            </label>
             <ul className="flex flex-row mb-7 w-80 text-[.75rem] flex-wrap gap-2">
               <UserAddedItem
                 email={session.data.user.email}
@@ -199,11 +226,20 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         </form>
         <DialogFooter className="">
           <DialogClose asChild>
-            <Button type="button" variant="secondary">
+            <Button
+              type="button"
+              variant="secondary"
+              className="font-thin font-iceland text-sm  md:text-xl"
+            >
               Cancel
             </Button>
           </DialogClose>
-          <Button type="submit" onClick={handleSubmit} isLoading={isSubmitting}>
+          <Button
+            type="submit"
+            onClick={handleSubmit}
+            isLoading={isSubmitting}
+            className="font-thin font-iceland text-sm  md:text-xl"
+          >
             Register
           </Button>
         </DialogFooter>

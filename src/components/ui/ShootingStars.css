@@ -1,0 +1,56 @@
+
+
+.starryBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out alternate;
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes shoot {
+    0% {
+      transform: translate(0)
+    }
+    25% {
+        transform:translate(500px, 650px);
+        opacity: 0.4;
+    }
+    50%{
+        transform:translate(700px, 750px);
+        opacity: 0;
+    }
+    75%{
+        transform:translate(800px, 850px);
+        opacity: 0.74;
+    }
+    100% {
+      transform: translate(1000px, 500px);
+      opacity: 1;
+    }
+  }
+  
+  .shooting_star{
+    width: 100%;
+    position: absolute;
+    border-radius: 50%;
+    animation: shoot 5s 20s ease-in-out alternate;
+  }

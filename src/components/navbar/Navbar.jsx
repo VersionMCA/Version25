@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import versionLogo from "../../../public/assets/version_logo_light.png";
 import UserAccountDropDown from "./UserAccountDropDown";
+import "./navbar.css";
 // import "./navbar.css"   working without importing
 
 import Image from "next/image";
@@ -64,11 +65,11 @@ const Navbar = ({ toggle }) => {
             return (
               <li
                 key={name}
-                className="mx-3 lg:mx-4 pixie  xl:mx-8  hidden md:block"
+                className="mx-3 lg:mx-4 font-iceland xl:mx-8  hidden md:block"
               >
                 <Link href={link}>
-                  <p className="transition-all codedText tempp   ease-in-out">
-                    {name}
+                  <p className="transition-all ease-in-out codedText tempp">
+                    {name.toUpperCase()}
                   </p>
                 </Link>
               </li>
@@ -76,7 +77,7 @@ const Navbar = ({ toggle }) => {
           })}
           {!user ? (
             <Button
-              className="font-semibold max-sm:h-8 max-sm:text-xs bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight"
+              className="font-iceland text-lg md:text-xl bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight"
               onClick={async () => {
                 await signIn();
               }}
@@ -89,7 +90,7 @@ const Navbar = ({ toggle }) => {
           <UserAccountDropDown />
 
           {/* Hamburger */}
-          <li className="flex justify-end  max-sm:h-2 border-white text-white items-center basis-full">
+          <li className="flex justify-end max-sm:h-2 border-white text-white items-center basis-full">
             <button type="button" className="md:hidden " onClick={toggle}>
               <svg
                 // className="invert"

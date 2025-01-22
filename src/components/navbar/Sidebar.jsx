@@ -27,13 +27,13 @@ const Sidebar = ({ isOpen, toggle }) => {
           </svg>
         </button>
 
-        <ul className="sidebar-nav text-center leading-relaxed text-4xl lg:text-7xl font-extrabold text-white max-h-screen pixie">
+        <ul className="sidebar-nav text-center leading-relaxed text-4xl lg:text-7xl font-iceland text-white max-h-screen ">
           {navLinks.map(({ name, link }) => {
             return (
               <li key={name} className="mx-4 xl:mx-8 " onClick={toggle}>
                 {" "}
                 <Link href={link}>
-                  <p>{name}</p>
+                  <p>{name.toUpperCase()}</p>
                 </Link>
               </li>
             );

@@ -10,11 +10,6 @@ export default {
     "./src/app/**/*.{js,jsx}",
   ],
   theme: {
-    fontFamily: {
-      "open-talk": ["Open Sans", "sans-serif"],
-      "open-poppins": ["Poppins", "sans-serif"],
-      "open-montserrat": ["Montserrat Alternates", "sans-serif"],
-    },
     extend: {
       screens: {
         "2.5xl": "1730px",
@@ -73,6 +68,11 @@ export default {
       fontFamily: {
         primary: ["Orbitron", "sans-serif"],
         secondary: ["Raleway", "sans-serif"],
+        chakra: ["var(--font-chakra)", "sans-serif"],
+        audiowide: ["var(--font-audiowide)", "sans-serif"],
+        aldrich: ["var(--font-aldrich)", "sans-serif"],
+        iceland: ["var(--font-iceland)", "sans-serif"],
+        mina: ["var(--font-mina)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

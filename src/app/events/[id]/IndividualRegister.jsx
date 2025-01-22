@@ -42,7 +42,11 @@ const IndividualRegister = ({ event, setRegistered }) => {
   };
 
   return (
-    <Button isLoading={isSubmitting} onClick={handleRegister}>
+    <Button
+      isLoading={isSubmitting}
+      onClick={handleRegister}
+      className="font-thin font-iceland text-sm  md:text-xl "
+    >
       Register
     </Button>
   );
