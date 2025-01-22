@@ -1,4 +1,5 @@
 import { prisma } from "@/db/index.mjs";
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
@@ -10,7 +11,7 @@ export async function POST(req) {
     });
 
     if (!user) {
-      return new Response(JSON.stringify({ message: "User not found" }), {
+      return new NextResponse(JSON.stringify({ message: "User not found" }), {
         status: 404,
       });
     }
@@ -23,20 +24,32 @@ export async function POST(req) {
       select: {
         event: {
           select: {
-            eventName: true,
+            name: true,
           },
         },
       },
     });
 
     // Extract event names from the results
-    const registeredEvents = registeredEventIds.map(
-      (registration) => registration.event.eventName,
-    );
-    return new Response(JSON.stringify(registeredEvents), { status: 200 });
-  } catch {
-    return new Response(JSON.stringify({ message: "Internal server error" }), {
-      status: 500,
+    const myEvents = await prisma.event.findMany({
+      where: {
+        name: {
+          in: registeredEventIds.map((x) => x?.event?.name), // Matches any name in the array
+        },
+      },
     });
+
+    return new NextResponse(JSON.stringify(myEvents || []), {
+      status: 200,
+    });
+  } catch (err) {
+    console.log("Fetch events error", err);
+
+    return new NextResponse(
+      JSON.stringify({ message: "Internal server error" }),
+      {
+        status: 500,
+      },
+    );
   }
 }
