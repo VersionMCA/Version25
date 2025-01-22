@@ -137,6 +137,5 @@ export default function About() {
         </main>
         <div className="bottom bg-[#323a26]"></div>
       </div>
-    </>
   );
 }
