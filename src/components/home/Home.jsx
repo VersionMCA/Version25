@@ -137,7 +137,7 @@ const Home = () => {
       <div className="relative h-screen w-screen overflow-hidden ">
         <Social />
         <section
-          className=" h-screen max-w-screen overflow-x-hidden"
+          className=" h-screen flex justify-center items-center max-w-screen overflow-x-hidden"
           id="gameSection"
           onMouseEnter={() => setActive(true)}
           onMouseLeave={() => setActive(false)}
@@ -146,12 +146,14 @@ const Home = () => {
             <div className="gridAnimate border absolute top-0 -left-4 w-1/4 h-2/4 bg-theme-blue_dark opacity-50 transform blur-[60px] -rotate-12 animate-circle2" />
             <div className="gridAnimate1 absolute bottom-0 -right-0 w-1/2 h-3/4 bg-theme-blue_light opacity-20 blur-[120px] animate-circle2" />
           </div>
-          <div className="absoulte top-1/2 left-1/2 -transform-x-1/2 -transform-y-1/2  mt-[5%] md:mt-0 select-none">
-            <Image
-              src={velo_svg}
-              alt="LOGO"
-              className="relative mainText m-auto w-full sm:w-[90%] xl:w-[80%] max-sm:pt-32 max-sm:p-5 rounded-3xl sm:p-20 md:p-32 lg:p-40 z-30"
-            />
+          {/*  center velocium*/}
+          <div className="flex justify-center items-center flex-col -translate-y-32">
+            <div className="text-9xl font-audiowide text-theme-cream ">
+              VELOCIUM
+            </div>
+            <div className="text-6xl font-iceland text-theme-light_lime">
+              EMPOWER IDEAS MINIMIZE CODE
+            </div>
           </div>
 
           {/* <div className="absolute top-0 myGrid w-screen h-screen z-20"></div> */}
@@ -200,15 +202,6 @@ const Home = () => {
                 className="w-full sm:w-1/2 select-none"
               />
             </div>
-            {/* <div className="absolute -bottom-16 h-20 w-screen ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1000 100"
-              fill="#94C84C"
-            >
-              <path d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z"></path>
-            </svg>
-          </div> */}
           </div>
           <div
             id="fireworks"

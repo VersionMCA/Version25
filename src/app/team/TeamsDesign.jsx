@@ -4,7 +4,7 @@ import ProfileCard from "./ProfileCard";
 function TeamsDesign({ Data }) {
   return (
     <div className=" flex max-sm:mb-24 mb-32 items-center justify-center px-4 flex-col flax-wrap bg-[rgb(3,7,18)]">
-      <h3 className=" max-md:hidden text-theme-cream/50 text-center max-sm:mb-4 mb-8 font-bold bg-gradient-to-r text-2xl lg:text-3xl hover:scale-105 transition duration-500  tracking-tighter">
+      <h3 className="font-aldrich max-md:hidden text-theme-cream/50 text-center max-sm:mb-4 mb-8 font-bold bg-gradient-to-r text-2xl lg:text-3xl tracking-tighter">
         {Data.Title}
       </h3>
       <div className=" flex flex-col gap-y-14">
