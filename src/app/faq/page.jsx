@@ -24,8 +24,10 @@ function page() {
                 value={`item-${index + 1}`}
                 key={index}
               >
-                <AccordionTrigger className="">{item.title}</AccordionTrigger>
-                <AccordionContent className="text-gray-400">
+                <AccordionTrigger className="font-aldrich">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-400 font-aldrich">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>

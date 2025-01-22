@@ -78,14 +78,18 @@ export default function About() {
               activeTab === "version" ? "fade-in" : "fade-out"
             } ${animateTab === "version" ? "visible" : "hidden"}`}
           >
-            <h2 className="text-3xl font-bold mb-4 select-none">About Us</h2>
-            <p className="text-md md:text-lg lg:text-lg select-none">
+            <h2 className="text-3xl font-aldrich mb-4 select-none">About Us</h2>
+            <p className="text-md md:text-lg lg:text-lg select-none font-mina opacity-80">
               Embarking on its 31st edition, Version 2025, the annual All India
               MCA meet hosted by the students of NIT Trichy, stands as the
               pinnacle event for MCA students nationwide. Lorem ipsum dolor, sit
               amet consectetur adipisicing elit. Delectus nam culpa placeat
               dolorem, error fugit blanditiis animi quis! Molestiae qui maxime
               ipsa magnam, maiores ullam fugiat sapiente illum! Ratione, nisi.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
+              nam culpa placeat dolorem, error fugit blanditiis animi quis!
+              Molestiae qui maxime ipsa magnam, maiores ullam fugiat sapiente
+              illum! Ratione, nisi.
             </p>
           </div>
 
@@ -95,8 +99,8 @@ export default function About() {
               activeTab === "velocium" ? "fade-in" : "fade-out"
             } ${animateTab === "velocium" ? "visible" : "hidden"}`}
           >
-            <h2 className="text-3xl font-bold mb-4 select-none">Events</h2>
-            <p className="text-md md:text-lg lg:text-lg select-none">
+            <h2 className="text-3xl font-aldrich mb-4 select-none">Events</h2>
+            <p className="text-md md:text-lg lg:text-lg select-none font-mina opacity-80">
               Join us for exciting coding challenges, hackathons, and workshops
               with industry experts! Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Enim error, fuga quibusdam facilis provident

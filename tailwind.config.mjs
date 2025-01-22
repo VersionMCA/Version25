@@ -74,6 +74,10 @@ export default {
         primary: ["Orbitron", "sans-serif"],
         secondary: ["Raleway", "sans-serif"],
         chakra: ["var(--font-chakra)", "sans-serif"],
+        audiowide: ["var(--font-audiowide)", "sans-serif"],
+        aldrich: ["var(--font-aldrich)", "sans-serif"],
+        iceland: ["var(--font-iceland)", "sans-serif"],
+        mina: ["var(--font-mina)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
