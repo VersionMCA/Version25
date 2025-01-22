@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import "./page.css";
-import ShootingStars from "../../components/ui/ShootingStars";
 import Image from "next/image";
 export default function About() {
   const [activeTab, setActiveTab] = useState("version");
@@ -20,7 +19,6 @@ export default function About() {
 
   return (
     <>
-      <ShootingStars />
       <div
         className=" md:pt-0 sm:pt-[10%] h-max min-w-[90%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:mt-[2.5%] sm:mt-[3%] rounded-xl"
         id="final"
@@ -47,9 +45,9 @@ export default function About() {
           </div>
         </div>
         {/* Header */}
-        <header className=" header bg-[#171616] shadow-md  rounded-md p-7 m-0 orb select-none ">
+        <header className=" header bg-[#171616] shadow-sm  rounded-md p-7 m-0 orb select-none ">
           <h1 className="text-center text-3xl font-bold text-[#C6FF00]">
-            VERSION 2025
+            ABOUT US
           </h1>
         </header>
 
@@ -71,26 +69,38 @@ export default function About() {
         </div>
 
         {/* Tab Content */}
-        <main className="main applyBorder flex-grow p-8 bg-gradient-to-t from-[#323a26] via-[#202419] to-[#171616] h-max lg:h-72 doto font-extrabold rounded-xl">
+        <main className="main applyBorder flex-grow p-8 bg-gradient-to-t from-[#323a26] via-[#202419] to-[#171616] h-max lg:h-72  font-extrabold rounded-xl">
           {/* Version Tab */}
           <div
             className={`tabs select-none ${
               activeTab === "version" ? "fade-in" : "fade-out"
             } ${animateTab === "version" ? "visible" : "hidden"}`}
           >
-            <h2 className="text-3xl font-aldrich mb-4 select-none">About Us</h2>
-            <p className="text-md md:text-lg lg:text-lg select-none font-mina opacity-80">
-              Embarking on its 31st edition, Version 2025, the annual All India
-              MCA meet hosted by the students of NIT Trichy, stands as the
-              pinnacle event for MCA students nationwide. Lorem ipsum dolor, sit
-              amet consectetur adipisicing elit. Delectus nam culpa placeat
-              dolorem, error fugit blanditiis animi quis! Molestiae qui maxime
-              ipsa magnam, maiores ullam fugiat sapiente illum! Ratione, nisi.
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
-              nam culpa placeat dolorem, error fugit blanditiis animi quis!
-              Molestiae qui maxime ipsa magnam, maiores ullam fugiat sapiente
-              illum! Ratione, nisi.
-            </p>
+            <ul className="text-xs sm:text-sm lg:text-lg  select-none font-mina opacity-80">
+              <li>
+                Version 2025 is proud to present its forward-looking theme,
+                "Velocium: Empower Ideas, Minimize Code." Velocium, a fusion of
+                "velocity" and "optimum," symbolizes the pursuit of speed and
+                efficiency in software development through low-code innovation
+                and enhanced developer productivity.
+              </li>
+              <li>
+                The theme highlights the transformative power of minimizing
+                traditional coding hurdles while maximizing creativity and
+                execution. It embodies the essence of building smarter, faster,
+                and more efficient solutions, enabling developers to focus on
+                bringing ideas to life rather than being bogged down by complex
+                code. Velocium celebrates the future of development where
+                simplicity meets innovation, empowering individuals to create
+                impactful solutions with ease.
+              </li>
+              <li>
+                Prepare to embark on a journey into the realm of Low-Code
+                Development and Developer Productivity at Version 2025. Discover
+                how this cutting-edge approach is redefining the way we build,
+                innovate, and solve challenges in the digital age.
+              </li>
+            </ul>
           </div>
 
           {/* Velocium Tab */}
@@ -99,15 +109,31 @@ export default function About() {
               activeTab === "velocium" ? "fade-in" : "fade-out"
             } ${animateTab === "velocium" ? "visible" : "hidden"}`}
           >
-            <h2 className="text-3xl font-aldrich mb-4 select-none">Events</h2>
-            <p className="text-md md:text-lg lg:text-lg select-none font-mina opacity-80">
-              Join us for exciting coding challenges, hackathons, and workshops
-              with industry experts! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Enim error, fuga quibusdam facilis provident
-              nesciunt, beatae necessitatibus consequatur placeat officiis
-              cupiditate rem, consectetur iure ratione consequuntur corporis
-              facere similique pariatur.
-            </p>
+            <ul className="text-xs sm:text-sm lg:text-lg  select-none font-mina opacity-80">
+              <li>
+                Version 2025 is proud to present its forward-looking theme,
+                "Velocium: Empower Ideas, Minimize Code." Velocium, a fusion of
+                "velocity" and "optimum," symbolizes the pursuit of speed and
+                efficiency in software development through low-code innovation
+                and enhanced developer productivity.
+              </li>
+              <li>
+                The theme highlights the transformative power of minimizing
+                traditional coding hurdles while maximizing creativity and
+                execution. It embodies the essence of building smarter, faster,
+                and more efficient solutions, enabling developers to focus on
+                bringing ideas to life rather than being bogged down by complex
+                code. Velocium celebrates the future of development where
+                simplicity meets innovation, empowering individuals to create
+                impactful solutions with ease.
+              </li>
+              <li>
+                Prepare to embark on a journey into the realm of Low-Code
+                Development and Developer Productivity at Version 2025. Discover
+                how this cutting-edge approach is redefining the way we build,
+                innovate, and solve challenges in the digital age.
+              </li>
+            </ul>
           </div>
         </main>
         <div className="bottom bg-[#323a26]"></div>

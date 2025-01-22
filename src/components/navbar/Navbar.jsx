@@ -77,7 +77,7 @@ const Navbar = ({ toggle }) => {
           })}
           {!user ? (
             <Button
-              className="font-iceland max-sm:h-8 max-sm:text-xs bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight btn-16"
+              className="font-iceland text-lg md:text-xl bg-gradient-to-b from-theme-light_lime to-theme-lime tracking-tight"
               onClick={async () => {
                 await signIn();
               }}

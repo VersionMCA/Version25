@@ -1,102 +1,8 @@
-import {
-  Geist,
-  Geist_Mono,
-  Silkscreen,
-  Orbitron,
-  Chakra_Petch,
-  Doto,
-  Audiowide,
-  Aldrich,
-  Iceland,
-  Mina,
-  Iceberg,
-} from "next/font/google";
-
 import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/components/navbar/Navigation";
-
-const doto = Doto({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-doto",
-});
-
-const audiowide = Audiowide({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-audiowide",
-});
-
-const iceberg = Iceberg({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-iceberg",
-});
-
-const aldrich = Aldrich({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-aldrich",
-});
-
-const iceland = Iceland({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-iceland",
-});
-
-const mina = Mina({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-mina",
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const pixie = Silkscreen({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-pixie",
-});
-
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-orb",
-});
-
-const chakra = Chakra_Petch({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-chakra",
-});
+import ShootingStars from "@/components/ui/ShootingStars";
+import { mina, aldrich, iceland, audiowide, orbitron, doto } from "./fonts";
 
 export const metadata = {
   title: "Version'25 : All India MCA Meet",
@@ -111,9 +17,10 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Version25" />
       </head>
       <body
-        className={`${geistSans.variable} ${mina.variable} ${iceberg.variable} ${aldrich.variable} ${iceland.variable} ${audiowide.variable} ${geistMono.variable} ${pixie.variable} ${orbitron.variable} ${doto.variable} ${chakra.variable} antialiased`}
+        className={` ${mina.variable} ${aldrich.variable} ${iceland.variable} ${audiowide.variable}  ${orbitron.variable} ${doto.variable} antialiased `}
       >
         <Providers>
+          <ShootingStars />
           <Navigation />
           {children}
         </Providers>

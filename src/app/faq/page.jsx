@@ -5,17 +5,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqItems } from "../../app/faq/faqs.js";
-import ShootingStars from "@/components/ui/ShootingStars.jsx";
 
 function page() {
   return (
     <>
-      <ShootingStars />
       <div className=" max-w-2xl mx-auto mt-24 p-6">
         <Accordion
           type="single"
           collapsible
-          className="w-full border rounded-md p-4"
+          className="w-full border bg-black/90 rounded-md p-4"
         >
           {faqItems.map((item, index) => {
             return (

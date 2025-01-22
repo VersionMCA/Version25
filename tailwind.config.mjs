@@ -10,11 +10,6 @@ export default {
     "./src/app/**/*.{js,jsx}",
   ],
   theme: {
-    fontFamily: {
-      "open-talk": ["Open Sans", "sans-serif"],
-      "open-poppins": ["Poppins", "sans-serif"],
-      "open-montserrat": ["Montserrat Alternates", "sans-serif"],
-    },
     extend: {
       screens: {
         "2.5xl": "1730px",

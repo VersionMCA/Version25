@@ -1,7 +1,6 @@
 "use client";
 import "./home.css";
 import Image from "next/image";
-import velo_svg from "../../../public/assets/velo_svg.svg";
 import version_back from "../../../public/assets/version_back.svg";
 import road from "../../../public/assets/road.svg";
 import boy from "../../../public/assets/boy.svg";
@@ -11,7 +10,6 @@ import Social from "@/components/social/Social";
 import React, { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import { redirect, useSearchParams } from "next/navigation";
-import ShootingStars from "../ui/ShootingStars";
 
 const Home = () => {
   const [active, setActive] = useState(false);
@@ -133,7 +131,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <ShootingStars /> */}
       <div className="relative h-screen w-screen overflow-hidden ">
         <Social />
         <section
@@ -148,10 +145,10 @@ const Home = () => {
           </div>
           {/*  center velocium*/}
           <div className="flex justify-center items-center flex-col -translate-y-32">
-            <div className="text-9xl font-audiowide text-theme-cream ">
+            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-audiowide text-theme-cream ">
               VELOCIUM
             </div>
-            <div className="text-6xl font-iceland text-theme-light_lime">
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-iceland text-theme-light_lime">
               EMPOWER IDEAS MINIMIZE CODE
             </div>
           </div>
