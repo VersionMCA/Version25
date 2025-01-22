@@ -19,7 +19,7 @@ const colors = [
   "#FFA500",
 ];
 
-const ProfileCard2 = ({ person }) => {
+const ProfileCard = ({ person }) => {
   const { name, image, designation, message, socialLinks } = person;
 
   const color = colors[Math.floor(Math.random() * colors.length)];
@@ -40,12 +40,13 @@ const ProfileCard2 = ({ person }) => {
           data-astro-cid-6qtsqqpf
         >
           <div className="image-container" data-astro-cid-6qtsqqpf>
-            <div
+            <a
+              href="members/13"
               className="col-start-1 col-end-3 row-start-1 row-end-3 object-fill"
               data-astro-cid-6qtsqqpf
             >
               <img src={image} alt={name} data-astro-cid-6qtsqqpf />
-            </div>
+            </a>
           </div>
         </div>
         <div
@@ -160,4 +161,4 @@ const ProfileCard2 = ({ person }) => {
   );
 };
 
-export default ProfileCard2;
+export default ProfileCard;
