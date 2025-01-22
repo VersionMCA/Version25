@@ -54,7 +54,7 @@ export default function page() {
   return (
     <div
       className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundImage: `url(${BACKGROUND_IMAGE})` }}
+{/*       style={{ backgroundImage: `url(${BACKGROUND_IMAGE})` }} */}
     >
       <div className="w-full p-2 max-w-4xl translate-y-4 flex flex-col items-center gap-2 sm:gap-6 lg:gap-10">
         {/* Event Header */}
