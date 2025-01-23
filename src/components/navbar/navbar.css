@@ -1,0 +1,12 @@
+.navbar {
+  font-family: "Poppins", sans-serif !important;
+}
+
+
+.orb {
+  font-family: var(--font-orb);
+}
+
+.doto {
+  font-family: var(--font-doto);
+}

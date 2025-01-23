@@ -1,18 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
 import "./globals.css";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar/Navbar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navigation from "@/components/navbar/Navigation";
+import ShootingStars from "@/components/ui/ShootingStars";
+import { mina, aldrich, iceland, audiowide, orbitron, doto } from "./fonts";
 
 export const metadata = {
   title: "Version'25 : All India MCA Meet",
@@ -23,11 +13,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Version25" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${mina.variable} ${aldrich.variable} ${iceland.variable} ${audiowide.variable}  ${orbitron.variable} ${doto.variable} antialiased `}
       >
         <Providers>
-          <Navbar />
+          <ShootingStars />
+          <Navigation />
           {children}
         </Providers>
       </body>

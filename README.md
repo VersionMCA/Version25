@@ -30,3 +30,13 @@
   ```bash
   npm run format:check
    ```
+
+### Contributors
+
+Thanks to all the amazing contributors
+
+<div align="center">
+
+![Contributors](https://contributors-img.web.app/image?repo=VersionMCA/Version25)
+
+</div>
