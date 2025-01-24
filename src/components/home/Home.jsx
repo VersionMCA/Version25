@@ -103,6 +103,7 @@ const Home = () => {
 
   const handleKeydown = (event) => {
     player.current.style.animation = "none";
+
     if (event.key === "ArrowLeft" || event.key === "a") {
       movePlayer("left");
     } else if (event.key === "ArrowRight" || event.key === "d") {
@@ -111,6 +112,34 @@ const Home = () => {
       jump();
     }
   };
+
+  const startMovingRight = () => {
+    let x = playerX; // Current position
+    const moveInterval = setInterval(() => {
+      if (isColliding() || x > 250) {
+        setOver(true);
+        clearInterval(moveInterval);
+        return;
+      }
+      x += 10;
+      player.current.style.transform = `translateX(${x}px)`;
+    }, 100);
+  };
+
+  const checkScreenWidth = () => {
+    if (window.matchMedia("(max-width: 450px)").matches) {
+      player.current.style.animation = "none";
+      startMovingRight();
+    } else {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", checkScreenWidth);
+    checkScreenWidth();
+    return () => window.removeEventListener("resize", checkScreenWidth);
+  }, []);
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -132,6 +161,7 @@ const Home = () => {
       document.removeEventListener("keydown", handleKeydown);
       return;
     }
+
     if (obstacle.current) {
       setObstacleRect(obstacle.current.getBoundingClientRect());
     }
@@ -178,7 +208,7 @@ const Home = () => {
           <div className="absolute top-0 myGrid w-screen h-screen z-20"></div>
           <div className="">
             <div
-              className="absolute bottom-0 right-10 h-screen w-20"
+              className="absolute bottom-0 right-7 sm:right-5 md:right-10 h-screen w-20"
               ref={obstacle}
               id="obstacle"
             ></div>
