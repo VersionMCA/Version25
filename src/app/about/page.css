@@ -90,7 +90,7 @@
 #astro{
     transform: rotate(30deg);
     transition: all 0.5s ease;
-    animation: astrotalk 10s infinite 10s linear alternate;
+    animation: astrotalk 10s infinite 0s ease-in-out alternate;
 }
 
 .top2{
@@ -234,5 +234,7 @@
   }
   
   .active_btn{
-    box-shadow:inset 0 0 50px rgba(0, 0, 0, 0.458);
+    /* box-shadow:inset 0 0 50px rgba(0, 0, 0, 0.458); */
+    border-top: 1px solid rgba(0, 0, 0, 0.458);
+
   }

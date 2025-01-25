@@ -75,7 +75,7 @@ export default function About() {
               activeTab === "version" ? "fade-in" : "fade-out"
             } ${animateTab === "version" ? "visible" : "hidden"}`}
           >
-            <ul className="text-xs sm:text-sm lg:text-lg  select-none font-mina opacity-80">
+            <ul className="text-xs sm:text-sm lg:text-md xl:text-lg  select-none font-mina opacity-80">
               <li>
                 Version 2025 is proud to present its forward-looking theme,
                 "Velocium: Empower Ideas, Minimize Code." Velocium, a fusion of
@@ -108,7 +108,7 @@ export default function About() {
               activeTab === "velocium" ? "fade-in" : "fade-out"
             } ${animateTab === "velocium" ? "visible" : "hidden"}`}
           >
-            <ul className="text-xs sm:text-sm lg:text-lg  select-none font-mina opacity-80">
+            <ul className="text-xs sm:text-sm lg:text-md xl:text-lg select-none font-mina opacity-80">
               <li>
                 Version 2025 is proud to present its forward-looking theme,
                 "Velocium: Empower Ideas, Minimize Code." Velocium, a fusion of

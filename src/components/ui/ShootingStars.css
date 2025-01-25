@@ -14,7 +14,7 @@
     position: absolute;
     background-color: white;
     border-radius: 50%;
-    animation: twinkle 2s infinite ease-in-out alternate;
+    animation: twinkle 2s infinite 0s ease-in-out alternate;
   }
   
   @keyframes twinkle {
@@ -35,22 +35,41 @@
         opacity: 0.4;
     }
     50%{
-        transform:translate(700px, 750px);
+        transform:translate(1000px, 1000px);
         opacity: 0;
     }
     75%{
-        transform:translate(800px, 850px);
+        transform:translate(-670px, -860px);
         opacity: 0.74;
     }
     100% {
-      transform: translate(1000px, 500px);
+      transform: translate(0, 0);
       opacity: 1;
     }
   }
   
   .shooting_star{
-    width: 100%;
     position: absolute;
     border-radius: 50%;
-    animation: shoot 5s 20s ease-in-out alternate;
+    background-color: rgb(20, 232, 158);
+    animation-name: shoot;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+
+  .shooting_star::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(
+      to left,
+      rgba(5, 241, 159, 0.5),
+      rgba(20, 232, 158, 0)
+    );
+    z-index: -1; 
   }
