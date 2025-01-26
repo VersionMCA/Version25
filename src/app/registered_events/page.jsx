@@ -8,12 +8,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import axios from "axios";
-import { Link } from "lucide-react";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Button } from "@/components/ui/Button";
 import { FaGoogle } from "react-icons/fa";
+import toastStyle from "@/utilities/toastStyle";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -22,7 +22,7 @@ export const dynamic = "force-dynamic";
 
 const Page = () => {
   const { data: session } = useSession();
-
+  const [submitting, setIsSubmitting] = useState(false);
   const [registeredEvents, setRegisteredEvents] = useState(null);
 
   const convertToGoogleCalendarFormat = (isoString) => {
@@ -61,9 +61,30 @@ const Page = () => {
     window.open(calendarUrl, "_blank", "noopener,noreferrer");
   };
 
+  //Function to unregister for individual events
   const handleUnregister = async (event) => {
-    // write call here using event and user
-    const user = session?.user;
+    if (!session?.user?.id) {
+      toast.error("Login to unregister for the event", toastStyle);
+      return;
+    }
+    if (event.type === "TEAM") {
+      toast.error("Cannot unregister for team events", toastStyle);
+      return;
+    }
+    try {
+      setIsSubmitting(true);
+      const res = await axios.post(`${BACKEND_URL}/api/events/unregister`, {
+        eventId: event.id,
+      });
+      if (res.data?.message) {
+        toast.success(res.data.message, toastStyle);
+      }
+      setRegisteredEvents((prev) => prev.filter((e) => e.id !== event.id));
+    } catch (error) {
+      toast.error(error.response.data.message, toastStyle);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -78,7 +99,7 @@ const Page = () => {
         setRegisteredEvents((prev) => res.data);
       } catch (error) {
         console.log("Fetch my events error", error);
-        toast.error("Unable to fetch your events");
+        toast.error("Unable to fetch your events", toastStyle);
       }
     };
     fetchMyEvents();
@@ -86,23 +107,23 @@ const Page = () => {
 
   return (
     <>
-      <div className="p-48 ">
+      <div className="">
         {!session?.user && (
-          <div className="p-36 text-center">
+          <div className="mt-40 p-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-iceland text-center">
             Login to see your registered events
           </div>
         )}
         {registeredEvents?.length === 0 && (
-          <div className="p-36 text-center">
+          <div className="mt-40 p-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-iceland text-center">
             You haven't registered for any events yet.
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex mt-24 flex-row justify-center items-center flex-wrap gap-6">
           {registeredEvents?.map((event, index) => (
             <Card
               key={index}
-              className="shadow-lg text-foreground border rounded-lg"
+              className="shadow-lg m-2 w-full max-w-[400px] text-foreground border rounded-lg"
             >
               <CardHeader>
                 <CardTitle>{event.name}</CardTitle>
@@ -123,7 +144,7 @@ const Page = () => {
                 </p>
               </div>
 
-              <CardFooter className="flex gap-4">
+              <CardFooter className="flex max-md:flex-col flex-row gap-4">
                 <Button
                   variant="outline"
                   className="w-full"
@@ -132,13 +153,14 @@ const Page = () => {
                   Add to Calendar <FaGoogle size={8} />
                 </Button>
 
-                {event.type === "TEAM" && (
+                {event.type === "INDIVIDUAL" && (
                   <Button
                     variant="destructive"
                     className="w-full"
+                    disabled={submitting}
                     onClick={(e) => handleUnregister(event)}
                   >
-                    Unregister
+                    {submitting ? "Unregistering..." : "Unregister"}
                   </Button>
                 )}
               </CardFooter>

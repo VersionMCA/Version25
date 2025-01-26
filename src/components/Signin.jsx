@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Separator } from "./ui/separator";
-import versionLogo from "@public/assets/logo2.png";
+import versionLogo from "@public/assets/version_logo_light.png";
 
 const Signin = () => {
   const session = useSession();
@@ -36,7 +36,7 @@ const Signin = () => {
           type: "spring",
           damping: 10,
         }}
-        className="flex flex-col gap-12 justify-between bg-primary/5 p-8 rounded-2xl border border-primary/10 shadow-xl shadow-primary/5 min-w-[30vw]"
+        className="flex flex-col m-1 gap-12 justify-between bg-black/60 p-8 rounded-2xl border border-primary/10 shadow-xl shadow-primary/5 min-w-[30vw]"
       >
         <div className="flex flex-col gap-12">
           <div className="flex flex-col text-center">
@@ -69,19 +69,33 @@ const Signin = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex flex-col justify-center items-center gap-2 w-full">
           <Separator className="w-full my-2" />
           <Link
             href={"/"}
-            className="flex items-center gap-2 cursor-pointer mx-auto"
+            className="relative w-[340px] h-[80px] cursor-pointer overflow-hidden"
           >
             <Image
               src={versionLogo}
+              fill={true}
+              className="object-contain"
               alt="Logo"
-              className="rounded-full w-72 h-20"
             />
           </Link>
+          {/* <Link
+            href={"/"}
+            className="flex items-center gap-2 cursor-pointer mx-auto"
+          >
+            <div className="w-[170px] h-[40px]">
+              <Image
+                src={versionLogo}
+                alt="Logo"
+                fill={true}
+                className="object-contain"
+              />
+            </div>
+
+          </Link> */}
         </div>
       </motion.div>
     </div>
