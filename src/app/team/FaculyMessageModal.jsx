@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialogMessage";
 import { MessageSquareQuote } from "lucide-react";
 
 const FaculyMessage = ({ designation, message }) => {

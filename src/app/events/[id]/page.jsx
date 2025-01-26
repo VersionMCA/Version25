@@ -52,24 +52,24 @@ export default function page() {
   }, []);
 
   return (
-    <div
-      className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden"
-    >
+    <div className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="w-full p-2 max-w-4xl translate-y-4 flex flex-col items-center gap-2 sm:gap-6 lg:gap-10">
         {/* Event Header */}
         <div className="flex  w-full p-6 justify-between items-center">
           <div
-            className="flex flex-row  cursor-pointer"
+            className="flex flex-row  justify-center items-center cursor-pointer"
             onClick={() => router.push("/events")}
           >
             <ChevronLeft />
-            <div className="max-sm:hidden font-iceland">BACK</div>
+            <div className="max-sm:hidden sm:text-xl md:text-2xl lg:text-3xl font-iceland">
+              BACK
+            </div>
             <ChevronRight className="max-sm:hidden" />
           </div>
           <h1 className=" text-4xl lg:text-6xl font-primary">{event?.name}</h1>
           <div></div>
         </div>
-        <div className="border w-full h-[22rem] md:h-[24rem] bg-black/80 lg:h-[26rem] shadow-lg p-4 md:px-6 lg:px-8 shadow-primary/10 rounded-lg">
+        <div className="border w-full h-[22rem] md:h-[24rem]  bg-[#030712] lg:h-[26rem] shadow-lg p-4 md:px-6 lg:px-8 shadow-primary/10 rounded-lg">
           {/* Navigation */}
           <div className="flex gap-2 h-[19%] w-full items-center justify-between py-4 overflow-x-scroll no_scrollbar">
             {event?.eventDetails.map(({ title }, idx) => (
