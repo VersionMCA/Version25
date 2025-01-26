@@ -61,7 +61,6 @@ export default function UserDetailForm({ user }) {
     const fetchMyDetails = async () => {
       try {
         const res = await axios.get(`${BACKEND_URL}/api/user`);
-        console.log("me", res.data);
         setCurrUser((prev) => res.data);
       } catch (error) {
         toast.error("Unable to fetch your details", toastStyle);
@@ -73,12 +72,6 @@ export default function UserDetailForm({ user }) {
 
   return (
     <form className="flex flex-col gap-4">
-      <Label className="mb-2">Profile Picture</Label>
-      <div className="flex items-center justify-center">
-        <div className="!w-[6rem] !h-[6rem] flex items-center hover:bg-[#030712] p-[0.2rem] justify-center ">
-          <UserImage image={currUser.image} key={currUser.image} />
-        </div>
-      </div>
       <div>
         <Label className="">Name</Label>
         <Input

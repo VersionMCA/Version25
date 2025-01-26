@@ -40,13 +40,12 @@ const ProfileCard = ({ person }) => {
           data-astro-cid-6qtsqqpf
         >
           <div className="image-container" data-astro-cid-6qtsqqpf>
-            <a
-              href="members/13"
+            <div
               className="col-start-1 col-end-3 row-start-1 row-end-3 object-fill"
               data-astro-cid-6qtsqqpf
             >
               <img src={image} alt={name} data-astro-cid-6qtsqqpf />
-            </a>
+            </div>
           </div>
         </div>
         <div

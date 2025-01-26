@@ -17,7 +17,7 @@ const IndividualRegister = ({ event, setRegistered }) => {
       toast.error("Login to register for the event", toastStyle);
       return;
     }
-    if (event.type === "Team") {
+    if (event.type === "TEAM") {
       toast.error(
         "This event is a team event. Please register as a team",
         toastStyle,

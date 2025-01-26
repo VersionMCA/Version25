@@ -3,6 +3,7 @@ import "./home.css";
 import Image from "next/image";
 import version_back from "../../../public/assets/version_back.svg";
 import road from "../../../public/assets/road.svg";
+
 import boy from "../../../public/assets/boy.svg";
 import cloud from "../../../public/assets/cloud.svg";
 import Social from "@/components/social/Social";
@@ -56,6 +57,22 @@ const Home = () => {
     );
   };
 
+  const jump = () => {
+    if (player.current.classList.contains("jumping")) return;
+
+    player.current.classList.add("jumping");
+    player.current.style.transform = `translateX(${playerX}px) translateY(-100px)`;
+
+    setTimeout(() => {
+      player.current.style.transform = `translateX(${playerX}px) translateY(0)`;
+      player.current.classList.remove("jumping");
+    }, 500);
+
+    if (isColliding()) {
+      setOver(true);
+    }
+  };
+
   const movePlayer = (direction) => {
     if (direction === "left" && playerX > xMin) {
       playerX -= speed;
@@ -83,12 +100,44 @@ const Home = () => {
   };
 
   const handleKeydown = (event) => {
+    player.current.style.animation = "none";
+
     if (event.key === "ArrowLeft" || event.key === "a") {
       movePlayer("left");
     } else if (event.key === "ArrowRight" || event.key === "d") {
       movePlayer("right");
+    } else if (event.keyCode === 32) {
+      jump();
     }
   };
+
+  const startMovingRight = () => {
+    let x = playerX; // Current position
+    const moveInterval = setInterval(() => {
+      if (isColliding() || x > 250) {
+        setOver(true);
+        clearInterval(moveInterval);
+        return;
+      }
+      x += 10;
+      player.current.style.transform = `translateX(${x}px)`;
+    }, 100);
+  };
+
+  const checkScreenWidth = () => {
+    if (window.matchMedia("(max-width: 450px)").matches) {
+      player.current.style.animation = "none";
+      startMovingRight();
+    } else {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", checkScreenWidth);
+    checkScreenWidth();
+    return () => window.removeEventListener("resize", checkScreenWidth);
+  }, []);
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -148,15 +197,15 @@ const Home = () => {
             <div className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-audiowide text-theme-cream ">
               VELOCIUM
             </div>
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-iceland text-theme-light_lime">
+            <div className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-iceland text-theme-light_lime">
               EMPOWER IDEAS MINIMIZE CODE
             </div>
           </div>
 
-          {/* <div className="absolute top-0 myGrid w-screen h-screen z-20"></div> */}
+          <div className="absolute top-0 myGrid w-screen h-screen z-20"></div>
           <div className="">
             <div
-              className="absolute bottom-0 right-10 h-screen w-20"
+              className="absolute bottom-0 right-7 sm:right-5 md:right-10 h-screen w-20"
               ref={obstacle}
               id="obstacle"
             ></div>
@@ -173,16 +222,15 @@ const Home = () => {
             <Image
               src={cloud}
               alt="cloud"
-              className=" absolute animate-cloud2 bottom-[23%] right-3 mx-4 max-w-24 xl:min-w-36 z-[25] select-none"
+              className=" absolute animate-cloud2 bottom-[23%] right-3 mx-4 max-w-24 xl:min-w-36 z-[25] select-none "
             />
             <Image
               src={boy}
               ref={player}
               id="player"
               alt="boy"
-              className="absolute bottom-0 mr-8 ml-8 mb-3 xl:mb-5 max-w-8 sm:max-w-10 md:max-w-12 xl:max-w-14 z-40 select-none"
+              className="absolute left-0 bottom-0 mr-8 ml-8 mb-3 xl:mb-5 max-w-8 sm:max-w-10 md:max-w-12 xl:max-w-14 z-40 select-none "
             />
-
             <div
               id="gameArena"
               className="absolute bottom-0 left-0 w-screen flex justify-end items-end flex-row z-[35] select-none"
@@ -209,8 +257,8 @@ const Home = () => {
             <div className="firework"></div>
             <div className="firework"></div>
           </div>
-        </section>
-      </div>
+        </section >
+      </div >
     </>
   );
 };
