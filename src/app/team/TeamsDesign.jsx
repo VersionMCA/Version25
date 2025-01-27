@@ -8,23 +8,6 @@ function TeamsDesign({ Data }) {
         {Data.Title}
       </h3>
       <div className=" flex flex-col gap-y-14">
-<<<<<<< HEAD
-        {Data.Chairperson && (
-          <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-8 md:gap-y-14 lg:gap-y-20">
-            {Data.Chairperson.map((person, index) => (
-              <ProfileCard key={index} person={person} />
-            ))}
-          </div>
-        )}
-        {Data.Heads && (
-          <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-8 md:gap-y-14 lg:gap-y-20">
-            {Data.Heads.map((person, index) => (
-              <ProfileCard key={index} person={person} />
-            ))}
-          </div>
-        )}
-=======
->>>>>>> 8440ab4da83a57ae50899b9a2afa6350920b13f0
         {Data.Members && (
           <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-8 md:gap-y-14 lg:gap-y-20">
             {Data.Members.map((person, index) => (
