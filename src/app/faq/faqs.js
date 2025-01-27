@@ -65,6 +65,6 @@ export const faqItems = [
     title:
       "Are there any restrictions on the number of participants from each outside college?",
     content:
-      "There are no restrictions on the number of participants from each outside college. You are welcome to bring as many participants as you’d like.",
+      "Yes, a maximum of 8 students from one college can participate offline. For online events, there is no participant limit.",
   },
 ];
