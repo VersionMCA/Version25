@@ -46,7 +46,7 @@ const Chairpersons = {
     {
       name: "Nandini Kumari",
       image: "/profile_images/nandini_Kumari.jpg",
-      designation: "Chairperson",
+      designation: "ARC Chairperson",
       socialLinks: {
         github: "https://github.com/nandinisahu99",
         linkedin: "https://www.linkedin.com/in/nandini-sahu-118a40225",
@@ -55,7 +55,7 @@ const Chairpersons = {
     {
       name: "Aman Kumar Singh",
       image: "/profile_images/Aman_Singh.jpeg",
-      designation: "Chairperson",
+      designation: "PRC Chairperson",
       socialLinks: {
         github: "https://github.com/amanks009",
         linkedin: "https://www.linkedin.com/in/aman-kumar-singh-33610224b/",
@@ -64,7 +64,7 @@ const Chairpersons = {
     {
       name: "Pawan Agarwal",
       image: "/profile_images/Pawan_Agarwal.jpeg",
-      designation: "Chairperson",
+      designation: "PPC Chairperson",
       socialLinks: {
         github: "https://github.com/pawan-git7979",
         linkedin: "https://www.linkedin.com/in/pawan-agrawal-316a16190/",
@@ -73,7 +73,7 @@ const Chairpersons = {
     {
       name: "Harsha Jha",
       image: "/profile_images/Harsha_Jha.jpeg",
-      designation: "Chairperson",
+      designation: "HRC Chairperson",
       socialLinks: {
         github: "https://github.com/andresberlin",
         linkedin: "https://twitter.com/andresberlin",
