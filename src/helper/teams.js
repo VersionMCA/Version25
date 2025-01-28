@@ -39,13 +39,12 @@ const Chairpersons = {
       image: "/profile_images/Abhi_Nandi.jpeg",
       designation: "EEC Chairperson",
       socialLinks: {
-        github: "#",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/abhiusnees-nandi-b19349196/",
       },
     },
     {
       name: "Nandini Kumari",
-      image: "/profile_images/nandini_Kumari.jpg",
+      image: "/profile_images/nandini.jpg",
       designation: "ARC Chairperson",
       socialLinks: {
         github: "https://github.com/nandinisahu99",
@@ -75,8 +74,8 @@ const Chairpersons = {
       image: "/profile_images/Harsha_Jha.jpeg",
       designation: "HRC Chairperson",
       socialLinks: {
-        github: "https://github.com/andresberlin",
-        linkedin: "https://twitter.com/andresberlin",
+        github: "https://github.com/Harshajhaa",
+        linkedin: "https://www.linkedin.com/in/harsha-jha-1a7364167/",
       },
     },
   ],
@@ -91,7 +90,6 @@ const CCC = {
       designation: "Secratory",
 
       socialLinks: {
-        github: "#",
         linkedin: "http://www.linkedin.com/in/rohitmishra-here",
       },
     },
@@ -101,7 +99,6 @@ const CCC = {
       designation: "Treasurer",
 
       socialLinks: {
-        github: "#",
         linkedin: "https://in.linkedin.com/in/astikverma",
       },
     },
@@ -116,7 +113,7 @@ const CCC = {
     },
     {
       name: "Nikhil Chhipa",
-      image: "/profile_images/Nikhil_Chippa.jpeg",
+      image: "/profile_images/Nikhil_Chhipa.jpeg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/chhipanikhil9",
@@ -129,8 +126,7 @@ const CCC = {
       designation: "PPC Head",
 
       socialLinks: {
-        github: "#",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/nitin009/",
       },
     },
     {
@@ -139,8 +135,7 @@ const CCC = {
       designation: "PRC Head",
 
       socialLinks: {
-        github: "#",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/sahil-kumar-7505ab281/",
       },
     },
     {
@@ -149,18 +144,16 @@ const CCC = {
       designation: "ARC Head",
 
       socialLinks: {
-        github: "#",
         linkedin:
           "https://www.linkedin.com/in/prateek-dwivedi-175091282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       },
     },
     {
       name: "Amandeep",
-      image: "/profile_images/Amandeep_vaid.jpg",
+      image: "/profile_images/amandeep.jpg",
       designation: "HRC Head",
 
       socialLinks: {
-        github: "#",
         linkedin: "https://www.linkedin.com/in/amandeep-vaid-b2a446225",
       },
     },
@@ -170,7 +163,6 @@ const CCC = {
       designation: "HRC Head",
 
       socialLinks: {
-        github: "#",
         linkedin: "https://www.linkedin.com/in/114-vaibhav-gupta",
       },
     },

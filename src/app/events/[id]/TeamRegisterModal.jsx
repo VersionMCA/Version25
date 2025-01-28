@@ -60,7 +60,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         `${BACKEND_URL}/api/events/teamNameAvailabilityCheck`,
         {
           eventId: event.id,
-          teamName: teamName,
+          teamName: teamName.toUpperCase(),
         },
       );
       if (res.status === 500) {
@@ -74,7 +74,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
       const response = await axios.post(`${BACKEND_URL}/api/events/register`, {
         userId: session.data.user.id,
         eventId: event.id,
-        teamName,
+        teamName: teamName.toUpperCase(),
         teamMembers: emailList,
       });
       if (response.data?.message) {
@@ -158,7 +158,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         </DialogHeader>
         <form onSubmit={(e) => e.preventDefault()}>
           <div>
-            <label htmlFor="teamName" className="mb-2 font-normal">
+            <label htmlFor="teamName" className="mb-2  font-normal">
               Team Name
             </label>
             <Input
@@ -167,6 +167,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
                 setTeamName(e.target.value);
                 setTeamNameError("");
               }}
+              className="uppercase"
               value={teamName}
             />
             {teamNameError && (
