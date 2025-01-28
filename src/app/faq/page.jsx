@@ -5,11 +5,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqItems } from "../../app/faq/faqs.js";
+import Footer from "@/components/footer/Footer.jsx";
 
 function page() {
   return (
-    <>
-      <div className=" max-w-4xl mx-auto mt-24 p-6">
+    <div className="w-screen min-h-screen overflow-x-hidden">
+      <div className=" max-w-4xl mx-auto mt-16 p-6">
         <Accordion
           type="single"
           collapsible
@@ -33,7 +34,8 @@ function page() {
           })}
         </Accordion>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
 
