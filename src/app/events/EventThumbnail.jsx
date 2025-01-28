@@ -11,7 +11,7 @@ function EventThumbnail({ index, imgLink, name, setNewItemActive }) {
       aria-hidden="true"
     >
       <LazyLoadImage src={imgLink} alt={name} />
-      <div className="content max-sm:text-sm">{name}</div>
+      {/* <div className="content max-sm:text-sm">{name}</div> */}
     </div>
   );
 }

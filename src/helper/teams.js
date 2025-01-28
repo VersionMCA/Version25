@@ -113,7 +113,7 @@ const CCC = {
     },
     {
       name: "Nikhil Chhipa",
-      image: "/profile_images/Nikhil_Chhipa.jpeg",
+      image: "/profile_images/Nikhil2.jpeg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/chhipanikhil9",
