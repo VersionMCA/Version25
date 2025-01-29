@@ -8,24 +8,32 @@ import { faqItems } from "../../app/faq/faqs.js";
 
 function page() {
   return (
-    <div className=" max-w-2xl mx-auto mt-24 p-6">
-      <Accordion
-        type="single"
-        collapsible
-        className="w-full border rounded-md p-4"
-      >
-        {faqItems.map((item, index) => {
-          return (
-            <AccordionItem className="" value={`item-${index + 1}`} key={index}>
-              <AccordionTrigger className="">{item.title}</AccordionTrigger>
-              <AccordionContent className="text-gray-400">
-                {item.content}
-              </AccordionContent>
-            </AccordionItem>
-          );
-        })}
-      </Accordion>
-    </div>
+    <>
+      <div className=" max-w-4xl mx-auto mt-24 p-6">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full border bg-[#030712]/75 rounded-md p-4"
+        >
+          {faqItems.map((item, index) => {
+            return (
+              <AccordionItem
+                className=""
+                value={`item-${index + 1}`}
+                key={index}
+              >
+                <AccordionTrigger className="font-aldrich">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-400 font-aldrich">
+                  {item.content}
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
+      </div>
+    </>
   );
 }
 

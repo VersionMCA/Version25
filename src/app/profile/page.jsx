@@ -14,10 +14,10 @@ export default async function Profile() {
 
   return (
     <div className="w-[100vw] h-[100vh] flex justify-center items-center overflow-hidden">
-      <div className="w-full mt-16  rounded-lg p-3 screen max-w-[700px]">
+      <div className="w-full mt-16 border bg-[#030712]  rounded-lg p-3 screen max-w-[700px]">
         <div className="px-2">
           <h1 className="text-2xl flex items-center gap-2 font-semibold w-fit">
-            <UserRound color="#3b82f6" />
+            <UserRound color="#C6FF00" />
             <span>Profile</span>
           </h1>
           <span className="text-xs text-gray-400">

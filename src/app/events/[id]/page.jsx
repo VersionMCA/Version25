@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import MapDrop from "../../../../public/assets/MapDrop.png";
+import { FaLocationDot } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import Markdown from "react-markdown";
 import { useRouter } from "next/navigation";
@@ -16,6 +16,7 @@ import { Separator } from "@/components/ui/separator";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useAtom } from "jotai";
 import { eventByIdAtom } from "../../../atoms/eventsAtom";
+import formatDate from "@/utilities/formatDate";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -56,26 +57,28 @@ export default function page() {
         {/* Event Header */}
         <div className="flex  w-full p-6 justify-between items-center">
           <div
-            className="flex flex-row  cursor-pointer"
+            className="flex flex-row  justify-center items-center cursor-pointer"
             onClick={() => router.push("/events")}
           >
             <ChevronLeft />
-            <div className="max-sm:hidden">BACK</div>
+            <div className="max-sm:hidden sm:text-xl md:text-2xl lg:text-3xl font-iceland">
+              BACK
+            </div>
             <ChevronRight className="max-sm:hidden" />
           </div>
           <h1 className=" text-4xl lg:text-6xl font-primary">{event?.name}</h1>
           <div></div>
         </div>
-        <div className="border w-full h-[22rem] md:h-[24rem] lg:h-[26rem] shadow-lg p-4 md:px-6 lg:px-8 shadow-primary/10 rounded-lg">
+        <div className="border w-full h-[22rem] md:h-[24rem]  bg-[#030712] lg:h-[26rem] shadow-lg p-4 md:px-6 lg:px-8 shadow-primary/10 rounded-lg">
           {/* Navigation */}
           <div className="flex gap-2 h-[19%] w-full items-center justify-between py-4 overflow-x-scroll no_scrollbar">
             {event?.eventDetails.map(({ title }, idx) => (
               <div
                 key={idx}
-                className={`text-sm md:text-lg md:font-primary cursor-pointer ${contentIndex === idx ? "border-b-2 border-lime-400" : ""}`}
+                className={`text-sm md:text-xl font-iceland cursor-pointer ${contentIndex === idx ? "border-b-2 border-lime-400" : ""}`}
                 onClick={() => setContentIndex(idx)}
               >
-                {title}
+                {title.toUpperCase()}
               </div>
             ))}
           </div>
@@ -87,10 +90,15 @@ export default function page() {
           <Separator />
           {/* Footer Section */}
           <div className="flex max-sm:text-xs  h-[15%] w-full justify-between items-center py-2 pt-4">
-            <span>{event?.date}</span>
+            <span>{formatDate(event?.date)}</span>
             {session?.data?.user?.id ? (
               registered ? (
-                <Button variant="ghost">Registered</Button>
+                <Button
+                  variant="ghost"
+                  className="font-thin font-iceland text-sm  md:text-xl "
+                >
+                  Registered
+                </Button>
               ) : event?.type === "TEAM" ? (
                 <TeamRegisterModal
                   userId={session.data.user.id}
@@ -108,14 +116,13 @@ export default function page() {
                 onClick={() =>
                   toast.error("Login to register for the event", toastStyle)
                 }
+                className="font-thin font-iceland text-sm  md:text-xl "
               >
                 Register
               </Button>
             )}
             <div className="flex gap-2 items-center  ">
-              <div className="w-5 h-10 flex justify-center items-center">
-                <Image src={MapDrop} alt="Map" className=" object-fill" />
-              </div>
+              <FaLocationDot />
               <span>{event?.venue}</span>
             </div>
           </div>

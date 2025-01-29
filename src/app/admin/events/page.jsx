@@ -10,13 +10,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/Button";
 import { useAtom } from "jotai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import {
   eventsAtom,
   removeEventAtom,
   removeTodoAtom,
 } from "../../../atoms/eventsAtom";
+import toastStyle from "@/utilities/toastStyle";
 import axios from "axios";
 
 const BACKEND_URL =
@@ -55,9 +56,9 @@ const EventCard = ({ event }) => {
           method: "DELETE",
         });
         removeEvent(id);
-        toast.success("Event deleted successfully!");
+        toast.success("Event deleted successfully!", toastStyle);
       } catch (error) {
-        toast.error("Error deleting event.");
+        toast.error("Error deleting event.", toastStyle);
       } finally {
         setDeleting(false);
       }

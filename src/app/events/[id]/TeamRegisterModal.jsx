@@ -50,6 +50,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
       else
         toast.error(
           `This event needs ${event.minTeamSize} to ${event.maxTeamSize} members. `,
+          toastStyle,
         );
       return;
     }
@@ -60,7 +61,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         `${BACKEND_URL}/api/events/teamNameAvailabilityCheck`,
         {
           eventId: event.id,
-          teamName: teamName,
+          teamName: teamName.toUpperCase(),
         },
       );
       if (res.status === 500) {
@@ -74,7 +75,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
       const response = await axios.post(`${BACKEND_URL}/api/events/register`, {
         userId: session.data.user.id,
         eventId: event.id,
-        teamName,
+        teamName: teamName.toUpperCase(),
         teamMembers: emailList,
       });
       if (response.data?.message) {
@@ -145,7 +146,9 @@ export default function TeamRegisterModal({ event, setRegistered }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline">Register</Button>
+        <Button className="font-thin font-iceland text-sm  md:text-xl">
+          Register
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -188,6 +191,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
               />
               <Button
                 type="button"
+                className="font-iceland"
                 onClick={handleAddUser}
                 isLoading={isAddingUser}
               >
@@ -224,11 +228,20 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         </form>
         <DialogFooter className="">
           <DialogClose asChild>
-            <Button type="button" variant="secondary">
+            <Button
+              type="button"
+              variant="secondary"
+              className="font-thin font-iceland text-sm  md:text-xl"
+            >
               Cancel
             </Button>
           </DialogClose>
-          <Button type="submit" onClick={handleSubmit} isLoading={isSubmitting}>
+          <Button
+            type="submit"
+            onClick={handleSubmit}
+            isLoading={isSubmitting}
+            className="font-thin font-iceland text-sm  md:text-xl"
+          >
             Register
           </Button>
         </DialogFooter>

@@ -1,12 +1,7 @@
 import React from "react";
-import Social from "@/components/social/Social";
 
 const page = () => {
-  return (
-    <div>
-      <Social />
-    </div>
-  );
+  return <div>Hello</div>;
 };
 
 export default page;

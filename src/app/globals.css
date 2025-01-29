@@ -43,6 +43,12 @@
   .dark,:root {
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
+    body{
+      user-select: none;
+    }
+    img{
+      pointer-events: none;
+    }
 
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
@@ -119,5 +125,4 @@
 .no_scrollbar::-webkit-scrollbar {
   display: none;
 }
-
 

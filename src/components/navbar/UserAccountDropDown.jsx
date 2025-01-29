@@ -10,7 +10,8 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { signOut, useSession } from "next-auth/react";
-import { LogOut, UserRound } from "lucide-react";
+import { LogOut, UserRound, CalendarCheck } from "lucide-react";
+
 import { redirect, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/Button";
@@ -24,7 +25,7 @@ const dropDownData = [
   },
   {
     name: "Registered Events",
-    icon: <UserRound size={15} />,
+    icon: <CalendarCheck size={15} />,
     href: "/registered_events",
   },
 ];

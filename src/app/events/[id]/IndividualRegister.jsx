@@ -17,8 +17,11 @@ const IndividualRegister = ({ event, setRegistered }) => {
       toast.error("Login to register for the event", toastStyle);
       return;
     }
-    if (event.type === "Team") {
-      toast.error("This event is a team event. Please register as a team");
+    if (event.type === "TEAM") {
+      toast.error(
+        "This event is a team event. Please register as a team",
+        toastStyle,
+      );
       return;
     }
     try {
@@ -39,7 +42,11 @@ const IndividualRegister = ({ event, setRegistered }) => {
   };
 
   return (
-    <Button isLoading={isSubmitting} onClick={handleRegister}>
+    <Button
+      isLoading={isSubmitting}
+      onClick={handleRegister}
+      className="font-thin font-iceland text-sm  md:text-xl "
+    >
       Register
     </Button>
   );

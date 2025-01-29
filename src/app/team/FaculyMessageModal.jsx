@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialogMessage";
 import { MessageSquareQuote } from "lucide-react";
 
 const FaculyMessage = ({ designation, message }) => {
@@ -17,7 +17,7 @@ const FaculyMessage = ({ designation, message }) => {
       <DialogTrigger>
         <MessageSquareQuote />
       </DialogTrigger>
-      <DialogContent className="border border-red-100">
+      <DialogContent className="border w-[95%]">
         {message}
         <DialogFooter className="sm:justify-start">
           <DialogHeader>

@@ -3,18 +3,12 @@ import React from "react";
 import { Instagram } from "lucide-react";
 import { FaYoutube, FaLinkedin, FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import MapModal from "../map/MapModal";
+// import MapModal from "../map/MapModal";
 import CalendarModal from "../calendar/CalendarModal";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 
 const icons = [
-  {
-    id: 1,
-    href: "https://www.facebook.com/versionmeet",
-    icon: <FaFacebookF className="h-6 w-6" />,
-    label: "Facebook",
-  },
   {
     id: 2,
     href: "https://www.instagram.com/version_nit_trichy",
@@ -54,7 +48,7 @@ const SocialIcons = () => {
         </Link>
       ))}
       {/* <Separator /> */}
-      <MapModal />
+      {/* <MapModal /> */}
       <CalendarModal />
     </div>
   );

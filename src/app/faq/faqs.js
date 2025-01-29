@@ -1,62 +1,70 @@
 export const faqItems = [
   {
-    title: "What is Tailwind CSS?",
+    title: "What ways can students contribute to Version'25?",
     content:
-      "Tailwind CSS is a utility-first CSS framework for creating custom designs directly in your HTML.",
+      "Students can contribute by participating in various events and inviting their friends from other colleges to help make Version a success.",
   },
   {
-    title: "Is Tailwind CSS beginner-friendly?",
+    title: "How many events and pre-events are scheduled for Version’25?",
     content:
-      "Yes, Tailwind CSS is designed to be simple and efficient for developers of all levels.",
+      "Version is a three-day event, preceded by a week of pre-events and various public engagement activities.",
   },
   {
-    title: "What is an Event Management System?",
-    content:
-      "An Event Management System is a platform or tool used to plan, organize, and manage events seamlessly, from scheduling to execution.",
+    title: "When will Version 2025 take place?",
+    content: "Version 2025 is set to take place from March 7 to March 9, 2025.",
   },
   {
-    title: "How do I register for an event?",
-    content:
-      "You can register for an event by visiting the event's website or platform, filling out the registration form, and completing the required steps.",
+    title: "How can I register for the events of Version’25?",
+    content: "You can register for the events exclusively through our website.",
   },
   {
-    title: "Can I cancel my registration for an event?",
+    title: "What is the location of Version 2025?",
     content:
-      "Yes, most events allow cancellations, but the policy depends on the event organizer. Check the event terms for specific details.",
+      "Version 2025 will be held at the National Institute of Technology, Tiruchirappalli, India.",
   },
   {
-    title: "What is the difference between virtual and in-person events?",
+    title:
+      "Do I need to bring any specific documents or a student ID from my college?",
     content:
-      "Virtual events are conducted online via platforms like Zoom or Teams, while in-person events take place at a physical location.",
+      "Yes, you need to have your college ID proof handy for verification purposes.",
   },
   {
-    title: "What kind of events can be managed online?",
+    title:
+      "Who can participate in the college fest? Is it open to students from other colleges?",
     content:
-      "Online tools can manage a variety of events, including conferences, workshops, webinars, exhibitions, and meetups.",
+      "Only MCA students from across India can participate in Version’25.",
   },
   {
-    title: "How do I receive updates about an event I registered for?",
+    title:
+      "Can I participate in multiple events or competitions during Version?",
     content:
-      "Event organizers usually send updates via email or SMS. You can also check the event website for the latest information.",
+      "Yes, you can participate in multiple events or competitions during Version.",
   },
   {
-    title: "What should I do if I encounter issues during an event?",
+    title: "How can I stay updated with related announcements and changes?",
     content:
-      "You can contact the event support team. Look for a helpdesk or support contact information provided by the organizer.",
+      "You can stay updated with fest-related announcements and changes through our Instagram handle and website.",
   },
   {
-    title: "Are there discounts available for group registrations?",
-    content:
-      "Many events offer discounts for group registrations. Check the event details or contact the organizer for more information.",
+    title: "Is there an entry fee to participate, and if so, how much is it?",
+    content: "No, there is no entry fee for any event at Version’25.",
   },
   {
-    title: "Can I transfer my ticket to someone else?",
+    title:
+      "What transportation options are available for getting to the event location?",
     content:
-      "Ticket transfer policies vary by event. Some allow transfers, while others do not. Check the event's terms and conditions.",
+      "The National Institute of Technology, Trichy, is located on the Trichy-Tanjore highway (NH 67), about 20 km from the main city. You can take Bus No. 128 or Tanjore-bound buses (check for a halt at NITT) from the Central Bus Stand (CBS) to reach NITT. Alternatively, you can reach Chatram Bus Stand in about 15 minutes by auto from CBS, where there is regular bus service to NITT. The journey takes about 45 minutes from CBS or Chatram Bus Stand to NITT.",
   },
   {
-    title: "How can I provide feedback for an event?",
+    title:
+      "Is accommodation provided for participants from outside colleges, and if so, what is the cost?",
     content:
-      "Feedback is often collected via surveys or forms shared by the organizer after the event. You can also email them directly.",
+      "Yes, we provide free accommodation for participants from outside colleges.",
+  },
+  {
+    title:
+      "Are there any restrictions on the number of participants from each outside college?",
+    content:
+      "Yes, a maximum of 8 students from one college can participate offline. For online events, there is no participant limit.",
   },
 ];

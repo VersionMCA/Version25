@@ -19,7 +19,7 @@ const colors = [
   "#FFA500",
 ];
 
-const ProfileCard2 = ({ person }) => {
+const ProfileCard = ({ person }) => {
   const { name, image, designation, message, socialLinks } = person;
 
   const color = colors[Math.floor(Math.random() * colors.length)];
@@ -160,4 +160,4 @@ const ProfileCard2 = ({ person }) => {
   );
 };
 
-export default ProfileCard2;
+export default ProfileCard;
