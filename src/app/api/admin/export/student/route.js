@@ -3,6 +3,7 @@ import { prisma } from "@/db/index.mjs";
 
 export async function POST() {
   try {
+    // console.log("Exporting data to Google Sheets...");
     const credentials = JSON.parse(
       Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_JSON, "base64").toString(
         "utf8",
@@ -50,13 +51,13 @@ export async function POST() {
     });
 
     // grant the permission to the admin by the service account
-    const userEmail = process.env.GOOGLE_USER;
+    const adminEmail = process.env.GOOGLE_USER;
     await drive.permissions.create({
       fileId: spreadsheetId,
       requestBody: {
         role: "writer", // You can set "reader" for read-only access
         type: "user",
-        emailAddress: userEmail,
+        emailAddress: adminEmail,
       },
     });
 
