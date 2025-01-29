@@ -3,8 +3,6 @@ import "./home.css";
 import Image from "next/image";
 import version_back from "../../../public/assets/version_back.svg";
 import road from "../../../public/assets/road.svg";
-import road_2 from "../../../public/assets/road_2.svg";
-import road_3 from "../../../public/assets/road_3.svg";
 
 import boy from "../../../public/assets/boy.svg";
 import cloud from "../../../public/assets/cloud.svg";
@@ -161,7 +159,6 @@ const Home = () => {
       document.removeEventListener("keydown", handleKeydown);
       return;
     }
-
     if (obstacle.current) {
       setObstacleRect(obstacle.current.getBoundingClientRect());
     }
@@ -260,8 +257,8 @@ const Home = () => {
             <div className="firework"></div>
             <div className="firework"></div>
           </div>
-        </section>
-      </div>
+        </section >
+      </div >
     </>
   );
 };

@@ -82,20 +82,6 @@ const Signin = () => {
               alt="Logo"
             />
           </Link>
-          {/* <Link
-            href={"/"}
-            className="flex items-center gap-2 cursor-pointer mx-auto"
-          >
-            <div className="w-[170px] h-[40px]">
-              <Image
-                src={versionLogo}
-                alt="Logo"
-                fill={true}
-                className="object-contain"
-              />
-            </div>
-
-          </Link> */}
         </div>
       </motion.div>
     </div>

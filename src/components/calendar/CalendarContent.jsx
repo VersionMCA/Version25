@@ -72,7 +72,7 @@ function EventRow({ event }) {
     <div className="p-4 bg-theme-lime rounded-lg font-aldrich  shadow-md">
       <div className="flex justify-between items-center text-black text-lg mb-2">
         <span className="">{`${formattedStartTime} - ${formattedEndTime}`}</span>
-        <span>{}</span>
+        <span>{ }</span>
       </div>
       <p className="text-black text-2xl mb-1">{name}</p>
       <p className="text-black text-md font-medium text-end">{venue}</p>

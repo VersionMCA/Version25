@@ -79,7 +79,6 @@ const Chairpersons = {
     },
   ],
 };
-
 const CCC = {
   Title: "CENTRAL CORDINATION COMMITEE",
   Members: [
@@ -167,7 +166,6 @@ const CCC = {
     },
   ],
 };
-
 const colors = {
   color: [
     "bg-gradient-to-r from-neutral-500 to-neutral-700",
