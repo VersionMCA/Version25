@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import versionLogo from "../../../public/assets/version_logo_light.png";
+import versionLogo from "../../../public/assets/VersionNavLogo2.png";
 import UserAccountDropDown from "./UserAccountDropDown";
 import "./navbar.css";
 // import "./navbar.css"   working without importing

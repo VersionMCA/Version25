@@ -11,10 +11,5 @@ export default async function AdminLayout({ children }) {
   }
   if (session && session.user) adminCheck(session.user.email);
 
-  return (
-    <div>
-      <h1>Admin Panel</h1>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }

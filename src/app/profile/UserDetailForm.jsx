@@ -91,7 +91,7 @@ export default function UserDetailForm({ user }) {
         />
       </div>
       <div>
-        <Label className="">College Name</Label>
+        <Label className="">College Name*</Label>
         <Input
           placeholder="Enter your college name"
           value={currUser.collegeName}
@@ -102,7 +102,7 @@ export default function UserDetailForm({ user }) {
         />
       </div>
       <div>
-        <Label className="">College RollNumber</Label>
+        <Label className="">College Roll Number*</Label>
         <Input
           placeholder="Enter your college roll number"
           value={currUser.collegeRollNumber}
@@ -116,7 +116,7 @@ export default function UserDetailForm({ user }) {
         />
       </div>
       <div>
-        <Label className="">Phone Number</Label>
+        <Label className="">Phone Number*</Label>
         <Input
           type="tel"
           placeholder="Enter your contact number"

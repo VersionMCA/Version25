@@ -33,6 +33,7 @@ export default function TeamRegisterModal({ event, setRegistered }) {
   const [emailError, setEmailError] = useState("");
 
   const handleSubmit = async () => {
+    setTeamName(teamName.toUpperCase());
     if (!teamName) {
       setTeamNameError("Team Name is required");
       return;
@@ -158,16 +159,16 @@ export default function TeamRegisterModal({ event, setRegistered }) {
         </DialogHeader>
         <form onSubmit={(e) => e.preventDefault()}>
           <div>
-            <label htmlFor="teamName" className="mb-2  font-normal">
+            <label htmlFor="teamName" className="mb-2 font-normal">
               Team Name
             </label>
             <Input
               type="text"
+              className="uppercase"
               onChange={(e) => {
                 setTeamName(e.target.value);
                 setTeamNameError("");
               }}
-              className="uppercase"
               value={teamName}
             />
             {teamNameError && (
