@@ -8,16 +8,16 @@ const navLinks = [
     link: "/about",
   },
   {
-    name: "FAQ",
-    link: "/faq",
+    name: "Events",
+    link: "/events",
   },
   {
     name: "Team",
     link: "/team",
   },
   {
-    name: "Events",
-    link: "/events",
+    name: "FAQ",
+    link: "/faq",
   },
 ];
 

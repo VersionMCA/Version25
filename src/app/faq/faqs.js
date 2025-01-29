@@ -1,8 +1,7 @@
 export const faqItems = [
   {
-    title: "What ways can students contribute to Version'25?",
-    content:
-      "Students can contribute by participating in various events and inviting their friends from other colleges to help make Version a success.",
+    title: "When will Version'25 take place?",
+    content: "Version'25 is set to take place from March 7 to March 9, 2025.",
   },
   {
     title: "How many events and pre-events are scheduled for Version’25?",
@@ -10,17 +9,18 @@ export const faqItems = [
       "Version is a three-day event, preceded by a week of pre-events and various public engagement activities.",
   },
   {
-    title: "When will Version 2025 take place?",
-    content: "Version 2025 is set to take place from March 7 to March 9, 2025.",
+    title: "What ways can students contribute to Version'25?",
+    content:
+      "Students can contribute by participating in various events and inviting their friends from other colleges to help make Version a success.",
   },
   {
     title: "How can I register for the events of Version’25?",
     content: "You can register for the events exclusively through our website.",
   },
   {
-    title: "What is the location of Version 2025?",
+    title: "What is the location of Version'25?",
     content:
-      "Version 2025 will be held at the National Institute of Technology, Tiruchirappalli, India.",
+      "Version'25 will be held at the National Institute of Technology, Tiruchirappalli, India.",
   },
   {
     title:

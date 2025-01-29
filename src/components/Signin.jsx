@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Separator } from "./ui/separator";
-import versionLogo from "@public/assets/version_logo_light.png";
+import versionLogo from "@public/assets/VersionWhite2.png";
 
 const Signin = () => {
   const session = useSession();

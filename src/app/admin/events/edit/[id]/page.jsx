@@ -34,7 +34,7 @@ const eventSchema = z.object({
     (val) => parseInt(val, 10),
     z.number().min(1, "Max team size must be at least 1"),
   ),
-  image: z.string().url("Invalid URL format").optional(),
+  image: z.string().optional(),
   eventDetails: z.array(
     z.object({
       title: z.string().min(1, "Title is required"),
@@ -112,7 +112,7 @@ export default function Page() {
       if (!response.ok) throw new Error("Failed to update event");
       updateEvents(data);
       toast.success("Event updated successfully!", toastStyle);
-      router.push("/events");
+      router.push("/admin/events");
     } catch (error) {
       console.error(error);
       toast.error("Error updating event!", toastStyle);
@@ -247,7 +247,7 @@ export default function Page() {
           <Label htmlFor="image">Event Image URL</Label>
           <Input
             id="image"
-            type="url"
+            // type="text"
             {...register("image")}
             className="w-full mt-1"
             placeholder="Enter image URL"
