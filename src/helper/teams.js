@@ -3,7 +3,8 @@ const Faculty = {
   Members: [
     {
       name: "Dr. S. Domnic",
-      image: "/profile_images/domnic.jpg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356570/domnic_czqflp.jpg",
       designation: "HOD",
       socialLinks: {
         message:
@@ -12,7 +13,8 @@ const Faculty = {
     },
     {
       name: "Dr.(Mrs.) S. Sangeetha",
-      image: "/profile_images/sangeetha.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/sangeetha_xsvaxy.png",
       designation: "Staff Advisor",
       socialLinks: {
         message:
@@ -27,7 +29,8 @@ const Chairpersons = {
   Members: [
     {
       name: "Chirag Agarwal",
-      image: "/profile_images/Chirag_Agarwal.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356573/Chirag_Agarwal_y0cmz2.jpg",
       designation: "Version Chairperson",
       socialLinks: {
         github: "https://github.com/Chiragarwall",
@@ -36,7 +39,8 @@ const Chairpersons = {
     },
     {
       name: "Abhiusnees Nandi",
-      image: "/profile_images/Abhi_Nandi.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356566/Abhi_Nandi_rdwbco.jpg",
       designation: "EEC Chairperson",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/abhiusnees-nandi-b19349196/",
@@ -44,7 +48,8 @@ const Chairpersons = {
     },
     {
       name: "Nandini Kumari",
-      image: "/profile_images/nandini.jpg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356573/Nandini_Sahu_onu7fr.jpg",
       designation: "ARC Chairperson",
       socialLinks: {
         github: "https://github.com/nandinisahu99",
@@ -53,7 +58,8 @@ const Chairpersons = {
     },
     {
       name: "Aman Kumar Singh",
-      image: "/profile_images/Aman_Singh.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356568/Aman_Singh_ybnkjz.jpg",
       designation: "PRC Chairperson",
       socialLinks: {
         github: "https://github.com/amanks009",
@@ -62,7 +68,8 @@ const Chairpersons = {
     },
     {
       name: "Pawan Agarwal",
-      image: "/profile_images/Pawan_Agarwal.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356575/Pawan_Agarwal_zxhbcw.jpg",
       designation: "PPC Chairperson",
       socialLinks: {
         github: "https://github.com/pawan-git7979",
@@ -71,7 +78,8 @@ const Chairpersons = {
     },
     {
       name: "Harsha Jha",
-      image: "/profile_images/Harsha_Jha.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356572/Harsha_Jha_zycdi2.jpg",
       designation: "HRC Chairperson",
       socialLinks: {
         github: "https://github.com/Harshajhaa",
@@ -86,7 +94,8 @@ const CCC = {
   Members: [
     {
       name: "Rohit Mishra",
-      image: "/profile_images/Rohit_Mishra.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356577/Rohit_Mishra_jabxns.jpg",
       designation: "Secretary",
       socialLinks: {
         linkedin: "http://www.linkedin.com/in/rohitmishra-here",
@@ -94,7 +103,8 @@ const CCC = {
     },
     {
       name: "Astik Verma",
-      image: "/profile_images/Astik_Varma.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356573/Astik_Varma_pbpugw.jpg",
       designation: "Treasurer",
       socialLinks: {
         linkedin: "https://in.linkedin.com/in/astikverma",
@@ -102,7 +112,8 @@ const CCC = {
     },
     {
       name: "Vivek Kumar",
-      image: "/profile_images/Vivek_Kumar.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356579/Vivek_Kumar_rskntr.jpg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/109-Vivek",
@@ -111,7 +122,8 @@ const CCC = {
     },
     {
       name: "Nikhil Chhipa",
-      image: "/profile_images/Nikhil2.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356574/Nikhil2_x9dqh8.jpg",
       designation: "EEC Head",
       socialLinks: {
         github: "https://github.com/chhipanikhil9",
@@ -120,7 +132,8 @@ const CCC = {
     },
     {
       name: "Nitin Pandey",
-      image: "/profile_images/Nitin_Pandey.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356575/Nitin_Pandey_t55js2.jpg",
       designation: "PPC Head",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/nitin009/",
@@ -128,7 +141,8 @@ const CCC = {
     },
     {
       name: "Sahil Kumar",
-      image: "/profile_images/Sahil_Kumar.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/Sahil_Kumar_qctmem.jpg",
       designation: "PRC Head",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/sahil-kumar-7505ab281/",
@@ -136,7 +150,8 @@ const CCC = {
     },
     {
       name: "Prateek Dwivedi",
-      image: "/profile_images/Prateek_Dwiwedi.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356576/Prateek_Dwiwedi_dzfv9l.jpg",
       designation: "ARC Head",
       socialLinks: {
         linkedin:
@@ -145,7 +160,8 @@ const CCC = {
     },
     {
       name: "Amandeep",
-      image: "/profile_images/amandeep.jpg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356570/amandeep_pj1jb3.jpg",
       designation: "HRC Head",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/amandeep-vaid-b2a446225",
@@ -153,7 +169,8 @@ const CCC = {
     },
     {
       name: "Vaibhav Gupta",
-      image: "/profile_images/Vaibhav_Gupta.jpeg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/Vaibhav_Gupta_xyhood.jpg",
       designation: "HRC Head",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/114-vaibhav-gupta",
@@ -173,7 +190,8 @@ const MEMBERS = {
         github: "https://github.com/Priyanshu-miglani21",
       },
       designation: "EEC",
-      image: "/profile_images/PriyanshuMiglani.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356577/PriyanshuMiglani_pwf98w.png",
     },
     {
       name: "Yashraj Jangir",
@@ -182,7 +200,8 @@ const MEMBERS = {
         github: "https://github.com/hubofyashraj",
       },
       designation: "EEC",
-      image: "/profile_images/YashrajJangir.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356580/YashrajJangir_jcl6te.png",
     },
     {
       name: "Chirag Tomar",
@@ -192,7 +211,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/ChiragTomar.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356574/Chirag_ybww4t.jpg",
     },
     {
       name: "Dainish Rahangdale",
@@ -201,7 +221,8 @@ const MEMBERS = {
         github: "https://github.com/DainishRahangdale",
       },
       designation: "EEC",
-      image: "/profile_images/DainishRahangdale.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356567/DainishRahangdale_r97fx3.png",
     },
     {
       name: "Darshan Udaiwal",
@@ -210,7 +231,8 @@ const MEMBERS = {
         github: "https://github.com/Darshan-031",
       },
       designation: "EEC",
-      image: "/profile_images/DarshanUdaiwal.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356569/DarshanUdaiwal_or8kdr.png",
     },
     {
       name: "Shrey Patel",
@@ -219,7 +241,9 @@ const MEMBERS = {
         github: "https://github.com/205123064",
       },
       designation: "EEC",
-      image: "/profile_images/ShreyPatel.png",
+
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356579/ShreyPatel_ikaqgm.png",
     },
 
     {
@@ -229,7 +253,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/RohitKaithwas.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356577/RohitKaithwas_ldwous.png",
     },
     {
       name: "Nikhil Mittal",
@@ -238,7 +263,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/NikhilMittal.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356575/NikhilMittal_niwltw.png",
     },
     {
       name: "Aditi Sharma",
@@ -247,7 +273,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/AditiSharma.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356568/AditiSharma_eayxav.png",
     },
     {
       name: "Sourabh Ramteke",
@@ -256,7 +283,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/SourabhRamteke.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/SourabhRamteke_yllcxx.png",
     },
     {
       name: "Nimesh Kumar Nadar",
@@ -265,7 +293,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/NimeshKumarNadar.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356575/NimeshKumarNadar_zlodyy.png",
     },
     {
       name: "Sourab Kumar",
@@ -274,7 +303,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/SourabKumar.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/SourabKumar_bp3spu.png",
     },
     {
       name: "Nitya Gupta",
@@ -284,7 +314,8 @@ const MEMBERS = {
         github: "https://github.com/Nitya063",
       },
       designation: "EEC",
-      image: "/profile_images/NityaGupta.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356776/NityaGupta_11zon_bjizju.png",
     },
     {
       name: "Neha Pandey",
@@ -294,7 +325,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/NEHAPANDEY.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356576/NEHAPANDEY_azsjoo.png",
     },
     {
       name: "Akshat Jain",
@@ -303,7 +335,8 @@ const MEMBERS = {
         github: "https://github.com/010Akshat",
       },
       designation: "EEC",
-      image: "/profile_images/AkshatJain.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356569/AkshatJain_mpu6yy.png",
     },
     {
       name: "Pratham",
@@ -312,7 +345,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "EEC",
-      image: "/profile_images/Pratham.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356776/Pratham_11zon_jtkbva.png",
     },
 
     // PRC
@@ -323,7 +357,8 @@ const MEMBERS = {
         github: "https://github.com/Raje5hverma",
       },
       designation: "PRC",
-      image: "/profile_images/RAJESHVERMA.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356577/RAJESHVERMA_qpg4nc.png",
     },
     {
       name: "Kishu Gupta",
@@ -332,7 +367,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PRC",
-      image: "/profile_images/KishuGupta.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356573/KishuGupta_k1u3pk.png",
     },
     {
       name: "Piyush Khande",
@@ -341,7 +377,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PRC",
-      image: "/profile_images/PiyushKhande.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356576/PiyushKhande_vcugip.png",
     },
 
     // PPC
@@ -352,7 +389,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/JovalJoseph.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356571/JovalJoseph_x17tjt.png",
     },
     {
       name: "Abhishek Bilung",
@@ -361,7 +399,8 @@ const MEMBERS = {
         github: "https://github.com/abhishekbilung",
       },
       designation: "PPC",
-      image: "/profile_images/AbhishekBilung.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356566/AbhishekBilung_vz6fby.png",
     },
     {
       name: "Nisha Dhakad",
@@ -371,7 +410,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/NishaDhakad.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356576/NishaDhakad_jkuq0j.png",
     },
     {
       name: "Goutam Parsniya",
@@ -381,7 +421,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/GautamParsniya.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356571/GautamParsniya_wm1ld2.png",
     },
     {
       name: "Ashish",
@@ -391,7 +432,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/AshishChoudhary.jpg",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356571/AshishChoudhary_w2klvs.jpg",
     },
     {
       name: "Rishika Gupta",
@@ -400,7 +442,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/RishikaGupta.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/RishikaGupta_ha2kvw.png",
     },
     {
       name: "Deeksha Pandey",
@@ -409,7 +452,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/DeekshaPandey.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356570/DeekshaPandey_mnkhup.png",
     },
     {
       name: "Ajay",
@@ -418,7 +462,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "PPC",
-      image: "/profile_images/AjayKanasia.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356569/AjayKanasia_htorjp.png",
     },
     {
       name: "Ajay Mourya",
@@ -427,7 +472,8 @@ const MEMBERS = {
         github: "https://github.com/ajay8142",
       },
       designation: "PPC",
-      image: "/profile_images/Ajay.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356567/Ajay_oltte3.png",
     },
 
     // HRC
@@ -438,7 +484,8 @@ const MEMBERS = {
         github: "https://github.com/Amita-makwana",
       },
       designation: "HRC",
-      image: "/profile_images/AmitaMakwana.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356571/AmitaMakwana_jojdec.png",
     },
     {
       name: "Vijay Kumar Meena",
@@ -446,7 +493,8 @@ const MEMBERS = {
         linkedin: "www.linkedin.com/in/amita-makwana",
       },
       designation: "HRC",
-      image: "/profile_images/VijayKumarMeena.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356579/VijayKumarMeena_okdgri.png",
     },
     {
       name: "Devendra Solanki",
@@ -455,7 +503,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "HRC",
-      image: "/profile_images/DevendraSolanki.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356570/DevendraSolanki_ovyvyg.png",
     },
     {
       name: "Kashish Malviya",
@@ -464,7 +513,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "HRC",
-      image: "/profile_images/KashishMalviya.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356573/KashishMalviya_umera9.png",
     },
     {
       name: "Aradhya Gupta",
@@ -473,7 +523,8 @@ const MEMBERS = {
         github: "",
       },
       designation: "HRC",
-      image: "/profile_images/AradhyaGupta.png",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356572/AradhyaGupta_x6lf8b.png",
     },
   ],
 };
