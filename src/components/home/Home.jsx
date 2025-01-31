@@ -257,8 +257,8 @@ const Home = () => {
             <div className="firework"></div>
             <div className="firework"></div>
           </div>
-        </section >
-      </div >
+        </section>
+      </div>
     </>
   );
 };

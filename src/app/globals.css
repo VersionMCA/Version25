@@ -6,6 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.markdown > * {
+  all: revert;
+}
+
 @layer base {
   /* Our website has same color scheme for both light and dark mode */
   /* :root {

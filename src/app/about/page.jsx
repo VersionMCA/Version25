@@ -55,10 +55,11 @@ export default function About() {
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={`flex-grow py-2 text-lg font-semibold bg-[#171616] p-2 text-center transition-all ease-in-out ${activeTab === tab.id
-              ? "border-b-4 border-[#d4ff41] text-white active_btn"
-              : "text-gray-400 hover:text-white"
-              }`}
+            className={`flex-grow py-2 text-lg font-semibold bg-[#171616] p-2 text-center transition-all ease-in-out ${
+              activeTab === tab.id
+                ? "border-b-4 border-[#d4ff41] text-white active_btn"
+                : "text-gray-400 hover:text-white"
+            }`}
             onClick={() => setActiveTab(tab.id)}
           >
             {tab.label}
@@ -70,8 +71,9 @@ export default function About() {
       <main className="main applyBorder flex-grow p-8 bg-gradient-to-t from-[#323a26] via-[#202419] to-[#171616] h-max lg:h-72 rounded-xl">
         {/* Version Tab */}
         <div
-          className={`tabs select-none ${activeTab === "version" ? "fade-in" : "fade-out"
-            } ${animateTab === "version" ? "visible" : "hidden"}`}
+          className={`tabs select-none ${
+            activeTab === "version" ? "fade-in" : "fade-out"
+          } ${animateTab === "version" ? "visible" : "hidden"}`}
         >
           <ul className="text-xs sm:text-sm lg:text-md xl:text-lg  select-none font-mina opacity-80">
             <li>
@@ -102,8 +104,9 @@ export default function About() {
 
         {/* Velocium Tab */}
         <div
-          className={`tabs select-none ${activeTab === "velocium" ? "fade-in" : "fade-out"
-            } ${animateTab === "velocium" ? "visible" : "hidden"}`}
+          className={`tabs select-none ${
+            activeTab === "velocium" ? "fade-in" : "fade-out"
+          } ${animateTab === "velocium" ? "visible" : "hidden"}`}
         >
           <ul className="text-xs sm:text-sm lg:text-md xl:text-lg select-none font-mina opacity-80">
             <li>
