@@ -1,6 +1,7 @@
 import React from "react";
 import "./member.css";
 import FaculyMessage from "./FaculyMessageModal";
+import Image from "next/image";
 
 const colors = [
   "#6BBDBA",
@@ -44,7 +45,13 @@ const ProfileCard = ({ person }) => {
               className="col-start-1 col-end-3 row-start-1 row-end-3 object-fill"
               data-astro-cid-6qtsqqpf
             >
-              <img src={image} alt={name} data-astro-cid-6qtsqqpf />
+              <Image
+                width={240}
+                height={240}
+                src={image}
+                alt={name}
+                data-astro-cid-6qtsqqpf
+              />
             </div>
           </div>
         </div>
