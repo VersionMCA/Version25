@@ -3,8 +3,8 @@ import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import versionLogo from "../../../public/assets/VersionNavLogo2.png";
 import UserAccountDropDown from "./UserAccountDropDown";
+import { toast } from "react-toastify";
 import "./navbar.css";
-// import "./navbar.css"   working without importing
 
 import Image from "next/image";
 import { motion } from "framer-motion";
