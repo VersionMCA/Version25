@@ -2,7 +2,7 @@ import Teams from "@/helper/teams";
 import TeamsDesign from "@/app/team/TeamsDesign";
 
 const page = () => {
-  const { Faculty, Chairpersons, CCC } = Teams;
+  const { Faculty, Chairpersons, CCC, MEMBERS } = Teams;
   return (
     <div className="flex justify-center mt-16 w-full max-w-[1100px] mx-auto lg:mt-20  items-center p-4 flex-col  h-full">
       <div className="opacity-1 transform-none font-extrabold font-mono text-white mt-16">
@@ -17,6 +17,7 @@ const page = () => {
       <TeamsDesign Data={Faculty} />
       <TeamsDesign Data={Chairpersons} />
       <TeamsDesign Data={CCC} />
+      <TeamsDesign Data={MEMBERS} />
     </div>
   );
 };
