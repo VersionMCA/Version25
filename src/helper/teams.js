@@ -241,6 +241,7 @@ const MEMBERS = {
         github: "https://github.com/205123064",
       },
       designation: "EEC",
+
       image:
         "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356579/ShreyPatel_ikaqgm.png",
     },
