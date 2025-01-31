@@ -2,7 +2,7 @@ name: Linting, Formatting and Build Check on PR
 on:
   pull_request:
     branches:
-       - '**'
+       - main
 env : 
   HUSKY: 0
 

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import axios from "axios";
@@ -85,7 +87,9 @@ export default function page() {
           <Separator />
           {/* Content Section */}
           <div className="overflow-y-scroll h-[64%] py-2">
-            <Markdown>{event?.eventDetails[contentIndex]?.content}</Markdown>
+            <Markdown className="markdown" remarkPlugins={[remarkGfm]}>
+              {event?.eventDetails[contentIndex]?.content}
+            </Markdown>
           </div>
           <Separator />
           {/* Footer Section */}
