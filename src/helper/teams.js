@@ -341,8 +341,8 @@ const MEMBERS = {
     {
       name: "Ajeet",
       socialLinks: {
-        linkedin: "https://www.linkedin.com/in/shikhr/",
-        github: "https://github.com/shikhr",
+        linkedin: "https://www.linkedin.com/in/ajeet-singh-0a6952285/",
+        github: "https://github.com/009ajeet",
       },
       designation: "EEC",
       image:
@@ -351,8 +351,8 @@ const MEMBERS = {
     {
       name: "Shikhar Mishra",
       socialLinks: {
-        linkedin: "https://www.linkedin.com/in/ajeet-singh-0a6952285/",
-        github: "https://github.com/009ajeet",
+        linkedin: "https://www.linkedin.com/in/shikhr/",
+        github: "https://github.com/shikhr",
       },
       designation: "EEC",
       image:
