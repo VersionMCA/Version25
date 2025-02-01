@@ -24,5 +24,7 @@ jobs:
           git pull origin main
           npm install
           npx prisma generate
+          rm -rf .next/ node_modules/.cache/
+          npm cache clean --force
           npm run build
           pm2 restart version25
