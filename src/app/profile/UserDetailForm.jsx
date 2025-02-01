@@ -29,11 +29,6 @@ export default function UserDetailForm({ user }) {
       toast.warn("Please fill all details");
       return;
     }
-    if (!/^[0-9]+$/.test(currUser.collegeRollNumber)) {
-      toast.error("College Roll Number must be numeric.", toastStyle);
-      return;
-    }
-
     if (
       !/^[0-9]+$/.test(currUser.phoneNumber) ||
       currUser.phoneNumber.length != 10
