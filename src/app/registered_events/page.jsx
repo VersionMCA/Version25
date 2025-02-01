@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 import { Button } from "@/components/ui/Button";
 import { FaGoogle } from "react-icons/fa";
 import toastStyle from "@/utilities/toastStyle";
+import { convertToGoogleCalendarFormat } from "@/utilities/formatTime";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
@@ -24,20 +25,6 @@ const Page = () => {
   const { data: session } = useSession();
   const [submitting, setIsSubmitting] = useState(false);
   const [registeredEvents, setRegisteredEvents] = useState(null);
-
-  const convertToGoogleCalendarFormat = (isoString) => {
-    const date = new Date(isoString);
-
-    // Extract components
-    const year = date.getUTCFullYear();
-    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
-    const day = String(date.getUTCDate()).padStart(2, "0");
-    const hours = String(date.getUTCHours()).padStart(2, "0");
-    const minutes = String(date.getUTCMinutes()).padStart(2, "0");
-    const seconds = String(date.getUTCSeconds()).padStart(2, "0");
-
-    return `${year}${month}${day}T${hours}${minutes}${seconds}`;
-  };
 
   const handleAddToCalendar = (event) => {
     const title = `Version 25 - ${event.name}`;

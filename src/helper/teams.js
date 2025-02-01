@@ -279,7 +279,7 @@ const MEMBERS = {
     {
       name: "Sourabh Ramteke",
       socialLinks: {
-        linkedin: "https://www.linkedin.com/in/sourabh-ramteke",
+        linkedin: "https://www.linkedin.com/in/sourabh-ramteke-704152289/",
         github: "",
       },
       designation: "EEC",
@@ -331,12 +331,32 @@ const MEMBERS = {
     {
       name: "Akshat Jain",
       socialLinks: {
-        linkedin: "www.linkedin.com/in/akshat-jain-b83a09301",
+        linkedin: "https://linkedin.com/in/akshat-jain-b83a09301",
         github: "https://github.com/010Akshat",
       },
       designation: "EEC",
       image:
         "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356569/AkshatJain_mpu6yy.png",
+    },
+    {
+      name: "Ajeet",
+      socialLinks: {
+        linkedin: "https://www.linkedin.com/in/shikhr/",
+        github: "https://github.com/shikhr",
+      },
+      designation: "EEC",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738399827/cropped-WhatsApp_Image_2025-02-01_at_1.26.44_PM_hmuisq.jpg",
+    },
+    {
+      name: "Shikhar Mishra",
+      socialLinks: {
+        linkedin: "https://www.linkedin.com/in/ajeet-singh-0a6952285/",
+        github: "https://github.com/009ajeet",
+      },
+      designation: "EEC",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738399919/WhatsApp_Image_2025-02-01_at_1.28.12_PM_mhwyxn.jpg",
     },
     {
       name: "Pratham",
@@ -363,7 +383,7 @@ const MEMBERS = {
     {
       name: "Kishu Gupta",
       socialLinks: {
-        linkedin: "Kishugupta18",
+        linkedin: "https://www.linkedin.com/in/Kishugupta18",
         github: "",
       },
       designation: "PRC",
@@ -403,17 +423,6 @@ const MEMBERS = {
         "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356566/AbhishekBilung_vz6fby.png",
     },
     {
-      name: "Nisha Dhakad",
-      socialLinks: {
-        linkedin:
-          "https://www.linkedin.com/in/nisha-dhakad-59b1a921a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        github: "",
-      },
-      designation: "PPC",
-      image:
-        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356576/NishaDhakad_jkuq0j.png",
-    },
-    {
       name: "Goutam Parsniya",
       socialLinks: {
         linkedin:
@@ -436,6 +445,17 @@ const MEMBERS = {
         "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356571/AshishChoudhary_w2klvs.jpg",
     },
     {
+      name: "Nisha Dhakad",
+      socialLinks: {
+        linkedin:
+          "https://www.linkedin.com/in/nisha-dhakad-59b1a921a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "",
+      },
+      designation: "PPC",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356576/NishaDhakad_jkuq0j.png",
+    },
+    {
       name: "Rishika Gupta",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/rishika-gupta-225ab0227/",
@@ -445,6 +465,7 @@ const MEMBERS = {
       image:
         "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356578/RishikaGupta_ha2kvw.png",
     },
+
     {
       name: "Deeksha Pandey",
       socialLinks: {
@@ -458,7 +479,7 @@ const MEMBERS = {
     {
       name: "Ajay",
       socialLinks: {
-        linkedin: "NA",
+        linkedin: "/",
         github: "",
       },
       designation: "PPC",
@@ -480,7 +501,7 @@ const MEMBERS = {
     {
       name: "Amita Makwana",
       socialLinks: {
-        linkedin: "www.linkedin.com/in/amita-makwana",
+        linkedin: "https://linkedin.com/in/amita-makwana",
         github: "https://github.com/Amita-makwana",
       },
       designation: "HRC",
@@ -490,7 +511,7 @@ const MEMBERS = {
     {
       name: "Vijay Kumar Meena",
       socialLinks: {
-        linkedin: "www.linkedin.com/in/amita-makwana",
+        linkedin: "https://linkedin.com/in/vijay-kumar-3a4526312/",
       },
       designation: "HRC",
       image:
@@ -499,7 +520,7 @@ const MEMBERS = {
     {
       name: "Devendra Solanki",
       socialLinks: {
-        linkedin: ".",
+        linkedin: "/",
         github: "",
       },
       designation: "HRC",
@@ -519,7 +540,7 @@ const MEMBERS = {
     {
       name: "Aradhya Gupta",
       socialLinks: {
-        linkedin: "www.linkedin.com/in/aradhya-gupta-7a8691238",
+        linkedin: "https://linkedin.com/in/aradhya-gupta-7a8691238",
         github: "",
       },
       designation: "HRC",
