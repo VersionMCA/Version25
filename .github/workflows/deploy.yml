@@ -26,5 +26,7 @@ jobs:
           npx prisma generate
           rm -rf .next/ node_modules/.cache/
           npm cache clean --force
+          pm2 delete version25 || true
           npm run build
-          pm2 restart version25
+          pm2 start npm --name "version25" -- run start
+          pm2 save
