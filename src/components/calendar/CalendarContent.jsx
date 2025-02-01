@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { eventsAtom } from "@/atoms/eventsAtom";
 import { format } from "date-fns";
+import { convertToModalFormat } from "@/utilities/formatTime";
 
 export default function CalendarContent() {
   const [eventData] = useAtom(eventsAtom);
@@ -30,13 +31,14 @@ export default function CalendarContent() {
           )
       );
     }
-    console.log(groupAndSortEvents(eventData));
     setSortedEvents(groupAndSortEvents(eventData));
   }, []);
 
   return (
     <div className=" w-full  flex gap-y-4 h-full bg-opacity-50 flex-col items-center justify-center">
-      <div className="font-audiowide text-6xl text-theme-cream">VELOCIUM</div>
+      <div className="font-audiowide text-4xl md:text-5xl lg:text-6xl text-theme-cream">
+        VELOCIUM
+      </div>
       <div className="text-left h-[450px] w-full overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
         {sortedEvents.map((events, index) => {
           return <EventSection key={index} day="Sat 16th" events={events} />;
@@ -64,9 +66,9 @@ function EventSection({ day, events }) {
 function EventRow({ event }) {
   const { startTime, endTime, name, venue } = event;
 
-  // Format the start and end time
-  const formattedStartTime = format(new Date(startTime), "hh:mm a");
-  const formattedEndTime = format(new Date(endTime), "hh:mm a");
+  // the  Format the start and end time
+  const formattedStartTime = convertToModalFormat(startTime);
+  const formattedEndTime = convertToModalFormat(endTime);
 
   return (
     <div className="p-4 bg-theme-lime rounded-lg font-aldrich  shadow-md">
