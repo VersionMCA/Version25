@@ -28,6 +28,7 @@ export async function PUT(request, { params }) {
         endTime: body.date && body.endTime ? eventEndTime : null,
         venue: body.venue,
         type: body.type,
+        status: body.status,
         minTeamSize: body.minTeamSize,
         maxTeamSize: body.maxTeamSize,
         image: body.image,

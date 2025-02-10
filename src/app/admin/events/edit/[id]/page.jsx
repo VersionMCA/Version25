@@ -26,6 +26,7 @@ const eventSchema = z.object({
   endTime: z.string().optional(),
   venue: z.string().optional(),
   type: z.string().min(1, "Event type is required"),
+  status: z.string().min(1, "Event status is required"),
   minTeamSize: z.preprocess(
     (val) => parseInt(val, 10),
     z.number().min(1, "Min team size must be at least 1"),
@@ -88,6 +89,7 @@ export default function Page() {
 
       setValue("venue", event.venue);
       setValue("type", event.type);
+      setValue("status", event.status);
       setValue("minTeamSize", event.minTeamSize);
       setValue("maxTeamSize", event.maxTeamSize);
       setValue("image", event.image);
@@ -100,6 +102,25 @@ export default function Page() {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
+    if (data.minTeamSize > data.maxTeamSize) {
+      toast.error(
+        "Min team size should be less than or equal to max team size",
+        toastStyle,
+      );
+      setIsSubmitting(false);
+      return;
+    }
+    if (
+      data.type === "INDIVIDUAL" &&
+      (data.minTeamSize !== 1 || data.maxTeamSize !== 1)
+    ) {
+      toast.error(
+        "For individual events, min and max team size should be 1",
+        toastStyle,
+      );
+      setIsSubmitting(false);
+      return;
+    }
     try {
       const response = await fetch(`/api/admin/events/${id}`, {
         method: "PUT",
@@ -209,6 +230,25 @@ export default function Page() {
           </select>
           {errors.type && (
             <span className="text-red-500">{errors.type.message}</span>
+          )}
+        </div>
+
+        {/* Event Status */}
+        <div>
+          <Label htmlFor="status">Event Status</Label>
+          <select
+            id="type"
+            {...register("status")}
+            className="w-full mt-1 bg-black border h-9"
+          >
+            <option value="UPCOMING">UPCOMING</option>
+            <option value="REGISTRATION_STARTED">REGISTRATION_STARTED</option>
+            <option value="REGISTRATION_CLOSED">REGISTRATION_CLOSED</option>
+            <option value="ONGOING">ONGOING</option>
+            <option value="COMPLETED">COMPLETED</option>
+          </select>
+          {errors.status && (
+            <span className="text-red-500">{errors.status.message}</span>
           )}
         </div>
 

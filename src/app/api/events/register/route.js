@@ -25,6 +25,20 @@ export async function POST(req) {
       where: { id: eventId },
     });
 
+    // Check is registration open
+    if (event.status !== "REGISTRATION_STARTED") {
+      return new Response(
+        JSON.stringify("Registration for this event is not open"),
+        { status: 400 },
+      );
+    }
+
+    if (event.status !== "REGISTRATION_STARTED") {
+      return new Response(
+        JSON.stringify("Registration for this event not yet started"),
+      );
+    }
+
     if (!event) {
       return new Response(JSON.stringify({ message: "Event not found" }), {
         status: 404,

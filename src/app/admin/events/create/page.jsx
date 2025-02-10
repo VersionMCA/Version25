@@ -20,6 +20,7 @@ const eventSchema = z.object({
   endTime: z.string().optional(),
   venue: z.string().optional(),
   type: z.string().min(1, "Event type is required"),
+  status: z.string().min(1, "Event status is required"),
   minTeamSize: z.preprocess(
     (val) => parseInt(val, 10),
     z.number().min(1, "Min team size must be at least 1"),
@@ -183,6 +184,25 @@ export default function AddEventPage() {
           </select>
           {errors.type && (
             <span className="text-red-500">{errors.type.message}</span>
+          )}
+        </div>
+
+        {/* Event Status */}
+        <div>
+          <Label htmlFor="status">Event Status</Label>
+          <select
+            id="status"
+            {...register("status")}
+            className="w-full mt-1 bg-black  border h-9"
+          >
+            <option value="UPCOMING">UPCOMING</option>
+            <option value="REGISTRATION_STARTED">REGISTRATION_STARTED</option>
+            <option value="REGISTRATION_CLOSED">REGISTRATION_CLOSED</option>
+            <option value="ONGOING">ONGOING</option>
+            <option value="COMPLETED">COMPLETED</option>
+          </select>
+          {errors.status && (
+            <span className="text-red-500">{errors.status.message}</span>
           )}
         </div>
 

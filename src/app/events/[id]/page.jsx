@@ -93,13 +93,24 @@ export default function page() {
           </div>
           <Separator />
           {/* Footer Section */}
-          <div className="flex max-sm:text-xs  h-[15%] w-full justify-between items-center py-2 pt-4">
+          <div className="flex max-sm:text-xs h-[15%] w-full justify-between items-center py-2 pt-4">
             <span>{formatDate(event?.date)}</span>
-            {session?.data?.user?.id ? (
+
+            {/* Check event status */}
+            {["UPCOMING", "REGISTRATION_CLOSED", "COMPLETED"].includes(
+              event?.status,
+            ) ? (
+              <Button
+                variant="ghost"
+                className="font-thin font-iceland text-sm md:text-xl"
+              >
+                {event.status}
+              </Button>
+            ) : session?.data?.user?.id ? (
               registered ? (
                 <Button
                   variant="ghost"
-                  className="font-thin font-iceland text-sm  md:text-xl "
+                  className="font-thin font-iceland text-sm md:text-xl"
                 >
                   Registered
                 </Button>
@@ -120,12 +131,13 @@ export default function page() {
                 onClick={() =>
                   toast.error("Login to register for the event", toastStyle)
                 }
-                className="font-thin font-iceland text-sm  md:text-xl "
+                className="font-thin font-iceland text-sm md:text-xl"
               >
                 Register
               </Button>
             )}
-            <div className="flex gap-2 items-center  ">
+
+            <div className="flex gap-2 items-center">
               <FaLocationDot />
               <span>{event?.venue}</span>
             </div>
