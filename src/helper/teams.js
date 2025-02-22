@@ -131,6 +131,16 @@ const CCC = {
       },
     },
     {
+      name: "Priyanshu Miglani",
+      socialLinks: {
+        linkedin: "https://www.linkedin.com/in/priyanshu-miglani-191586196/",
+        github: "https://github.com/Priyanshu-miglani21",
+      },
+      designation: "PPC Head",
+      image:
+        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356577/PriyanshuMiglani_pwf98w.png",
+    },
+    {
       name: "Nitin Pandey",
       image:
         "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356575/Nitin_Pandey_t55js2.jpg",
@@ -183,16 +193,6 @@ const MEMBERS = {
   Title: "MEMBERS",
   Members: [
     // EEC
-    {
-      name: "Priyanshu Miglani",
-      socialLinks: {
-        linkedin: "https://www.linkedin.com/in/priyanshu-miglani-191586196/",
-        github: "https://github.com/Priyanshu-miglani21",
-      },
-      designation: "EEC",
-      image:
-        "https://res.cloudinary.com/dy6ylu3ea/image/upload/v1738356577/PriyanshuMiglani_pwf98w.png",
-    },
     {
       name: "Yashraj Jangir",
       socialLinks: {

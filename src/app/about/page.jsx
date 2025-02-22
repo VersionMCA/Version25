@@ -71,11 +71,11 @@ export default function About() {
       <main className="main applyBorder flex-grow p-8 bg-gradient-to-t from-[#323a26] via-[#202419] to-[#171616] h-max lg:h-72 rounded-xl">
         {/* Version Tab */}
         <div
-          className={`tabs select-none ${
+          className={`tabs ${
             activeTab === "version" ? "fade-in" : "fade-out"
           } ${animateTab === "version" ? "visible" : "hidden"}`}
         >
-          <ul className="text-xs sm:text-sm lg:text-md xl:text-lg  select-none font-mina opacity-80">
+          <ul className="text-xs sm:text-sm lg:text-md xl:text-lg font-mina opacity-80">
             <li>
               <li>
                 Embarking on its 32nd edition, Version 2025, the annual All
@@ -104,11 +104,11 @@ export default function About() {
 
         {/* Velocium Tab */}
         <div
-          className={`tabs select-none ${
+          className={`tabs  ${
             activeTab === "velocium" ? "fade-in" : "fade-out"
           } ${animateTab === "velocium" ? "visible" : "hidden"}`}
         >
-          <ul className="text-xs sm:text-sm lg:text-md xl:text-lg select-none font-mina opacity-80">
+          <ul className="text-xs sm:text-sm lg:text-md xl:text-lg font-mina opacity-80">
             <li>
               Version 2025 is proud to present its forward-looking theme,
               "Velocium: Empower Ideas, Minimize Code." Velocium, a fusion of
